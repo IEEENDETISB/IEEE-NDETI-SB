@@ -1958,41 +1958,51 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/*--------------------------------------------------------------
-# Mobile Responsive Improvements - Added by Malak Hassan
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Force Desktop View on All Devices
---------------------------------------------------------------*/
+/* تحسين التنسيق للموبايل بدون إلغاء الـ Responsive */
+@media (max-width: 576px) {
+    
+    /* 1. جعل أعضاء الـ Highboard يظهروا 2 جنب بعض بدل 1 */
+    #team .row > div {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 10px !important;
+    }
 
-/* تخلي كل حاجة تظهر بنفس شكل اللابتوب */
-body {
-  min-width: 1200px !important;
-}
+    #team .member img {
+        width: 120px !important; /* تصغير حجم الصورة لتناسب العرض الجديد */
+        height: 120px !important;
+    }
 
-.container {
-  width: 1200px !important;
-  max-width: 1200px !important;
-}
+    #team h4 {
+        font-size: 14px !important; /* تصغير الخط عشان الأسماء متدخلش في بعض */
+    }
 
-/* تخلي المستخدم يقدر يتحرك يمين وشمال لو شاشته ضيقة */
-html {
-  overflow-x: auto !important;
-}
+    /* 2. جعل صور الـ Events تظهر 2 جنب بعض */
+    #portfolio .row > div {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 5px !important;
+    }
 
-/* منع أي عنصر من إنه يترص تحت بعضه */
-.row {
-  display: block !important;
-}
+    /* 3. تظبيط اللجان (Committees) تظهر بشكل ملموم */
+    #services .service-item {
+        padding: 15px 10px !important;
+        margin-bottom: 0 !important;
+    }
 
-.col-lg-4, .col-lg-6, .col-xl-3, .col-md-6 {
-  float: left !important;
-  width: auto !important;
-}
+    #services .service-item h3 {
+        font-size: 16px !important;
+    }
 
-/* تنظيف الـ float */
-.row:after {
-  content: "";
-  clear: both;
-  display: table;
+    /* 4. تصغير الهيرو (أول صورة في الموقع) عشان متخدش الشاشة كلها */
+    .hero {
+        padding: 60px 0 !important;
+        min-height: 50vh !important;
+    }
+
+    .hero h1 {
+        font-size: 28px !important;
+    }
 }
