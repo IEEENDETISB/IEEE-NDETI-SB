@@ -1958,58 +1958,30 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* --- كود جعل الموبايل نسخة من اللاب توب --- */
-@media (max-width: 768px) {
-    
-    /* 1. منع العناصر من النزول تحت بعضها (إلغاء الـ Stack) */
-    .hero .row {
-        display: flex !important;
-        flex-direction: row !important; /* إجبار الكلام والصورة يبقوا جنب بعض */
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-    }
-
-    /* 2. توزيع المساحة: الكلام ياخد نص والصورة نص (زي اللاب) */
-    .hero .col-lg-6 {
-        width: 50% !important;
-        flex: 0 0 50% !important;
-        max-width: 50% !important;
-        padding-left: 20px !important;
-        text-align: left !important; /* محاذاة لليسار زي اللاب */
-    }
-
-    /* 3. تصغير الخطوط جداً عشان تكفي المساحة الجديدة */
-    .hero h1 {
-        font-size: 16px !important; /* صغرناه عشان ميكسرش السطر */
-        line-height: 1.2 !important;
-        margin-bottom: 10px !important;
-    }
-
-    .hero .btn-get-started {
-        font-size: 10px !important; /* زرار صغنن شيك */
-        padding: 5px 15px !important;
-    }
-
-    /* 4. تظبيط صورة الخلفية أو الصورة الجانبية */
-    .hero-img {
-        width: 50% !important;
-        display: block !important;
-    }
-
-    /* 5. منع الموقع من الانهيار العرضي */
-    .container {
-        min-width: 100% !important;
-        padding: 0 10px !important;
-    }
-
-    /* 6. تصغير الهيدر عشان مياخدش نص الشاشة */
-    .sitename {
-        font-size: 14px !important;
-    }
+/* إجبار الموقع على وضع اللابتوب الثابت */
+html, body {
+    width: 1200px !important; /* تثبيت عرض الموقع بالكامل */
+    overflow-x: auto !important; /* السماح بالحركة يمين وشمال */
+    -webkit-text-size-adjust: 100%; /* منع الموبايل من تكبير الخط تلقائياً */
 }
 
-/* حل عام لمنع أي عنصر يزق الشاشة يمين */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
+.container {
+    width: 1170px !important; /* مقاس حاوية اللابتوب القياسية */
+    max-width: none !important;
+}
+
+/* التأكد من أن الهيرو والهيدر لا يتقلصان */
+#header, #hero, .main, #footer {
+    width: 1200px !important;
+}
+
+/* منع الـ Bootstrap من إنه ينزل العناصر تحت بعضها */
+.row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+}
+
+.col-lg-6, .col-md-6, .col-lg-4 {
+    flex: 0 0 auto !important;
+    width: auto !important; /* خليهم ياخدوا عرضهم الطبيعي جنب بعض */
 }
