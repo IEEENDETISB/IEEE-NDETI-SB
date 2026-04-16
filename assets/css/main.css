@@ -1933,4 +1933,47 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+/* --- إظهار منيو اللاب توب على الموبايل --- */
 
+/* 1. إظهار القائمة الأصلية وإلغاء إخفائها */
+@media (max-width: 1199px) {
+  .navmenu {
+    display: block !important;
+    position: static !important;
+  }
+
+  .navmenu ul {
+    display: flex !important; /* يخليها صف واحد بالعرض */
+    flex-direction: row !important;
+    position: static !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .navmenu a, .navmenu a:focus {
+    color: var(--nav-color) !important;
+    padding: 18px 15px !important;
+    font-size: 15px !important; /* حجم خط اللاب */
+  }
+
+  /* 2. إخفاء زرار الموبايل المستفز (الشرط) */
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  /* 3. تظبيط الهيدر عشان يشيلهم كلهم جنب بعض */
+  .header .branding .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+}
+
+/* 4. إجبار الصور (زي اللوجو) إنها متصغرش بزيادة */
+.header .logo img {
+    max-height: 40px !important;
+}
