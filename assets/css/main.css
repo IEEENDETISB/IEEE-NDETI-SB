@@ -1942,3 +1942,28 @@ section,
     );
   }
 }
+/* --- تعديل قسم الـ Highboard عشان الصور تتسنتر --- */
+
+/* 1. سنترة العناصر كلها في السطر */
+.team .member {
+    text-align: center !important; /* يجبر الكلام (الاسم) ينزل في النص */
+    display: flex !important;
+    flex-direction: column !important; /* يرص المحتوى بالطول */
+    align-items: center !important; /* يسنتر الصور والكلام في نص العمود بالظبط */
+    justify-content: center !important;
+}
+
+/* 2. تظبيط الصورة عشان متصغرش بزيادة وتفضل واضحة */
+.team .member .member-img img {
+    max-width: 100% !important;
+    width: auto !important;
+    margin: 0 auto 15px auto !important; /* سنترة الصورة مع مسافة تحتها */
+}
+
+/* 3. سنترة الاسم والبوزيشن */
+.team .member .member-info h4,
+.team .member .member-info span {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+}
