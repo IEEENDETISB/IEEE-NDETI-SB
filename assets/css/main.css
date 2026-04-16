@@ -1958,30 +1958,42 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* إجبار الموقع على وضع اللابتوب الثابت */
-html, body {
-    width: 1200px !important; /* تثبيت عرض الموقع بالكامل */
-    overflow-x: auto !important; /* السماح بالحركة يمين وشمال */
-    -webkit-text-size-adjust: 100%; /* منع الموبايل من تكبير الخط تلقائياً */
-}
+@media (max-width: 768px) {
+    /* 1. تظبيط منطقة الهيرو عشان الكلام يظهر */
+    .hero {
+        background-position: right center !important; /* زق صورة الدوائر لليمين شوية */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important; /* ابدأ من الشمال عشان تبعد عن الأيقونة اللي في النص */
+        padding-left: 20px !important;
+    }
 
-.container {
-    width: 1170px !important; /* مقاس حاوية اللابتوب القياسية */
-    max-width: none !important;
-}
+    .hero .container {
+        margin: 0 !important; /* إلغاء التوسيط عشان الكلام يروح عالشمال */
+        z-index: 10 !important;
+    }
 
-/* التأكد من أن الهيرو والهيدر لا يتقلصان */
-#header, #hero, .main, #footer {
-    width: 1200px !important;
-}
+    /* 2. تصغير الخط عشان ميركبش فوق الأيقونات */
+    .hero h1 {
+        font-size: 20px !important;
+        max-width: 60% !important; /* الكلام هياخد 60% بس من العرض عشان ميوصلش للأيقونة الزرقاء */
+        line-height: 1.4 !important;
+        text-align: left !important;
+        color: #ffffff !important;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1) !important; /* ظل قوي عشان الكلام ينطق */
+    }
 
-/* منع الـ Bootstrap من إنه ينزل العناصر تحت بعضها */
-.row {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-}
+    /* 3. تظبيط الزرار تحت الكلام بالظبط */
+    .hero .btn-get-started {
+        margin-left: 0 !important;
+        margin-top: 15px !important;
+        padding: 8px 20px !important;
+        font-size: 14px !important;
+    }
 
-.col-lg-6, .col-md-6, .col-lg-4 {
-    flex: 0 0 auto !important;
-    width: auto !important; /* خليهم ياخدوا عرضهم الطبيعي جنب بعض */
+    /* 4. إجبار الموقع إنه ميهزش يمين وشمال */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
 }
