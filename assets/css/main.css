@@ -902,21 +902,31 @@ section,
 @media (max-width: 768px) {
 
   .hero {
-    padding: 80px 20px;
+    padding: 60px 20px; /* قللنا البادنج اللي فوق شوية عشان نرفع الكلام */
     background-position: center center;
+    display: flex;
+    align-items: flex-start; /* رفعنا المحتوى لفوق بدل ما يبقى في نص الصورة بالظبط */
+    padding-top: 100px; /* تحكمي في الرقم ده عشان ترفعي أو تنزلي الكلام */
   }
 
   .hero h1 {
     font-size: 22px;
+    line-height: 1.2;
+    /* إضافة هامة: تحديد العرض عشان الكلام ميفردش ويخبط في الرسمة يمين وشمال */
+    max-width: 280px; 
+    margin: 0 auto !important; 
   }
 
   .hero p {
     font-size: 16px;
+    max-width: 280px;
+    margin: 10px auto 30px auto !important;
   }
 
   .hero .btn-get-started {
-    display: block;
-    margin: 15px auto 0 auto;
+    display: inline-block; /* خليه inline عشان مياخدش عرض الشاشة كله ويبقى شكله أشيك */
+    margin: 0 auto;
+    padding: 10px 25px;
   }
 }
 
