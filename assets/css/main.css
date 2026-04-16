@@ -1961,20 +1961,28 @@ section,
 /*--------------------------------------------------------------
 # Mobile Responsive Improvements - Added by Malak Hassan
 --------------------------------------------------------------*/
-@media (max-width: 768px) {
-  body {
-    min-width: 1200px !important;
-    overflow-x: auto !important;
-  }
-  
-  .container {
-    width: 1200px !important;
-    max-width: 1200px !important;
-    min-width: 1200px !important;
-  }
-  
-  /* تخلي المستخدم يقدر يتحرك يمين وشمال */
-  html {
-    overflow-x: auto !important;
-  }
+
+<style>
+/* الشكل الأساسي (للاب أو الشاشات الكبيرة) */
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: lightblue;
 }
+
+/* للتابلت */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        background-color: lightgreen;
+    }
+}
+
+/* للموبايل */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        background-color: lightcoral;
+    }
+}
+</style>
