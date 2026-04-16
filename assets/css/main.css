@@ -837,6 +837,7 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/* Hero Section */
 .hero {
   width: 100%;
   min-height: 75vh;
@@ -844,107 +845,81 @@ section,
   padding: 60px 0;
   display: flex;
   align-items: center;
-  background: url("../img/hero-bg.jpg") top left;
+  justify-content: center;
+  text-align: center;
+
+  background: url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
-.hero:before {
+/* Overlay عشان الكلام يبقى واضح */
+.hero::before {
   content: "";
-  background:  transparent;
   position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* غمّق الصورة */
 }
 
+/* المحتوى */
 .hero .container {
   position: relative;
+  z-index: 2;
 }
 
+/* العنوان */
 .hero h1 {
   margin: 0;
   font-size: 30px;
   font-weight: 600;
-  line-height: 56px;
+  line-height: 1.4;
+  color: #fff;
 }
 
-.hero h1 span {
-  color: white;
-}
-
+/* البراجراف */
 .hero p {
-  color: white;
-  margin: 5px 0 30px 0;
+  color: #fff;
+  margin: 10px 0 30px 0;
   font-size: 20px;
-  font-weight: 400;
 }
 
+/* الزرار */
 .hero .btn-get-started {
-  color: var(--contrast-color);
+  color: #fff;
   background: var(--accent-color);
   font-family: var(--heading-font);
-  font-weight: 400;
   font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
   padding: 12px 30px;
   border-radius: 4px;
   transition: 0.5s;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  display: inline-block;
 }
 
 .hero .btn-get-started:hover {
-  color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
 
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  margin-left: 25px;
-  color: var(--default-color);
-  font-weight: 600;
-}
+/* Responsive (الموبايل) */
+@media (max-width: 768px) {
 
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
-}
+  .hero {
+    padding: 80px 20px;
+    background-position: center center;
+  }
 
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-.hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 640px) {
   .hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 22px;
   }
 
   .hero p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+    font-size: 16px;
   }
 
-  .hero .btn-get-started,
-  .hero .btn-watch-video {
-    font-size: 13px;
+  .hero .btn-get-started {
+    display: block;
+    margin: 15px auto 0 auto;
   }
 }
+
 
 @keyframes up-down {
   0% {
@@ -1958,42 +1933,4 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-@media (max-width: 768px) {
-    /* 1. تظبيط منطقة الهيرو عشان الكلام يظهر */
-    .hero {
-        background-position: right center !important; /* زق صورة الدوائر لليمين شوية */
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important; /* ابدأ من الشمال عشان تبعد عن الأيقونة اللي في النص */
-        padding-left: 20px !important;
-    }
-
-    .hero .container {
-        margin: 0 !important; /* إلغاء التوسيط عشان الكلام يروح عالشمال */
-        z-index: 10 !important;
-    }
-
-    /* 2. تصغير الخط عشان ميركبش فوق الأيقونات */
-    .hero h1 {
-        font-size: 20px !important;
-        max-width: 60% !important; /* الكلام هياخد 60% بس من العرض عشان ميوصلش للأيقونة الزرقاء */
-        line-height: 1.4 !important;
-        text-align: left !important;
-        color: #ffffff !important;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1) !important; /* ظل قوي عشان الكلام ينطق */
-    }
-
-    /* 3. تظبيط الزرار تحت الكلام بالظبط */
-    .hero .btn-get-started {
-        margin-left: 0 !important;
-        margin-top: 15px !important;
-        padding: 8px 20px !important;
-        font-size: 14px !important;
-    }
-
-    /* 4. إجبار الموقع إنه ميهزش يمين وشمال */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-    }
 }
