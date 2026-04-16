@@ -1961,110 +1961,20 @@ section,
 /*--------------------------------------------------------------
 # Mobile Responsive Improvements - Added by Malak Hassan
 --------------------------------------------------------------*/
-
-/* تحسينات عامة للموبايل */
 @media (max-width: 768px) {
-  
-  /* تصغير حجم الخط الرئيسي في الهيدر */
-  .branding .sitename {
-    font-size: 0.85rem !important;
+  body {
+    min-width: 1200px !important;
+    overflow-x: auto !important;
   }
   
-  /* تكبير عنوان الصفحة الرئيسية */
-  .hero h1 {
-    font-size: 1.6rem !important;
-    line-height: 1.3 !important;
-  }
-  
-  /* تكبير الأزرار عشان تتبان كويس */
-  .btn-get-started {
-    padding: 10px 20px !important;
-    font-size: 0.9rem !important;
-  }
-  
-  /* تكبير العناوين الرئيسية */
-  .section-title p {
-    font-size: 1.5rem !important;
-  }
-  
-  .section-title h2 {
-    font-size: 0.75rem !important;
-  }
-  
-  /* تحسين المسافات بين العناصر */
   .container {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    width: 1200px !important;
+    max-width: 1200px !important;
+    min-width: 1200px !important;
   }
   
-  /* تحسين ظهور البطاقات */
-  .service-item, .team-member {
-    padding: 15px !important;
-  }
-  
-  /* تكبير النصوص */
-  p, li, .service-item p {
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-  }
-  
-  /* تحسين صور المعرض */
-  .portfolio-item img {
-    width: 100% !important;
-    height: auto !important;
-  }
-  
-  /* تحسين الفوتر */
-  .footer .container {
-    text-align: center !important;
-  }
-  
-  .footer .row > div {
-    margin-bottom: 20px !important;
-  }
-  
-  /* تحسين الهيدر */
-  .header .topbar .contact-info i {
-    font-size: 0.75rem !important;
-  }
-  
-  /* تكبير حجم الأيقونات */
-  .service-item .icon i {
-    font-size: 28px !important;
-  }
-  
-  /* تحسين الهيدر للموبايل */
-  .branding .container {
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-  
-  .navmenu ul {
-    justify-content: center !important;
-  }
-  
-  .navmenu a {
-    font-size: 0.8rem !important;
-    padding: 8px 10px !important;
-  }
-}
-
-/* تحسينات للشاشات الصغيرة جدًا (اقل من 480px) */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.3rem !important;
-  }
-  
-  .branding .sitename {
-    font-size: 0.7rem !important;
-  }
-  
-  .section-title p {
-    font-size: 1.2rem !important;
-  }
-  
-  .btn-get-started {
-    padding: 8px 16px !important;
-    font-size: 0.8rem !important;
+  /* تخلي المستخدم يقدر يتحرك يمين وشمال */
+  html {
+    overflow-x: auto !important;
   }
 }
