@@ -1942,28 +1942,51 @@ section,
     );
   }
 }
-/* --- تعديل قسم الـ Highboard عشان الصور تتسنتر --- */
+/* --- الحل النهائي والوحيد لسنترة الـ Highboard --- */
 
-/* 1. سنترة العناصر كلها في السطر */
-.team .member {
-    text-align: center !important; /* يجبر الكلام (الاسم) ينزل في النص */
+/* 1. سنترة العمود نفسه */
+.team-member {
     display: flex !important;
-    flex-direction: column !important; /* يرص المحتوى بالطول */
-    align-items: center !important; /* يسنتر الصور والكلام في نص العمود بالظبط */
-    justify-content: center !important;
-}
-
-/* 2. تظبيط الصورة عشان متصغرش بزيادة وتفضل واضحة */
-.team .member .member-img img {
-    max-width: 100% !important;
-    width: auto !important;
-    margin: 0 auto 15px auto !important; /* سنترة الصورة مع مسافة تحتها */
-}
-
-/* 3. سنترة الاسم والبوزيشن */
-.team .member .member-info h4,
-.team .member .member-info span {
+    flex-direction: column !important;
+    align-items: center !important; /* بيسنتر الصورة والاسم في نص العمود */
     text-align: center !important;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* 2. تظبيط الصورة عشان متترحلش يمين أو شمال */
+.team-member .member-img {
+    width: 200px !important; /* حجم موحد للكل */
+    height: 200px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto 15px auto !important; /* السنترة السحرية */
+    border-radius: 10px; /* زاوية خفيفة بتخلي الشكل أشيك */
+}
+
+.team-member .member-img img {
     width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* بيخلي الصورة تملى المربع من غير ما تمط */
+}
+
+/* 3. سنترة الكلام (الاسم والوظيفة) */
+.team-member .member-info {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.team-member .member-info h4 {
+    margin: 5px 0 !important;
     display: block !important;
+    width: 100% !important;
+}
+
+.team-member .member-info span {
+    display: block !important;
+    width: 100% !important;
+    font-style: italic;
+    color: #777;
 }
