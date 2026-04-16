@@ -11,11 +11,10 @@
   <!-- Favicons -->
   <link href="assets/img/LOG.jpeg" rel="icon">
   
-
-  <!-- Fonts -->
+  <!-- Fonts - تم تحسينها لعدم منع التحميل -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +26,26 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* تحسينات إضافية للسرعة على الموبايل */
+    @media (max-width: 768px) {
+      .sitename {
+        font-size: 1rem !important;
+      }
+      .hero h1 {
+        font-size: 1.8rem !important;
+      }
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="index-page">
@@ -37,25 +56,19 @@
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:ieee.ndeti.student.branch@gmail.com">ieee.ndeti.student.branch@gmail.com</a></i>
-          
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          
           <a href="https://www.facebook.com/share/1FF6kMpaya/?mibextid=wwXIfr" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/ieee_ndeti?igsh=MXRqc2ZvaTljd2Vyag==" class="instagram"><i class="bi bi-instagram"></i></a>
-          
-          
         </div>
       </div>
-    </div><!-- End Top Bar -->
+    </div>
 
     <div class="branding d-flex align-items-cente">
-
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <h1 class="sitename">IEEE NDETI STUDENT BRANCH</h1>
-        </a> 
-
+        </a>
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="#hero" class="active">Home</a></li>
@@ -77,7 +90,6 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background" style="background-image: url('assets/img/photom.jpg'); background-size: cover; background-position: center;">
-
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
@@ -88,39 +100,37 @@
           </div>
         </div>
       </div>
-
-    </section><!-- /Hero Section -->
+    </section>
 
     <!-- Featured Services Section -->
     <section id="featured-services" class="featured-services section">
-
       <div class="container">
         <div class="row gy-4">
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-cpu"></i></div>
-              <h4><a href="" class="stretched-link">Innovation & Technology</a></h4>
+              <h4><a href="#" class="stretched-link">Innovation & Technology</a></h4>
               <p>Empowering students to create innovative solutions and advance technology for the benefit of humanity.</p>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-people"></i></div>
-              <h4><a href="" class="stretched-link">Networking & Community</a></h4>
+              <h4><a href="#" class="stretched-link">Networking & Community</a></h4>
               <p>connecting students with experts,professors and peers through events and collaboration.</p>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-trophy"></i></div>
-              <h4><a href="" class="stretched-link">Competitions & Events</a></h4>
+              <h4><a href="#" class="stretched-link">Competitions & Events</a></h4>
               <p>hackathons,ieee extreme and global ieee challenges to boost creativity and problem solving skills.</p>
             </div>
           </div>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-mortarboard"></i></div>
-              <h4><a href="" class="stretched-link">professional Developments</a></h4>
+              <h4><a href="#" class="stretched-link">professional Developments</a></h4>
               <p>workshops,training,and mentoring programs to prepare members for future careers in engineering.</p>
             </div>
           </div>
@@ -135,11 +145,10 @@
         <p><span>About IEEE NDETI Student Branch</span></p>
         <p>IEEE NDETI Student Branch is a community of passionate students dedicated to advancing technology and creating opportunities for professional growth.</p>
       </div>
-
       <div class="container">
         <div class="row gy-3">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/koko.jpeg" class="img-fluid" alt="IEEE Students">
+            <img src="assets/img/koko.jpeg" class="img-fluid" alt="IEEE Students" width="600" height="400" loading="lazy">
           </div>
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="about-content ps-0 ps-lg-3">
@@ -231,7 +240,7 @@
     <section id="services" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>committees</h2>
-        <p><span>Meet Our</span> committees</p>
+        <p><span>Meet Our committees</span></p>
       </div>
       <div class="container">
         <div class="row gy-4">
@@ -304,31 +313,31 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/lolo.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/lolo.jpeg" class="img-fluid" alt="Event 1" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/jj.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/jj.jpeg" class="img-fluid" alt="Event 2" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/yy.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/yy.jpeg" class="img-fluid" alt="Event 3" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/xt.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/xt.jpeg" class="img-fluid" alt="Event 4" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/kiki.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/kiki.jpeg" class="img-fluid" alt="Event 5" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/hhh.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/hhh.jpeg" class="img-fluid" alt="Event 6" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/b.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/b.jpeg" class="img-fluid" alt="Event 7" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/c.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/c.jpeg" class="img-fluid" alt="Event 8" width="400" height="300" loading="lazy">
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="assets/img/a.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/a.jpeg" class="img-fluid" alt="Event 9" width="400" height="300" loading="lazy">
           </div>
         </div>
       </div>
@@ -344,7 +353,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/WhatsApp Image 2026-01-19 at 3.28.11 AM.jpeg" class="img-fluid" alt="">
+                <img src="assets/img/WhatsApp Image 2026-01-19 at 3.28.11 AM.jpeg" class="img-fluid" alt="Dr Rania Hamdy" width="300" height="300" loading="lazy">
               </div>
               <div class="member-info text-center">
                 <h4>Dr Rania Hamdy</h4>
@@ -367,7 +376,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/akram.jpeg" class="img-fluid" alt="Ahmed Akram">
+                <img src="assets/img/akram.jpeg" class="img-fluid" alt="Ahmed Akram" width="300" height="300" loading="lazy">
               </div>
               <div class="member-info">
                 <h4>Ahmed Akram</h4>
@@ -378,7 +387,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/tasneem.jpeg" class="img-fluid" alt="">
+                <img src="assets/img/tasneem.jpeg" class="img-fluid" alt="Tasneem Mostafa" width="300" height="300" loading="lazy">
               </div>
               <div class="member-info">
                 <h4>Tasneem Mostafa</h4>
@@ -389,7 +398,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/khaled.jpeg" class="img-fluid" alt="">
+                <img src="assets/img/khaled.jpeg" class="img-fluid" alt="Khalid Ali" width="300" height="300" loading="lazy">
               </div>
               <div class="member-info">
                 <h4>Khalid Ali</h4>
@@ -400,7 +409,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/kareem.jpeg" class="img-fluid" alt="">
+                <img src="assets/img/kareem.jpeg" class="img-fluid" alt="Kareem Ibrahim" width="300" height="300" loading="lazy">
               </div>
               <div class="member-info">
                 <h4>Kareem Ibrahim</h4>
@@ -411,7 +420,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/malak.jpeg" class="img-fluid" alt="Malak Hassan">
+                <img src="assets/img/malak.jpeg" class="img-fluid" alt="Malak Hassan" width="300" height="300" loading="lazy">
               </div>
               <div class="member-info">
                 <h4>Malak Hassan</h4>
@@ -512,7 +521,7 @@
               </div>
               <div class="mt-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.2227230490714!2d31.6666!3d31.4166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzAwLjAiTiAzMcKwNDAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" 
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Google Map Location"></iframe>
               </div>
             </div>
           </div>
@@ -584,5 +593,3 @@
 
 </body>
 </html>
-
-
