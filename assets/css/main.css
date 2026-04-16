@@ -1917,3 +1917,20 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+@media (min-width: 992px) {
+
+  .hero .container {
+    padding-left: 60px;   /* يبعد عن اليمين/الاطراف */
+    padding-right: 60px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    text-align: left;
+    max-width: 700px;
+  }
+
+  .hero .d-flex {
+    justify-content: flex-start;
+  }
+}
