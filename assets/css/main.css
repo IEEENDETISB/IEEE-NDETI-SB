@@ -1920,17 +1920,25 @@ section,
 @media (min-width: 992px) {
 
   .hero .container {
-    padding-left: 60px;   /* يبعد عن اليمين/الاطراف */
-    padding-right: 60px;
+    max-width: 600px;
+    margin-left: 80px;
   }
 
   .hero h1 {
-    font-size: 48px;
     text-align: left;
-    max-width: 700px;
+    font-size: 48px;
+    line-height: 1.2;
   }
 
   .hero .d-flex {
     justify-content: flex-start;
+  }
+
+  .hero::before {
+    background: linear-gradient(
+      to right,
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.2)
+    );
   }
 }
