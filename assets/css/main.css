@@ -837,7 +837,9 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-/* Hero Section */
+/* --- الجزء الجديد والنهائي للهيرو --- */
+
+/* 1. التنسيق الأساسي (بينفذ على اللاب توب) */
 .hero {
   width: 100%;
   min-height: 75vh;
@@ -845,91 +847,68 @@ section,
   padding: 60px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-
+  justify-content: flex-start; /* الكلام يروح شمال في اللاب */
+  text-align: left; /* بداية الكلام من الشمال */
   background: url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
-/* Overlay عشان الكلام يبقى واضح */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* غمّق الصورة */
+  background: rgba(0, 0, 0, 0.5); /* تغميق الصورة عشان الكلام يبان */
 }
 
-/* المحتوى */
 .hero .container {
   position: relative;
   z-index: 2;
+  margin-left: 8% !important; /* مسافة من طرف الشاشة في اللاب */
 }
 
-/* العنوان */
 .hero h1 {
   margin: 0;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 48px; /* حجم كبير للابتوب */
+  font-weight: 700;
+  line-height: 1.2;
   color: #fff;
+  max-width: 600px; /* يمنع التداخل مع الرسمة */
 }
 
-/* البراجراف */
 .hero p {
   color: #fff;
   margin: 10px 0 30px 0;
   font-size: 20px;
+  max-width: 500px;
 }
 
-/* الزرار */
-.hero .btn-get-started {
-  color: #fff;
-  background: var(--accent-color);
-  font-family: var(--heading-font);
-  font-size: 16px;
-  padding: 12px 30px;
-  border-radius: 4px;
-  transition: 0.5s;
-  display: inline-block;
-}
-
-.hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-/* Responsive (الموبايل) */
+/* 2. تنسيق الموبايل (عشان يفضل شكله حلو زي ما تحبي) */
 @media (max-width: 768px) {
-
   .hero {
-    padding: 60px 20px; /* قللنا البادنج اللي فوق شوية عشان نرفع الكلام */
-    background-position: center center;
-    display: flex;
-    align-items: flex-start; /* رفعنا المحتوى لفوق بدل ما يبقى في نص الصورة بالظبط */
-    padding-top: 100px; /* تحكمي في الرقم ده عشان ترفعي أو تنزلي الكلام */
+    justify-content: center !important; /* يرجع في النص للموبايل */
+    text-align: center !important; 
+    padding: 80px 20px !important;
+  }
+
+  .hero .container {
+    margin-left: 0 !important; /* يلغي إزاحة اللاب توب */
+    margin: 0 auto !important;
   }
 
   .hero h1 {
-    font-size: 22px;
-    line-height: 1.2;
-    /* إضافة هامة: تحديد العرض عشان الكلام ميفردش ويخبط في الرسمة يمين وشمال */
-    max-width: 280px; 
-    margin: 0 auto !important; 
+    font-size: 24px !important;
+    max-width: 100% !important; /* ياخد راحته في نص الموبايل */
   }
 
   .hero p {
-    font-size: 16px;
-    max-width: 280px;
-    margin: 10px auto 30px auto !important;
+    font-size: 16px !important;
+    max-width: 100% !important;
   }
 
   .hero .btn-get-started {
-    display: inline-block; /* خليه inline عشان مياخدش عرض الشاشة كله ويبقى شكله أشيك */
-    margin: 0 auto;
-    padding: 10px 25px;
+    margin: 0 auto !important;
   }
 }
-
 
 @keyframes up-down {
   0% {
