@@ -1958,71 +1958,68 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* --- الكود الشامل لإصلاح الموبايل --- */
+/* --- الكود النهائي والمنقذ للموبايل --- */
 @media (max-width: 576px) {
     
-    /* 1. إجبار المحتوى كله يظهر جوه حدود الشاشة */
+    /* 1. منع الحركة العرضية تماماً وإظهار المحتوى المختفي */
     html, body {
         overflow-x: hidden !important;
-        position: relative;
         width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* 2. تظبيط قسم الـ Home (Hero) عشان الكلام يبان */
+    /* 2. تظبيط الهيرو (Welcome to IEEE) - فك الكلام عن بعضه */
     .hero {
-        padding: 40px 0 !important;
-        text-align: center !important; /* خلي الكلام في النص عشان ما يتقطعش */
-        background-attachment: scroll !important; /* بيمنع مشاكل الخلفية في الموبايل */
+        padding: 120px 0 60px 0 !important; /* مساحة عشان الكلام ميركبش على الهيدر */
+        text-align: center !important;
     }
 
     .hero h1 {
-        font-size: 24px !important;
-        line-height: 1.2 !important;
-        width: 100% !important;
-        margin: 0 auto !important;
+        font-size: 24px !important; /* تصغير الخط عشان يكفي العرض */
+        line-height: 1.5 !important; /* أهم سطر: عشان السطور متركبش فوق بعضها */
+        white-space: normal !important; /* يسمح للكلمات تنزل سطر جديد */
     }
 
-    /* 3. منع الـ Container من إنه يخرج بره */
-    .container {
-        max-width: 100vw !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        margin: 0 auto !important;
-    }
-
-    /* 4. إجبار الـ Highboard والـ Portfolio يبقوا 2 جنب بعض */
-    #team .row, #portfolio .row {
+    /* 3. السحر: إظهار العناصر 2 جنب بعض بدل ما هي بالطول */
+    /* ده هيطبق على الـ Highboard وصور الـ Events */
+    #team .row, #portfolio .row, .services .row {
         display: flex !important;
         flex-wrap: wrap !important;
-        margin: 0 !important;
+        margin-right: -5px !important;
+        margin-left: -5px !important;
     }
 
     #team .row > div, #portfolio .row > div {
-        width: 50% !important;
+        width: 50% !important; /* خليهم 2 جنب بعض */
         max-width: 50% !important;
         flex: 0 0 50% !important;
         padding: 5px !important;
     }
 
-    /* تصغير الصور عشان الـ 50% تكفيهم */
-    #team .member img {
-        width: 100px !important;
-        height: 100px !important;
+    /* 4. تصغير صور الأشخاص عشان الـ 50% تكفيهم */
+    .member img {
+        width: 120px !important;
+        height: 120px !important;
+        object-fit: cover;
     }
 
-    /* 5. تظبيط الهيدر (Navmenu) عشان ما يزقش الشاشة */
-    .header {
-        width: 100% !important;
-        max-width: 100% !important;
+    /* 5. تظبيط اللجان (Committees) عشان متبقاش بالطول الممل */
+    .service-item {
+        padding: 10px !important;
+        height: 100% !important;
+    }
+
+    /* 6. منع أي عنصر يزق الشاشة يمين */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        overflow: hidden !important;
     }
 }
 
-/* حل عام لكل الأجهزة للمنع الـ Scroll العرضي */
+/* حل عام عشان الـ Row ميعملش Scroll بالعرض */
 .row {
     margin-right: 0 !important;
     margin-left: 0 !important;
-}
-img {
-    max-width: 100% !important;
-    height: auto !important;
 }
