@@ -1958,68 +1958,58 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* --- الكود النهائي والمنقذ للموبايل --- */
-@media (max-width: 576px) {
+/* --- كود جعل الموبايل نسخة من اللاب توب --- */
+@media (max-width: 768px) {
     
-    /* 1. منع الحركة العرضية تماماً وإظهار المحتوى المختفي */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* 2. تظبيط الهيرو (Welcome to IEEE) - فك الكلام عن بعضه */
-    .hero {
-        padding: 120px 0 60px 0 !important; /* مساحة عشان الكلام ميركبش على الهيدر */
-        text-align: center !important;
-    }
-
-    .hero h1 {
-        font-size: 24px !important; /* تصغير الخط عشان يكفي العرض */
-        line-height: 1.5 !important; /* أهم سطر: عشان السطور متركبش فوق بعضها */
-        white-space: normal !important; /* يسمح للكلمات تنزل سطر جديد */
-    }
-
-    /* 3. السحر: إظهار العناصر 2 جنب بعض بدل ما هي بالطول */
-    /* ده هيطبق على الـ Highboard وصور الـ Events */
-    #team .row, #portfolio .row, .services .row {
+    /* 1. منع العناصر من النزول تحت بعضها (إلغاء الـ Stack) */
+    .hero .row {
         display: flex !important;
-        flex-wrap: wrap !important;
-        margin-right: -5px !important;
-        margin-left: -5px !important;
+        flex-direction: row !important; /* إجبار الكلام والصورة يبقوا جنب بعض */
+        flex-wrap: nowrap !important;
+        align-items: center !important;
     }
 
-    #team .row > div, #portfolio .row > div {
-        width: 50% !important; /* خليهم 2 جنب بعض */
-        max-width: 50% !important;
+    /* 2. توزيع المساحة: الكلام ياخد نص والصورة نص (زي اللاب) */
+    .hero .col-lg-6 {
+        width: 50% !important;
         flex: 0 0 50% !important;
-        padding: 5px !important;
+        max-width: 50% !important;
+        padding-left: 20px !important;
+        text-align: left !important; /* محاذاة لليسار زي اللاب */
     }
 
-    /* 4. تصغير صور الأشخاص عشان الـ 50% تكفيهم */
-    .member img {
-        width: 120px !important;
-        height: 120px !important;
-        object-fit: cover;
+    /* 3. تصغير الخطوط جداً عشان تكفي المساحة الجديدة */
+    .hero h1 {
+        font-size: 16px !important; /* صغرناه عشان ميكسرش السطر */
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
     }
 
-    /* 5. تظبيط اللجان (Committees) عشان متبقاش بالطول الممل */
-    .service-item {
-        padding: 10px !important;
-        height: 100% !important;
+    .hero .btn-get-started {
+        font-size: 10px !important; /* زرار صغنن شيك */
+        padding: 5px 15px !important;
     }
 
-    /* 6. منع أي عنصر يزق الشاشة يمين */
+    /* 4. تظبيط صورة الخلفية أو الصورة الجانبية */
+    .hero-img {
+        width: 50% !important;
+        display: block !important;
+    }
+
+    /* 5. منع الموقع من الانهيار العرضي */
     .container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        overflow: hidden !important;
+        min-width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    /* 6. تصغير الهيدر عشان مياخدش نص الشاشة */
+    .sitename {
+        font-size: 14px !important;
     }
 }
 
-/* حل عام عشان الـ Row ميعملش Scroll بالعرض */
-.row {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+/* حل عام لمنع أي عنصر يزق الشاشة يمين */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }
