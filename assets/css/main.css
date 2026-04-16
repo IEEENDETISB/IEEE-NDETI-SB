@@ -1958,58 +1958,42 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* --- كود جعل الموبايل نسخة من اللاب توب --- */
 @media (max-width: 768px) {
-    
-    /* 1. منع العناصر من النزول تحت بعضها (إلغاء الـ Stack) */
-    .hero .row {
+    /* 1. تظبيط منطقة الهيرو عشان الكلام يظهر */
+    .hero {
+        background-position: right center !important; /* زق صورة الدوائر لليمين شوية */
         display: flex !important;
-        flex-direction: row !important; /* إجبار الكلام والصورة يبقوا جنب بعض */
-        flex-wrap: nowrap !important;
         align-items: center !important;
-    }
-
-    /* 2. توزيع المساحة: الكلام ياخد نص والصورة نص (زي اللاب) */
-    .hero .col-lg-6 {
-        width: 50% !important;
-        flex: 0 0 50% !important;
-        max-width: 50% !important;
+        justify-content: flex-start !important; /* ابدأ من الشمال عشان تبعد عن الأيقونة اللي في النص */
         padding-left: 20px !important;
-        text-align: left !important; /* محاذاة لليسار زي اللاب */
     }
 
-    /* 3. تصغير الخطوط جداً عشان تكفي المساحة الجديدة */
+    .hero .container {
+        margin: 0 !important; /* إلغاء التوسيط عشان الكلام يروح عالشمال */
+        z-index: 10 !important;
+    }
+
+    /* 2. تصغير الخط عشان ميركبش فوق الأيقونات */
     .hero h1 {
-        font-size: 16px !important; /* صغرناه عشان ميكسرش السطر */
-        line-height: 1.2 !important;
-        margin-bottom: 10px !important;
+        font-size: 20px !important;
+        max-width: 60% !important; /* الكلام هياخد 60% بس من العرض عشان ميوصلش للأيقونة الزرقاء */
+        line-height: 1.4 !important;
+        text-align: left !important;
+        color: #ffffff !important;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1) !important; /* ظل قوي عشان الكلام ينطق */
     }
 
+    /* 3. تظبيط الزرار تحت الكلام بالظبط */
     .hero .btn-get-started {
-        font-size: 10px !important; /* زرار صغنن شيك */
-        padding: 5px 15px !important;
-    }
-
-    /* 4. تظبيط صورة الخلفية أو الصورة الجانبية */
-    .hero-img {
-        width: 50% !important;
-        display: block !important;
-    }
-
-    /* 5. منع الموقع من الانهيار العرضي */
-    .container {
-        min-width: 100% !important;
-        padding: 0 10px !important;
-    }
-
-    /* 6. تصغير الهيدر عشان مياخدش نص الشاشة */
-    .sitename {
+        margin-left: 0 !important;
+        margin-top: 15px !important;
+        padding: 8px 20px !important;
         font-size: 14px !important;
     }
-}
 
-/* حل عام لمنع أي عنصر يزق الشاشة يمين */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
+    /* 4. إجبار الموقع إنه ميهزش يمين وشمال */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
 }
