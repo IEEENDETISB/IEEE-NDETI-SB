@@ -1942,3 +1942,17 @@ section,
     );
   }
 }
+.team-member .member-img {
+  width: 100%;
+  height: 320px;        /* ثابت لكل الكروت */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* الصورة نفسها */
+.team-member .member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* أهم سطر */
+  object-position: center;
+}
