@@ -837,18 +837,15 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 /* HERO SECTION */
 .hero {
   position: relative;
-  height: 100vh;
-  background: url("photom.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  background: url("your-image.jpg") no-repeat center center/cover;
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  padding: 0 20px;
 }
 
 /* Overlay */
@@ -860,35 +857,35 @@ section,
   z-index: 1;
 }
 
-/* Content */
-.hero-content {
+/* Bootstrap container fix */
+.hero .container {
   position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #fff;
+  z-index: 2;
 }
 
-/* Text */
-.hero-content h2,
-.hero-content p {
+/* TEXT */
+.hero h1 {
   color: #fff !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  font-size: 42px;
+  font-weight: 700;
+  text-align: left;
 }
 
-/* Button */
-.btn {
-  background-color: #1e3a8a;
+.hero h1 span {
   color: #fff !important;
-  border: none;
+}
+
+/* BUTTON */
+.btn-get-started {
+  display: inline-block;
+  background: #1e3a8a;
+  color: #fff !important;
   padding: 12px 25px;
   border-radius: 8px;
-  display: inline-block;
+  text-decoration: none;
+
   margin-top: 15px;
 
-  position: relative;
-  z-index: 20;
   pointer-events: auto;
   cursor: pointer;
 }
@@ -896,16 +893,16 @@ section,
 /* MOBILE */
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    padding: 80px 20px;
+    text-align: center;
   }
 
-  .hero-content h2 {
-    font-size: 20px;
+  .hero h1 {
+    font-size: 24px;
+    text-align: center;
   }
 
-  .btn {
-    width: 70%;
+  .d-flex {
+    justify-content: center;
   }
 }
 @keyframes up-down {
