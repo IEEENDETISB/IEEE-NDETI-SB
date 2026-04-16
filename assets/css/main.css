@@ -1961,28 +1961,38 @@ section,
 /*--------------------------------------------------------------
 # Mobile Responsive Improvements - Added by Malak Hassan
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Force Desktop View on All Devices
+--------------------------------------------------------------*/
 
-<style>
-/* الشكل الأساسي (للاب أو الشاشات الكبيرة) */
+/* تخلي كل حاجة تظهر بنفس شكل اللابتوب */
+body {
+  min-width: 1200px !important;
+}
+
 .container {
-    width: 80%;
-    margin: auto;
-    background-color: lightblue;
+  width: 1200px !important;
+  max-width: 1200px !important;
 }
 
-/* للتابلت */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-        background-color: lightgreen;
-    }
+/* تخلي المستخدم يقدر يتحرك يمين وشمال لو شاشته ضيقة */
+html {
+  overflow-x: auto !important;
 }
 
-/* للموبايل */
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        background-color: lightcoral;
-    }
+/* منع أي عنصر من إنه يترص تحت بعضه */
+.row {
+  display: block !important;
 }
-</style>
+
+.col-lg-4, .col-lg-6, .col-xl-3, .col-md-6 {
+  float: left !important;
+  width: auto !important;
+}
+
+/* تنظيف الـ float */
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
