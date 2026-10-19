@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IEEE NDETI SB | Events & Moments Gallery</title>
+  <meta name="description" content="Official photo gallery of IEEE NDETI Student Branch. Live stream of events, workshops, hackathons, and moments directly from Google Drive.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #00629B;
+      --deep: #003A5A;
+      --paper: #F3F6F9;
+      --ink: #10243A;
+      --mute: #556A7F;
+      --spark: #FFB81C;
+      --line: #D3DDE6;
+      --card-bg: #FFFFFF;
+      --bg: #FAFCFE;
+      --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+      --body: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+      --shadow-sm: 0 4px 12px rgba(0, 58, 90, 0.06);
+      --shadow-md: 0 10px 25px rgba(0, 58, 90, 0.12);
+      --shadow-lg: 0 20px 40px rgba(0, 58, 90, 0.18);
+    }
+
+    [data-theme="dark"] {
+      --paper: #0b1e32;
+      --ink: #EAF2F8;
+      --mute: #94A9C0;
+      --line: #1C334E;
+      --card-bg: #0F253E;
+      --bg: #071524;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; border: none; outline: none; cursor: pointer; }
+
+    .wrap {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    /* Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 58, 90, 0.92);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span { color: var(--spark); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }
+
+    .theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--spark);
+      font-size: 1.2rem;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .theme-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(15deg);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(150deg, var(--deep) 0%, var(--blue) 60%, #0087c5 100%);
+      color: #fff;
+      padding: 60px 0 70px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 184, 28, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--spark);
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin-inline: auto;
+      font-size: 1.15rem;
+      color: #d8e8f5;
+      margin-bottom: 2rem;
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+      box-shadow: var(--shadow-md);
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 16px 10px 42px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0, 98, 155, 0.15);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      fill: var(--mute);
+    }
+
+    .controls-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sync-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--mute);
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10B981;
+      animation: pulse 2s infinite;
+    }
+
+    .status-dot.warning {
+      background: var(--spark);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .btn-sync {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-sync:hover {
+      background: var(--deep);
+      transform: translateY(-1px);
+    }
+
+    .btn-sync.spinning svg {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Notice Banner */
+    .notice-banner {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: rgba(255, 184, 28, 0.12);
+      border: 1px solid rgba(255, 184, 28, 0.3);
+      color: var(--ink);
+      font-size: 0.92rem;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .notice-banner svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--spark);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 40px 0 80px;
+      flex: 1;
+    }
+
+    /* Container as requested */
+    #events-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+      padding: 20px 0;
+    }
+
+    /* Card styling */
+    .img-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line);
+      position: relative;
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .img-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+      background: var(--paper);
+    }
+
+    .img-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .card-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 2.2rem 1.2rem 1rem;
+      background: linear-gradient(to top, rgba(0, 30, 50, 0.9) 0%, rgba(0, 30, 50, 0.4) 65%, transparent 100%);
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .img-card:hover .card-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .caption-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-view-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--spark);
+      color: var(--deep);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Album browser */
+    #gallery-navigation { display:none; align-items:center; gap:12px; margin:10px 0 0; color:var(--mute); font-weight:600; }
+    #backToAlbums { display:inline-flex; align-items:center; gap:8px; padding:9px 15px; border-radius:999px; color:var(--ink); background:var(--card-bg); border:1px solid var(--line); box-shadow:var(--shadow-sm); font-weight:700; }
+    #backToAlbums:hover { border-color:var(--blue); transform:translateY(-1px); }
+    .album-card { background:var(--card-bg); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-sm); position:relative; cursor:pointer; aspect-ratio:4 / 3; isolation:isolate; transition:transform .3s, box-shadow .3s; }
+    .album-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .album-cover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:var(--paper); z-index:-2; transition:transform .5s; }
+    .album-card:hover .album-cover { transform:scale(1.05); }
+    .album-placeholder { position:absolute; inset:0; display:grid; place-items:center; background:linear-gradient(140deg,var(--deep),var(--blue),#1686ae); color:#fff; z-index:-2; }
+    .album-placeholder svg { width:76px; height:76px; opacity:.9; }
+    .album-caption { position:absolute; inset:auto 0 0 0; padding:2.7rem 1.2rem 1rem; background:linear-gradient(to top,rgba(0,30,50,.94),rgba(0,30,50,.48) 65%,transparent); color:#fff; }
+    .album-title { font-size:1rem; font-weight:700; line-height:1.3; overflow-wrap:anywhere; margin-bottom:5px; }
+    .album-count { font-size:.84rem; color:#d8e8f5; }
+    .empty-state { grid-column:1 / -1; text-align:center; padding:4rem 1rem; color:var(--mute); background:var(--card-bg); border:1px dashed var(--line); border-radius:16px; }
+
+    /* Skeleton Loading State */
+    .skeleton-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      position: relative;
+    }
+
+    .skeleton-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 1.5s infinite;
+    }
+
+    [data-theme="dark"] .skeleton-card::after {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    }
+
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
+    }
+
+    /* Lightbox Modal */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(4, 15, 28, 0.94);
+      backdrop-filter: blur(14px);
+      display: none;
+      place-items: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    #lightbox.active {
+      display: grid;
+      opacity: 1;
+    }
+
+    .lb-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lb-content img {
+      max-width: 100%;
+      max-height: 78vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      object-fit: contain;
+    }
+
+    .lb-info {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .lb-info a {
+      color: var(--spark);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: background 0.2s;
+    }
+
+    .lb-info a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .lb-btn {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      user-select: none;
+    }
+
+    .lb-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.08);
+    }
+
+    .lb-close {
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5rem;
+    }
+
+    .lb-prev { left: 24px; }
+    .lb-next { right: 24px; }
+
+    /* Footer */
+    footer {
+      background: var(--deep);
+      color: #fff;
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer p { color: #a9c5db; }
+    footer strong { color: #fff; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 40px 0 50px; }
+      .controls-bar { margin-top: -20px; }
+      .lb-btn { width: 40px; height: 40px; font-size: 1.3rem; }
+      .lb-prev { left: 10px; }
+      .lb-next { right: 10px; }
+      .lb-close { top: 12px; right: 12px; }
+    }
+  .img-card.failed { display: grid; place-items: center; background: var(--paper); }
+    .fail-note { padding: 1rem; text-align: center; color: var(--mute); font-size: 0.88rem; line-height: 1.8; }
+    .fail-note a { color: var(--spark); font-weight: 600; text-decoration: underline; }
+  .lb-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .card-dl { position: absolute; top: 10px; right: 10px; z-index: 2; width: 36px; height: 36px; border-radius: 50%; background: rgba(0, 30, 50, 0.78); color: #fff; display: grid; place-items: center; opacity: 0; transition: opacity 0.2s, background 0.2s; }
+    .img-card:hover .card-dl, .card-dl:focus-visible { opacity: 1; }
+    .card-dl:hover { background: var(--blue); }
+    @media (hover: none) { .card-dl { opacity: 1; } }
+    .dl-album { margin-inline-start: auto; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--blue); color: #fff; font-weight: 700; box-shadow: var(--shadow-sm); transition: transform 0.2s, background 0.2s; }
+    .dl-album:hover { background: var(--deep); transform: translateY(-1px); }
+    .dl-album:disabled { opacity: 0.75; cursor: progress; transform: none; }
+    [dir=rtl] .card-dl { right: auto; left: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="wrap">
+      <a href="index.html" class="brand">
+        IEEE <span>NDETI</span> SB
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Home
+        </a>
+        <a href="gallery-ar.html" class="back-btn" lang="ar" hreflang="ar">العربية</a>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">☀</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Live Drive Stream
+      </span>
+      <h1>Events & Moments Gallery</h1>
+      <p>Explore our workshops, hackathons, seminars, and community moments synced directly with Google Drive.</p>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="gallery-section">
+    <div class="wrap">
+      
+      <!-- Controls Bar -->
+      <div class="controls-bar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="searchInput" placeholder="Search photos by title or keyword..." aria-label="Search photos">
+        </div>
+        <div class="controls-actions">
+          <div class="sync-status">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="statusText">Connecting to Drive...</span>
+          </div>
+          <button class="btn-sync" id="refreshBtn" title="Re-sync images from Google Drive">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            Sync Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Info / Notice banner if needed -->
+      <div class="notice-banner" id="noticeBanner">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <div id="noticeMsg">
+          Displaying verified branch event photos while Google Drive sync finishes configuration.
+        </div>
+      </div>
+
+      <div id="gallery-navigation">
+        <button id="backToAlbums" type="button" aria-label="Back to all albums"><span aria-hidden="true">←</span> All Albums</button>
+        <span id="currentAlbumTitle"></span>
+        <button id="downloadAlbum" type="button" class="dl-album"></button>
+      </div>
+
+      <!-- Albums appear first; opening an album shows its photos -->
+      <div id="events-gallery">
+        <!-- Skeleton loaders initially -->
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Viewer Modal -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo Viewer">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close viewer">✕</button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo">›</button>
+    <div class="lb-content">
+      <img id="lbImg" src="" alt="Expanded View">
+      <div class="lb-info">
+        <span id="lbTitle">Photo Caption</span>
+        <span id="lbCounter" style="opacity: 0.75;"></span>
+        <div class="lb-links"><a id="lbDownload" href="#"></a><a id="lbDriveLink" href="#" target="_blank" rel="noopener">Open Original ↗</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <p><strong>IEEE NDETI Student Branch</strong> — New Damietta, Egypt.</p>
+      <p>© <span id="year"></span> IEEE NDETI SB. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- السكريبت الذي يسحب الصور من جوجل درايف ويدمجها في المعرض -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme Management
+    const themeBtn = document.getElementById('themeToggle');
+    const getStoredTheme = () => {
+      try { return localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+      catch (e) { return 'light'; }
+    };
+
+    const setTheme = theme => {
+      document.documentElement.dataset.theme = theme;
+      themeBtn.textContent = theme === 'dark' ? '☀' : '☾';
+      try { localStorage.setItem('theme', theme); } catch (e) {}
+    };
+
+    setTheme(getStoredTheme());
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.dataset.theme;
+      setTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+
+    // Google Apps Script API endpoint. Keep this set to your deployed /exec URL.
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyx1i2GvBTk1_6hcznqg7NDW14Wc3ZjVZvFKvsJeyGgARWNTA6D3_CwlydmVA5Rsao/exec';
+
+    const localEvents = [
+      { name: 'Branch Workshop Session', url: 'assets/img/lolo.jpeg' },
+      { name: 'Hackathon Team Collaboration', url: 'assets/img/jj.jpeg' },
+      { name: 'Technical Training Day', url: 'assets/img/yy.jpeg' },
+      { name: 'IEEE Xtreme & Coding Challenge', url: 'assets/img/xt.jpeg' },
+      { name: 'Orientation & Branch Meetup', url: 'assets/img/kiki.jpeg' },
+      { name: 'Innovation Projects Showcase', url: 'assets/img/hhh.jpeg' },
+      { name: 'Student Community Activity', url: 'assets/img/b.jpeg' },
+      { name: 'Leadership & Committee Meeting', url: 'assets/img/c.jpeg' },
+      { name: 'Annual General Gathering', url: 'assets/img/a.jpeg' },
+      { name: 'NDETI Tech Summit', url: 'assets/img/nd.jpeg' },
+      { name: 'Branch Members Photo', url: 'assets/img/koko.jpeg' }
+    ];
+
+    let albums = [];
+    let currentAlbum = null;
+    let visibleImages = [];
+    let currentLightboxIdx = 0;
+
+    const gallery = document.getElementById('events-gallery');
+    const searchInput = document.getElementById('searchInput');
+    const statusText = document.getElementById('statusText');
+    const statusDot = document.getElementById('statusDot');
+    const refreshBtn = document.getElementById('refreshBtn');
+    const noticeBanner = document.getElementById('noticeBanner');
+    const noticeMsg = document.getElementById('noticeMsg');
+    const galleryNavigation = document.getElementById('gallery-navigation');
+    const backToAlbumsBtn = document.getElementById('backToAlbums');
+    const currentAlbumTitle = document.getElementById('currentAlbumTitle');
+    const downloadAlbumBtn = document.getElementById('downloadAlbum');
+
+    function normalizeImage(item) {
+      const rawUrl = item.url || '';
+      const match = rawUrl.match(/\/d\/([a-zA-Z0-9_-]+)/) || rawUrl.match(/id=([a-zA-Z0-9_-]+)/);
+      const fileId = match ? match[1] : '';
+      return {
+        name: item.name || 'IEEE NDETI Event Photo',
+        id: fileId,
+        url: fileId ? 'https://lh3.googleusercontent.com/d/' + fileId + '=w480' : rawUrl,
+        driveUrl: item.driveUrl || (fileId ? 'https://drive.google.com/file/d/' + fileId + '/view' : rawUrl),
+        date: item.date || 0
+      };
+    }
+
+    // JSONP avoids browser fetch/CORS restrictions for Apps Script web apps.
+    function requestDriveData() {
+      return new Promise((resolve, reject) => {
+        const callbackName = '__driveGalleryCallback_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+        const script = document.createElement('script');
+        let finished = false;
+        let timeoutId;
+        const cleanup = () => {
+          if (finished) return;
+          finished = true;
+          clearTimeout(timeoutId);
+          script.remove();
+          try { delete window[callbackName]; } catch (_) { window[callbackName] = undefined; }
+        };
+        timeoutId = setTimeout(() => {
+          cleanup();
+          reject(new Error('Timed out waiting for Apps Script. Check the /exec URL and web app access.'));
+        }, 45000);
+        window[callbackName] = data => {
+          cleanup();
+          if (data && data.error) reject(new Error(data.error));
+          else if (!data || !Array.isArray(data.albums)) reject(new Error('The API response has no albums array. Update and redeploy the supplied Apps Script code.'));
+          else resolve(data);
+        };
+        script.onerror = () => {
+          cleanup();
+          reject(new Error('Could not load Apps Script. Check the /exec URL and deployment access.'));
+        };
+        script.src = SCRIPT_URL + (SCRIPT_URL.includes('?') ? '&' : '?') + 'callback=' + encodeURIComponent(callbackName);
+        document.head.appendChild(script);
+      });
+    }
+
+        // ---- Image loading: small thumbnails, 4 at a time, only near the viewport, with retries ----
+    const MSG_FAIL_LABEL = 'Photo unavailable';
+    const MSG_OPEN_DRIVE = 'Open in Drive';
+    const MSG_FAIL_NOTICE = n => 'Could not load ' + n + ' photo(s) from Google Drive. Click “Open in Drive” on a failed photo: if Drive asks for access, share the folder and every file inside it as “Anyone with the link: Viewer”. Then press Sync Now.';
+    const MSG_CACHE = 'Drive is slow to respond, so a saved copy of the albums is shown.';
+    let failedCount = 0, okCount = 0, badCount = 0, imgActive = 0;
+    const imgQueue = [];
+    const IMG_SLOTS = 4;
+    function pumpImages() {
+      while (imgActive < IMG_SLOTS && imgQueue.length) { imgActive++; imgQueue.shift()(); }
+    }
+    const lazyObserver = 'IntersectionObserver' in window
+      ? new IntersectionObserver(entries => entries.forEach(e => {
+          if (e.isIntersecting) { lazyObserver.unobserve(e.target); e.target._go(); }
+        }), { rootMargin: '500px' })
+      : null;
+    function imgSources(img, big) {
+      if (!img.id) return [img.url];
+      const w = big ? 2000 : 480;
+      return [
+        'https://lh3.googleusercontent.com/d/' + img.id + '=w' + w,
+        'https://drive.google.com/thumbnail?id=' + img.id + '&sz=w' + w,
+        'https://drive.google.com/uc?export=view&id=' + img.id
+      ];
+    }
+    function loadImg(el, img, big, onFail, target) {
+      const list = imgSources(img, big);
+      clearTimeout(el._t);
+      const attempt = done => {
+        const quick = list.length < 2 || (okCount === 0 && badCount >= 4);
+        const seq = quick ? [[list[0], 0]] : [[list[0], 0], [list[0], 1500], [list[1], 500], [list[2], 500], [list[0], 4000]];
+        let k = 0;
+        const next = () => {
+          if (k >= seq.length) return done(false);
+          const step = seq[k++];
+          el._t = setTimeout(() => { el.onload = () => done(true); el.onerror = next; el.src = step[0]; }, step[1]);
+        };
+        next();
+      };
+      const finish = ok => {
+        el.onload = el.onerror = null;
+        if (ok) okCount++; else { badCount++; if (onFail) onFail(el); }
+      };
+      if (!target) return attempt(finish);
+      const job = () => {
+        if (!el.isConnected) { imgActive--; return pumpImages(); }
+        attempt(ok => { imgActive--; pumpImages(); finish(ok); });
+      };
+      target._go = () => { imgQueue.push(job); pumpImages(); };
+      if (lazyObserver) lazyObserver.observe(target); else target._go();
+    }
+    function markFailed(card, photo, img) {
+      photo.remove();
+      card.classList.add('failed');
+      const note = document.createElement('div');
+      note.className = 'fail-note';
+      note.textContent = MSG_FAIL_LABEL;
+      if (img && img.driveUrl) {
+        const a = document.createElement('a');
+        a.href = img.driveUrl; a.target = '_blank'; a.rel = 'noopener'; a.textContent = MSG_OPEN_DRIVE;
+        a.addEventListener('click', e => e.stopPropagation());
+        note.append(document.createElement('br'), a);
+      }
+      card.prepend(note);
+      failedCount++;
+      noticeBanner.style.display = 'flex';
+      noticeMsg.textContent = MSG_FAIL_NOTICE(failedCount);
+    }
+
+        // ---- Downloads: one photo, or a whole album (ZIP when the browser allows it) ----
+    const MSG_DL_PHOTO = 'Download photo';
+    const MSG_DL_ALBUM = 'Download album';
+    const MSG_ZIP_PROGRESS = (i, n) => 'Preparing ' + i + '/' + n + '…';
+    const MSG_ALBUM_CONFIRM = n => 'Download all ' + n + ' photos of this album as one ZIP file? Large albums can take a minute.';
+    const MSG_ALBUM_FALLBACK = 'Your browser blocked zipping, so the photos will download one by one. Allow multiple downloads if your browser asks.';
+    const MSG_ZIP_PARTIAL = n => n + ' photo(s) could not be added to the ZIP.';
+    const DL_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>';
+    const downloadUrl = img => img.id ? 'https://drive.google.com/uc?export=download&id=' + img.id : img.url;
+    function makeDlButton(img) {
+      const a = document.createElement('a');
+      a.className = 'card-dl'; a.href = downloadUrl(img); a.title = MSG_DL_PHOTO;
+      a.setAttribute('aria-label', MSG_DL_PHOTO);
+      if (!img.id) a.setAttribute('download', img.name);
+      a.innerHTML = DL_ICON;
+      a.addEventListener('click', e => e.stopPropagation());
+      return a;
+    }
+    function loadScript(src) {
+      return new Promise((res, rej) => { const s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = () => rej(new Error('script')); document.head.appendChild(s); });
+    }
+    const cleanName = n => String(n || 'photo').replace(/[\\/:*?"<>|]+/g, '_');
+    const zipName = (name, i) => String(i + 1).padStart(3, '0') + '_' + (/\.[a-z0-9]{2,5}$/i.test(cleanName(name)) ? cleanName(name) : cleanName(name) + '.jpg');
+    function saveBlob(blob, name) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 60000);
+    }
+    async function fetchBlob(url) {
+      for (let t = 0; t < 2; t++) {
+        try { const r = await fetch(url); if (r.ok) return await r.blob(); } catch (e) { if (t) throw e; }
+        await new Promise(r => setTimeout(r, 1500));
+      }
+      throw new Error('download failed');
+    }
+    async function zipAlbum(imgs, albumName, onProgress) {
+      if (!window.JSZip) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+      const urlOf = img => img.id ? 'https://lh3.googleusercontent.com/d/' + img.id + '=w2400' : img.url;
+      const zip = new JSZip();
+      zip.file(zipName(imgs[0].name, 0), await fetchBlob(urlOf(imgs[0])));   // probe: throws if the browser blocks it
+      let next = 1, done = 1, failed = 0;
+      onProgress(done);
+      const worker = async () => {
+        while (next < imgs.length) {
+          const i = next++;
+          try { zip.file(zipName(imgs[i].name, i), await fetchBlob(urlOf(imgs[i]))); } catch (e) { failed++; }
+          onProgress(++done);
+        }
+      };
+      await Promise.all([worker(), worker(), worker()]);
+      saveBlob(await zip.generateAsync({ type: 'blob' }), cleanName(albumName || 'album') + '.zip');
+      return failed;
+    }
+    async function downloadOneByOne(imgs, onProgress) {
+      for (let i = 0; i < imgs.length; i++) {
+        if (imgs[i].id) {
+          const f = document.createElement('iframe');
+          f.style.display = 'none'; f.src = downloadUrl(imgs[i]);
+          document.body.appendChild(f); setTimeout(() => f.remove(), 60000);
+        } else {
+          const a = document.createElement('a');
+          a.href = imgs[i].url; a.download = imgs[i].name; document.body.appendChild(a); a.click(); a.remove();
+        }
+        onProgress(i + 1);
+        await new Promise(r => setTimeout(r, 900));
+      }
+    }
+    async function downloadAlbum() {
+      if (!currentAlbum || !currentAlbum.images.length) return;
+      const imgs = currentAlbum.images, btn = downloadAlbumBtn, label = btn.innerHTML;
+      if (!confirm(MSG_ALBUM_CONFIRM(imgs.length))) return;
+      btn.disabled = true;
+      const progress = n => { btn.textContent = MSG_ZIP_PROGRESS(n, imgs.length); };
+      try {
+        const failed = await zipAlbum(imgs, currentAlbum.name, progress);
+        if (failed) alert(MSG_ZIP_PARTIAL(failed));
+      } catch (err) {
+        console.warn('ZIP failed, downloading one by one:', err);
+        alert(MSG_ALBUM_FALLBACK);
+        await downloadOneByOne(imgs, progress);
+      }
+      btn.disabled = false; btn.innerHTML = label;
+    }
+
+    function showEmptyState(message) {
+      gallery.innerHTML = '';
+      const box = document.createElement('div');
+      box.className = 'empty-state';
+      box.textContent = message;
+      gallery.appendChild(box);
+    }
+
+    function addFolderPlaceholder(card) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'album-placeholder';
+      placeholder.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H10l2 2h7.5A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/></svg>';
+      card.prepend(placeholder);
+    }
+
+    function albumPageUrl(albumId) {
+      const url = new URL(window.location.href);
+      url.search = '';
+      url.searchParams.set('album', albumId);
+      url.hash = '';
+      return url.pathname + url.search;
+    }
+
+    function showAlbumsPage() {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('album');
+      url.hash = '';
+      window.location.href = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '');
+    }
+
+    function renderAlbums(list = albums) {
+      currentAlbum = null;
+      visibleImages = [];
+      galleryNavigation.style.display = 'none';
+      gallery.innerHTML = '';
+      if (!list.length) return showEmptyState('No folders found in your Google Drive gallery folder yet.');
+
+      list.forEach(album => {
+        const card = document.createElement('div');
+        card.className = 'album-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', 'Open album ' + album.name);
+
+        if (album.images.length && album.images[0].url) {
+          const cover = document.createElement('img');
+          cover.className = 'album-cover';
+          loadImg(cover, album.images[0], false, () => { cover.remove(); addFolderPlaceholder(card); }, card);
+          cover.alt = '';
+          cover.loading = 'lazy';
+          
+          card.appendChild(cover);
+        } else addFolderPlaceholder(card);
+
+        const caption = document.createElement('div');
+        caption.className = 'album-caption';
+        const title = document.createElement('div');
+        title.className = 'album-title';
+        title.textContent = album.name;
+        const count = document.createElement('div');
+        count.className = 'album-count';
+        count.textContent = album.images.length + (album.images.length === 1 ? ' photo' : ' photos');
+        caption.append(title, count);
+        card.appendChild(caption);
+
+        const open = () => { window.location.href = albumPageUrl(album.id); };
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+        gallery.appendChild(card);
+      });
+    }
+
+    function openAlbum(albumId) {
+      const album = albums.find(item => item.id === albumId);
+      if (!album) return;
+      currentAlbum = album;
+      searchInput.value = '';
+      currentAlbumTitle.textContent = album.name;
+      galleryNavigation.style.display = 'flex';
+      downloadAlbumBtn.innerHTML = DL_ICON + ' ' + MSG_DL_ALBUM + ' (' + album.images.length + ')';
+      renderImages(album.images);
+    }
+
+    function renderImages(images) {
+      failedCount = 0;
+      visibleImages = images;
+      gallery.innerHTML = '';
+      if (!images.length) return showEmptyState('This folder has no photos yet.');
+
+      images.forEach((img, index) => {
+        const card = document.createElement('div');
+        card.className = 'img-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', 'View photo ' + img.name);
+        const photo = document.createElement('img');
+        loadImg(photo, img, false, () => markFailed(card, photo, img), card);
+        photo.alt = img.name;
+        photo.loading = 'lazy';
+        
+        const caption = document.createElement('div');
+        caption.className = 'card-caption';
+        const title = document.createElement('span');
+        title.className = 'caption-title';
+        title.textContent = img.name;
+        const viewButton = document.createElement('div');
+        viewButton.className = 'card-view-btn';
+        viewButton.title = 'View Fullscreen';
+        viewButton.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+        caption.append(title, viewButton);
+        card.append(photo, caption, makeDlButton(img));
+        card.addEventListener('click', () => openLightbox(index));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(index); }
+        });
+        gallery.appendChild(card);
+      });
+    }
+
+    async function loadGalleryData() {
+      refreshBtn.classList.add('spinning');
+      statusText.textContent = 'Syncing folders from Google Drive...';
+      statusDot.className = 'status-dot warning';
+      try {
+        let data, fromCache = false;
+        try {
+          data = await requestDriveData();
+          try { localStorage.setItem('galleryCache', JSON.stringify(data)); } catch (_) {}
+        } catch (driveErr) {
+          let saved = null;
+          try { saved = JSON.parse(localStorage.getItem('galleryCache')); } catch (_) {}
+          if (saved && Array.isArray(saved.albums)) { data = saved; fromCache = true; } else throw driveErr;
+        }
+        albums = data.albums.map(album => ({
+          id: String(album.id || album.name),
+          name: album.name || 'Untitled album',
+          date: album.date || 0,
+          images: Array.isArray(album.images) ? album.images.map(normalizeImage) : []
+        }));
+        const totalPhotos = albums.reduce((sum, album) => sum + album.images.length, 0);
+        statusText.textContent = `Synced ${albums.length} Albums · ${totalPhotos} Photos`;
+        statusDot.className = 'status-dot';
+        noticeBanner.style.display = fromCache ? 'flex' : 'none';
+        if (fromCache) noticeMsg.textContent = MSG_CACHE;
+        searchInput.value = '';
+        const pageParams = new URLSearchParams(window.location.search);
+        const requestedAlbumKey = pageParams.get('album') || pageParams.get('folder') || pageParams.get('id');
+        if (requestedAlbumKey) {
+          // Accept either the Drive folder ID (preferred) or the album name for older links.
+          const key = requestedAlbumKey.trim();
+          const requestedAlbum = albums.find(album => album.id === key) ||
+            albums.find(album => album.name.trim().toLocaleLowerCase() === key.toLocaleLowerCase());
+
+          if (requestedAlbum) {
+            openAlbum(requestedAlbum.id);
+            document.title = requestedAlbum.name + ' | IEEE NDETI Gallery';
+
+            // Normalize old/name-based links to the canonical folder ID without reloading.
+            if (pageParams.get('album') !== requestedAlbum.id || pageParams.has('folder') || pageParams.has('id')) {
+              const canonicalUrl = new URL(window.location.href);
+              canonicalUrl.searchParams.delete('folder');
+              canonicalUrl.searchParams.delete('id');
+              canonicalUrl.searchParams.set('album', requestedAlbum.id);
+              window.history.replaceState({}, '', canonicalUrl.pathname + canonicalUrl.search + canonicalUrl.hash);
+            }
+          } else {
+            // Do not clear the album cards: the old code rendered them and then
+            // immediately erased them with showEmptyState(), leaving users nowhere to go.
+            document.title = 'IEEE NDETI SB | Events & Moments Gallery';
+            renderAlbums();
+            noticeBanner.style.display = 'flex';
+            noticeMsg.textContent = 'This album link does not match a current Drive folder. All available albums are shown below; open one to get its current link.';
+          }
+        } else {
+          document.title = 'IEEE NDETI SB | Events & Moments Gallery';
+          renderAlbums();
+        }
+      } catch (err) {
+        console.error('Google Drive album sync error:', err);
+        albums = [{ id: '__fallback__', name: 'Branch Event Photos (Fallback)', date: 0, images: localEvents.map(normalizeImage) }];
+        statusText.textContent = 'Showing fallback album';
+        statusDot.className = 'status-dot warning';
+        noticeBanner.style.display = 'flex';
+        noticeMsg.textContent = 'Drive sync failed: ' + (err && err.message ? err.message : String(err)) + ' — showing local fallback photos. Check the Apps Script albums/JSONP code and redeploy.';
+        const requestedAlbumId = new URLSearchParams(window.location.search).get('album');
+        if (requestedAlbumId === '__fallback__') openAlbum('__fallback__');
+        else renderAlbums();
+      } finally {
+        refreshBtn.classList.remove('spinning');
+      }
+    }
+
+    searchInput.addEventListener('input', e => {
+      const q = e.target.value.toLowerCase().trim();
+      if (currentAlbum) renderImages(currentAlbum.images.filter(img => img.name.toLowerCase().includes(q)));
+      else renderAlbums(albums.filter(album => album.name.toLowerCase().includes(q) || album.images.some(img => img.name.toLowerCase().includes(q))));
+    });
+
+    backToAlbumsBtn.addEventListener('click', showAlbumsPage);
+    downloadAlbumBtn.addEventListener('click', downloadAlbum);
+    refreshBtn.addEventListener('click', loadGalleryData);
+
+    // Lightbox viewer
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbCounter = document.getElementById('lbCounter');
+    const lbDriveLink = document.getElementById('lbDriveLink');
+    const lbDownload = document.getElementById('lbDownload');
+    lbDownload.innerHTML = DL_ICON + ' ' + MSG_DL_PHOTO;
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+
+    function openLightbox(index) {
+      if (!visibleImages.length) return;
+      currentLightboxIdx = index;
+      updateLightboxContent();
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() { lb.classList.remove('active'); document.body.style.overflow = ''; }
+    function updateLightboxContent() {
+      const item = visibleImages[currentLightboxIdx];
+      if (!item) return;
+      loadImg(lbImg, item, true, () => {});
+      lbImg.alt = item.name;
+      lbTitle.textContent = item.name;
+      lbCounter.textContent = `${currentLightboxIdx + 1} / ${visibleImages.length}`;
+      lbDriveLink.href = item.driveUrl || item.url;
+      lbDownload.href = downloadUrl(item);
+      if (item.id) lbDownload.removeAttribute('download'); else lbDownload.setAttribute('download', item.name);
+    }
+    function showNext() { if (visibleImages.length) { currentLightboxIdx = (currentLightboxIdx + 1) % visibleImages.length; updateLightboxContent(); } }
+    function showPrev() { if (visibleImages.length) { currentLightboxIdx = (currentLightboxIdx - 1 + visibleImages.length) % visibleImages.length; updateLightboxContent(); } }
+    lbClose.addEventListener('click', closeLightbox);
+    lbNext.addEventListener('click', e => { e.stopPropagation(); showNext(); });
+    lbPrev.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    window.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+    let touchStartX = 0;
+    lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(diff) > 50) { if (diff < 0) showNext(); else showPrev(); }
+    });
+
+    // Initial page view is the list of folders/albums.
+    loadGalleryData();
+  </script>
+</body>
+</html>

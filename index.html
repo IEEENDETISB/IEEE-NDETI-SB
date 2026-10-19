@@ -3,886 +3,1773 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>IEEE NDETI SB</title>
-  <meta name="description" content="Official Website for IEEE NDETI Student Branch">
-  <meta name="keywords" content="IEEE,Engineering Events,New Damietta city">
-
-  <!-- Favicons -->
-  <link href="assets/img/LOG.jpeg" rel="icon">
-  
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IEEE NDETI SB | The spark behind innovation</title>
+  <meta name="description" content="Official website of the IEEE NDETI Student Branch in New Damietta, Egypt: workshops, hackathons and a community of engineering students.">
+  <meta name="theme-color" content="#003A5A">
+  <!-- Performance: DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+  <!-- Preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload critical hero logo -->
+  <link rel="preload" href="assets/img/logo.jpeg" as="image">
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #00629B;
+      --deep: #003A5A;
+      --paper: #F3F6F9;
+      --ink: #10243A;
+      --mute: #556A7F;
+      --spark: #FFB81C;
+      --line: #D3DDE6;
+      --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+      --body: 'Figtree', 'Segoe UI', system-ui, sans-serif
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px
+    }
 
-  <!-- =======================================================
-  * Template Name: BizLand
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Updated: Dec 05 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    body {
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      font-size: 1.0625rem
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+      background: var(--line)
+    }
+
+    img.broken {
+      visibility: hidden
+    }
+
+    a {
+      color: inherit
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--spark);
+      outline-offset: 3px
+    }
+
+    .wrap {
+      width: min(1120px, 92%);
+      margin-inline: auto
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      line-height: 1.1;
+      letter-spacing: -.02em
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem
+    }
+
+    section {
+      padding: 96px 0
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .85rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, background .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn.main {
+      background: var(--spark);
+      color: var(--deep)
+    }
+
+    .btn.ghost {
+      border: 2px solid #ffffff66;
+      color: #fff
+    }
+
+    .btn.ghost:hover {
+      background: #ffffff1a
+    }
+
+    /* nav */
+    nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: #003a5aeb;
+      backdrop-filter: blur(10px);
+      color: #fff
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem
+    }
+
+    .logo img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--spark);
+      background: #fff;
+      flex-shrink: 0;
+      padding: 2px
+    }
+
+    .logo span {
+      color: var(--spark)
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.6rem;
+      list-style: none;
+      font-size: .95rem
+    }
+
+    nav ul a {
+      text-decoration: none;
+      opacity: .85
+    }
+
+    nav ul a:hover {
+      opacity: 1;
+      text-decoration: underline;
+      text-decoration-color: var(--spark);
+      text-underline-offset: 6px
+    }
+
+    #menu {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(160deg, var(--blue), var(--deep) 75%);
+      color: #fff;
+      padding: 140px 0 0;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 3rem;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6.5vw, 5rem);
+      font-weight: 800
+    }
+
+    .hero p {
+      max-width: 34rem;
+      margin: 1.4rem 0 2rem;
+      font-size: 1.15rem;
+      color: #dbe9f3
+    }
+
+    .hero .cta {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap
+    }
+
+    .collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .collage img {
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      border-radius: 14px;
+      border: 3px solid #ffffff33
+    }
+
+    .collage img:first-child {
+      grid-row: span 2;
+      transform: rotate(-2deg)
+    }
+
+    .collage img:nth-child(2) {
+      transform: rotate(2deg)
+    }
+
+    .collage img:nth-child(3) {
+      transform: rotate(-1deg)
+    }
+
+    #wave {
+      display: block;
+      width: 100%;
+      height: 130px;
+      margin-top: 2rem
+    }
+
+    /* pillars */
+    .pillars {
+      background: var(--paper);
+      padding: 56px 0
+    }
+
+    .pillars .wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem
+    }
+
+    .pillars div {
+      border-top: 3px solid var(--blue);
+      padding-top: 1rem
+    }
+
+    .pillars h3 {
+      font-size: 1.2rem;
+      margin-bottom: .4rem
+    }
+
+    .pillars p {
+      color: var(--mute);
+      font-size: .98rem
+    }
+
+    /* about */
+    .about .wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start
+    }
+
+    .about .pic img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px
+    }
+
+    .about .lead {
+      color: var(--mute);
+      margin-bottom: 2rem;
+      max-width: 36rem
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem 2rem;
+      margin-bottom: 2.5rem
+    }
+
+    .facts h3 {
+      font-size: 1.1rem;
+      color: var(--blue)
+    }
+
+    .facts p {
+      color: var(--mute);
+      font-size: .97rem
+    }
+
+    .bars {
+      display: grid;
+      gap: .9rem
+    }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 11rem 1fr 3rem;
+      gap: 1rem;
+      align-items: center;
+      font-size: .95rem
+    }
+
+    .bar b {
+      text-align: right;
+      font-family: var(--display)
+    }
+
+    .bar .t {
+      height: 8px;
+      background: var(--line);
+      border-radius: 9px;
+      overflow: hidden
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--blue), var(--spark));
+      border-radius: 9px;
+      transition: width 1.2s cubic-bezier(.2, .7, .2, 1)
+    }
+
+    .bar.in i {
+      width: var(--v)
+    }
+
+    /* committees */
+    .committees {
+      background: var(--paper)
+    }
+
+    .rows {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 2rem;
+      padding: 1.4rem .8rem;
+      border-top: 1px solid var(--line);
+      transition: background .2s, padding-left .2s
+    }
+
+    .row:hover {
+      background: var(--white);
+      padding-left: 1.4rem
+    }
+
+    .row h3 {
+      font-size: 1.5rem
+    }
+
+    .row p {
+      color: var(--mute)
+    }
+
+    /* events */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      grid-auto-rows: 210px;
+      grid-auto-flow: dense;
+      gap: 12px
+    }
+
+    .gallery button {
+      border: 0;
+      padding: 0;
+      cursor: zoom-in;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--line)
+    }
+
+    .gallery button:nth-child(1),
+    .gallery button:nth-child(6) {
+      grid-column: span 2;
+      grid-row: span 2
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      transition: transform .5s
+    }
+
+    .gallery button:hover img {
+      transform: scale(1.06)
+    }
+
+    #lb {
+      position: fixed;
+      inset: 0;
+      background: #000d;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 2rem
+    }
+
+    #lb.open {
+      display: grid
+    }
+
+    #lb img {
+      max-height: 88vh;
+      max-width: 92vw;
+      border-radius: 10px;
+      object-fit: contain
+    }
+
+    #lb button {
+      position: absolute;
+      background: #fff2;
+      border: 0;
+      color: #fff;
+      font-size: 2rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer
+    }
+
+    #lb .x {
+      top: 18px;
+      right: 18px
+    }
+
+    #lb .p {
+      left: 18px
+    }
+
+    #lb .n {
+      right: 18px
+    }
+
+    /* numbers */
+    .numbers {
+      background: var(--deep);
+      color: #fff;
+      padding: 64px 0
+    }
+
+    .numbers .wrap {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+      align-items: baseline
+    }
+
+    .numbers strong {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      color: var(--spark);
+      font-weight: 800;
+      line-height: 1
+    }
+
+    .numbers span {
+      display: block;
+      font-size: 1.1rem;
+      color: #cfe1ee
+    }
+
+    /* people */
+    .sup {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 4rem
+    }
+
+    .sup img {
+      width: 200px;
+      height: 240px;
+      border-radius: 20px
+    }
+
+    .sup h3 {
+      font-size: 2rem
+    }
+
+    .sup p,
+    .person p {
+      color: var(--mute)
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.4rem
+    }
+
+    .person img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      margin-bottom: .8rem
+    }
+
+    .person h3 {
+      font-size: 1.2rem
+    }
+
+    .people h2+.sup {
+      margin-top: 0
+    }
+
+    .people h3.sub {
+      font-size: 1.6rem;
+      margin-bottom: 1.4rem
+    }
+
+    /* faq */
+    .faq {
+      background: var(--paper)
+    }
+
+    .faq .wrap {
+      max-width: 820px
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding: 1.1rem 0
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    summary::after {
+      content: "+";
+      color: var(--blue);
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: transform .25s
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg)
+    }
+
+    details p {
+      color: var(--mute);
+      margin-top: .7rem
+    }
+
+    /* contact */
+    .contact .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem
+    }
+
+    .contact h3 {
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin: 1.4rem 0 .2rem
+    }
+
+    .contact h3:first-of-type {
+      margin-top: 0
+    }
+
+    .social {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-top: .6rem
+    }
+
+    .social a {
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .social a:hover {
+      background: var(--blue);
+      color: #fff
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      border: 0;
+      border-radius: 18px;
+      background: var(--line)
+    }
+
+    footer {
+      background: var(--deep);
+      color: #cfe1ee;
+      padding: 48px 0;
+      font-size: .95rem
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: end
+    }
+
+    footer strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.6rem;
+      color: #fff
+    }
+
+    @media(max-width:860px) {
+      section {
+        padding: 72px 0
+      }
+
+      #menu {
+        display: block
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--deep);
+        flex-direction: column;
+        padding: 1rem 4%;
+        gap: 1rem
+      }
+
+      nav ul.open {
+        display: flex
+      }
+
+      .hero .wrap,
+      .about .wrap,
+      .contact .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .pillars .wrap {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: .4rem
+      }
+
+      .bar {
+        grid-template-columns: 8.5rem 1fr 2.6rem
+      }
+
+      .sup {
+        grid-template-columns: 1fr
+      }
+
+      .gallery {
+        grid-auto-rows: 170px
+      }
+    }
+
+    @media(max-width:520px) {
+
+      .pillars .wrap,
+      .facts {
+        grid-template-columns: 1fr
+      }
+
+      .bar {
+        grid-template-columns: 1fr 3rem
+      }
+
+      .bar span {
+        grid-column: 1/-1
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+    }
+
+    :root {
+      --white: #fff
+    }
+
+    [data-theme=dark] {
+      --white: #0A1726;
+      --paper: #0E2034;
+      --ink: #E7EFF7;
+      --mute: #9DB2C5;
+      --line: #213A52;
+      --blue: #3FAAEA;
+      color-scheme: dark
+    }
+
+    [data-theme=dark] .hero {
+      background: linear-gradient(160deg, #004f7d, #00263d 75%)
+    }
+
+    [data-theme=dark] nav,
+    [data-theme=dark] .numbers,
+    [data-theme=dark] footer {
+      background: #001d2f
+    }
+
+    [data-theme=dark] .social a:hover {
+      color: #00263d
+    }
+
+    /* progress + nav extras */
+    .prog {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      background: var(--spark);
+      transform-origin: 0 50%
+    }
+
+    .nr {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem
+    }
+
+    .tt {
+      background: none;
+      border: 2px solid #ffffff55;
+      color: #fff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1
+    }
+
+    .tt:hover {
+      background: #ffffff1f
+    }
+
+    nav ul a.btn {
+      opacity: 1;
+      color: var(--deep);
+      padding: .4rem 1.1rem
+    }
+
+    nav ul a.btn:hover {
+      text-decoration: none
+    }
+
+    /* hero upgrades */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#ffffff10 1px, transparent 1px), linear-gradient(90deg, #ffffff10 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000, transparent 75%);
+      mask-image: radial-gradient(ellipse at 70% 30%, #000, transparent 75%)
+    }
+
+    .hero .wrap,
+    .sig {
+      position: relative;
+      z-index: 1
+    }
+
+    .collage {
+      position: relative;
+      transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      transition: transform .25s ease-out
+    }
+
+    .collage::before {
+      content: "";
+      position: absolute;
+      inset: -12% -8%;
+      background: radial-gradient(circle at 60% 40%, #FFB81C45, transparent 60%);
+      filter: blur(22px);
+      z-index: -1
+    }
+
+    #wave {
+      cursor: pointer
+    }
+
+    .hint {
+      position: absolute;
+      right: 4%;
+      bottom: 10px;
+      font-size: .85rem;
+      color: #ffffffb8;
+      pointer-events: none
+    }
+
+    .about .pic {
+      isolation: isolate;
+      position: relative
+    }
+
+    .about .pic::after {
+      content: "";
+      position: absolute;
+      inset: 18px -14px -14px 18px;
+      border: 3px solid var(--spark);
+      border-radius: 22px;
+      z-index: -1
+    }
+
+    .bars.in .bar i {
+      width: var(--v)
+    }
+
+    /* committees master-detail */
+    .cm {
+      display: grid;
+      grid-template-columns: .8fr 1.4fr;
+      gap: 2rem
+    }
+
+    .cm-list {
+      display: grid;
+      gap: .4rem;
+      align-content: start
+    }
+
+    .cm-list button {
+      font: 700 1.3rem var(--display);
+      text-align: left;
+      padding: .9rem 1.2rem;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .2s, padding-left .2s
+    }
+
+    .cm-list button:hover {
+      background: var(--white)
+    }
+
+    .cm-list button.on {
+      background: var(--blue);
+      color: #fff;
+      padding-left: 1.8rem
+    }
+
+    .cm-panel {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 2.4rem;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      animation: swap .35s
+    }
+
+    .cm-panel .mono {
+      position: absolute;
+      right: -.5rem;
+      bottom: -2.2rem;
+      font: 800 11rem/1 var(--display);
+      color: var(--blue);
+      opacity: .09;
+      pointer-events: none
+    }
+
+    .cm-panel h3 {
+      font-size: 2.2rem
+    }
+
+    .cm-panel p {
+      color: var(--mute);
+      max-width: 32rem;
+      font-size: 1.15rem
+    }
+
+    .cm-panel .btn {
+      align-self: flex-start;
+      margin-top: .6rem;
+      position: relative
+    }
+
+    @keyframes swap {
+      from {
+        opacity: 0;
+        transform: translateY(10px)
+      }
+    }
+
+    /* gallery + people polish */
+    .gallery button {
+      position: relative
+    }
+
+    .gallery button span {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 1.6rem .9rem .7rem;
+      background: linear-gradient(transparent, #003a5acc);
+      color: #fff;
+      font-weight: 600;
+      text-align: left;
+      opacity: 0;
+      transition: opacity .25s
+    }
+
+    .gallery button:hover span,
+    .gallery button:focus-visible span {
+      opacity: 1
+    }
+
+    .person .ph {
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: .8rem;
+      border-bottom: 4px solid var(--spark)
+    }
+
+    .person .ph img {
+      margin: 0;
+      border-radius: 0;
+      transition: transform .5s
+    }
+
+    .person:hover .ph img {
+      transform: scale(1.06)
+    }
+
+    /* faq accordion */
+    .qa {
+      border-top: 1px solid var(--line)
+    }
+
+    .qa:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .qa>button {
+      all: unset;
+      box-sizing: border-box;
+      width: 100%;
+      cursor: pointer;
+      padding: 1.1rem 0;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .qa>button::after {
+      content: "+";
+      color: var(--blue);
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: transform .25s
+    }
+
+    .qa.open>button::after {
+      transform: rotate(45deg)
+    }
+
+    .qa>button:focus-visible {
+      outline: 3px solid var(--spark);
+      outline-offset: 3px
+    }
+
+    .ans {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .3s
+    }
+
+    .qa.open .ans {
+      grid-template-rows: 1fr
+    }
+
+    .ans>div {
+      overflow: hidden
+    }
+
+    .ans p {
+      color: var(--mute);
+      padding-bottom: 1.1rem
+    }
+
+    /* join form */
+    .join {
+      background: linear-gradient(160deg, var(--blue), var(--deep));
+      color: #fff
+    }
+
+    .join .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start
+    }
+
+    .join p {
+      color: #dbe9f3;
+      max-width: 30rem
+    }
+
+    .join form {
+      --ink: #10243A;
+      --mute: #556A7F;
+      --line: #D3DDE6;
+      display: grid;
+      gap: 1rem;
+      background: #fff;
+      color: var(--ink);
+      padding: 1.8rem;
+      border-radius: 20px
+    }
+
+    .join label {
+      display: grid;
+      gap: .3rem;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .join input,
+    .join select,
+    .join textarea {
+      font: inherit;
+      padding: .7rem .9rem;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink)
+    }
+
+    .join input:focus,
+    .join select:focus,
+    .join textarea:focus {
+      border-color: #00629B;
+      outline: none
+    }
+
+    .join [aria-invalid=true] {
+      border-color: #B42318
+    }
+
+    .join .err {
+      color: #B42318;
+      font-size: .88rem;
+      font-weight: 500
+    }
+
+    .join .ok {
+      color: #067647;
+      font-weight: 600;
+      max-width: none
+    }
+
+    .join button.btn {
+      border: 0;
+      cursor: pointer;
+      font: 600 1rem var(--body)
+    }
+
+    .acts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      margin-bottom: 3rem
+    }
+
+    .acts article {
+      border-top: 4px solid var(--c);
+      background: var(--paper);
+      padding: 1.4rem 1.2rem 1.6rem;
+      border-radius: 0 0 14px 14px;
+      transition: transform .25s
+    }
+
+    .acts article:hover {
+      transform: translateY(-4px)
+    }
+
+    .acts h3 {
+      font-size: 1.3rem;
+      margin-bottom: .5rem
+    }
+
+    .acts p {
+      color: var(--mute);
+      font-size: .97rem
+    }
+
+    .sub2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem
+    }
+
+    .voices {
+      background: var(--paper)
+    }
+
+    .draft {
+      background: #FFF4D6;
+      color: #5C4400;
+      border-left: 4px solid var(--spark);
+      padding: .6rem 1rem;
+      border-radius: 6px;
+      margin: -.6rem 0 1.6rem;
+      font-size: .95rem;
+      max-width: 40rem
+    }
+
+    .vq {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.4rem
+    }
+
+    .vq figure {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.8rem;
+      position: relative
+    }
+
+    .vq figure::before {
+      content: "\201C";
+      position: absolute;
+      top: .2rem;
+      left: 1.1rem;
+      font: 800 4.5rem/1 var(--display);
+      color: var(--spark)
+    }
+
+    .vq blockquote {
+      padding-top: 2.2rem;
+      font-size: 1.1rem
+    }
+
+    .vq figcaption {
+      margin-top: 1.2rem;
+      color: var(--mute);
+      font-size: .92rem
+    }
+
+    .vq figcaption b {
+      display: block;
+      color: var(--ink)
+    }
+
+    .vq .big {
+      grid-row: span 2;
+      background: var(--deep);
+      border: 0;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .vq .big blockquote {
+      font: 700 clamp(1.4rem, 2.6vw, 2rem)/1.3 var(--display);
+      letter-spacing: -.01em
+    }
+
+    .vq .big figcaption {
+      color: #cfe1ee
+    }
+
+    .vq .big figcaption b {
+      color: #fff
+    }
+
+    .contact form {
+      display: grid;
+      gap: .9rem;
+      margin-top: 2rem
+    }
+
+    .contact label {
+      display: grid;
+      gap: .3rem;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .contact input,
+    .contact textarea {
+      font: inherit;
+      padding: .7rem .9rem;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--ink)
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      border-color: var(--blue);
+      outline: none
+    }
+
+    .contact [aria-invalid=true] {
+      border-color: #B42318
+    }
+
+    .contact .err {
+      color: #B42318;
+      font-size: .88rem;
+      font-weight: 500
+    }
+
+    .contact .ok {
+      color: #067647;
+      font-weight: 600
+    }
+
+    .contact button.btn {
+      border: 0;
+      cursor: pointer;
+      font: 600 1rem var(--body);
+      justify-self: start
+    }
+
+    .final {
+      background: var(--spark);
+      color: var(--deep);
+      padding: 72px 0
+    }
+
+    .final .wrap {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap
+    }
+
+    .final h2 {
+      margin-bottom: .4rem
+    }
+
+    .final p {
+      font-size: 1.15rem;
+      font-weight: 500
+    }
+
+    .btn.dark {
+      background: var(--deep);
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 1rem 2rem
+    }
+
+    @media(max-width:860px) {
+      .acts {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .vq {
+        grid-template-columns: 1fr
+      }
+
+      .vq .big {
+        grid-row: auto
+      }
+    }
+
+    @media(max-width:520px) {
+      .acts {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:860px) {
+
+      .cm,
+      .join .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .cm-list {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cm-panel .mono {
+        font-size: 8rem
+      }
+    }
+
+    @media(max-width:1020px) {
+      nav ul {
+        gap: 1rem;
+        font-size: .9rem
+      }
+    }
+
+    .album-tabs {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem
+    }
+
+    .album-tab {
+      font: 600 .95rem var(--body);
+      padding: .55rem 1.2rem;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s
+    }
+
+    .album-tab:hover {
+      border-color: var(--blue)
+    }
+
+    .album-tab.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff
+    }
+
+    .ico {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      margin-bottom: .9rem;
+      color: var(--blue);
+      background: color-mix(in srgb, var(--blue) 12%, transparent)
+    }
+
+    .ico svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .acts article:nth-child(even) .ico {
+      color: var(--deep);
+      background: #FFB81C66
+    }
+
+    [data-theme=dark] .acts article:nth-child(even) .ico {
+      color: var(--spark)
+    }
+
+    /* ── Gallery Section ── */
+    .gallery-section {
+      background: var(--ink);
+      padding: 96px 0;
+      contain: layout
+    }
+
+    [data-theme=dark] .gallery-section {
+      background: #000d1a
+    }
+
+    .gallery-section h2 {
+      color: #fff
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem
+    }
+
+    .gallery-sub {
+      color: #8dafc9;
+      margin-top: .4rem;
+      font-size: 1.05rem
+    }
+
+    .gallery-loading {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 4rem 1rem;
+      color: var(--mute)
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #ffffff22;
+      border-top-color: var(--spark);
+      border-radius: 50%;
+      animation: spin .7s linear infinite
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg) }
+    }
+
+    .gal-btn {
+      contain: strict
+    }
+
+    /* Performance: reduce paint for offscreen images */
+    .gallery img {
+      content-visibility: auto
+    }
+
+    @media(max-width:860px) {
+      .gallery-header { flex-direction: column; align-items: flex-start }
+    }
+  </style>
 </head>
 
-<body class="index-page">
-
-  <header id="header" class="header sticky-top">
-
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:ieee.ndeti.student.branch@gmail.com">ieee.ndeti.student.branch@gmail.com</a></i>
-          
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          
-          <a href="https://www.facebook.com/share/1FF6kMpaya/?mibextid=wwXIfr" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/ieee_ndeti?igsh=MXRqc2ZvaTljd2Vyag==" class="instagram"><i class="bi bi-instagram"></i></a>
-          
-          
-        </div>
-      </div>
-    </div><!-- End Top Bar -->
-
-    <div class="branding d-flex align-items-cente">
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">IEEE NDETI STUDENT BRANCH </h1>
-        </a> 
-         
-
-        <nav id="navmenu" class="navmenu">
-  <ul>
-    <nav id="navmenu" class="navmenu">
-  <ul>
-    <li><a href="#hero" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Committees</a></li>
-    <li><a href="#portfolio">Events</a></li>
-    <li><a href="#team">Highboard</a></li>
-    <li><a href="#supervisor">Supervisor</a></li>
-    <li><a href="#faq">F.A.Q</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-
-    
-</nav>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-     
-
-<section id="hero" class="hero section light-background" style="background-image: url('assets/img/photom.jpg'); background-size: cover; background-position: center;">
-
-    
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>Welcome to <span>IEEE NDETI SB</span></h1>
-            
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-cpu"></i></div>
-              <h4><a href="" class="stretched-link">Innovation & Technology</a></h4>
-              <p>Empowering students to create innovative solutions and advance technology for the benefit of humanity.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-people"></i></div>
-              <h4><a href="" class="stretched-link">Networking & Community</a></h4>
-              <p>connecting students with experts,professors and peers through events and collaboration.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-trophy"></i></div>
-              <h4><a href="" class="stretched-link">Competitions & Events</a></h4>
-              <p>hackathons,ieee extreme and global ieee challenges to boost creativity and problem solving skills.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-mortarboard"></i></div>
-              <h4><a href="" class="stretched-link">professional Developments</a></h4>
-              <p>workshops,training,and mentoring programs to prepare members for future careers in engineering.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Featured Services Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p><span>About IEEE NDETI Student Branch</span> <span class="description-title"></span></p> 
-        <P>IEEE NDETI Student Branch is a community of passionate students dedicated to advancing technology and creating opportunities for professional growth.</P>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-3">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/koko.jpeg" alt="" class="img-fluid" alt="IEEE Students">
-          </div>
-
-    
-</ul>
-</ul>
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-content ps-0 ps-lg-3">
-             <li>
-             <i class="bi bi-people"></i>
-                  <div>
-                    <h4>Who We Are ?</h4>
-                    <p>A Student Branch that connects engineering and technology students with global IEEE resources.</p>
-                  </div>
-                </li>
-                <li>
-                  <i class="bi bi-bullseye"></i>
-                  <div>
-                    <h4>our activities</h4>
-                    <p>Workshops,hackathons,training programs.</p>
-                  </div>
-                </li>
-              </ul>
-               <li>
-                  <i class="bi bi-globe"></i>
-                  <div>
-                    <h4>our community</h4>
-                    <p>Collaboration between students,professors and professionals.</p>
-                  </div>
-                </li>
-              </ul>
-                <li>
-                  <i class="bi bi-lightning"></i>
-                  <div>
-                    <h4>our impact</h4>
-                    <p>Empowering innovation to solve real world challenges.</p>
-                  </div>
-                </li>
-              </ul>
-              
-            </div>
-
-              
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-        
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Workshops Organized</span> <i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Technical Projects</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Competitions & Hackathons</span> <i class="val">40%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Community Engagement</span> <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="90"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>Industry Collaboration</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60"></div>
-              </div>
-            </div><!-- End Skills Item -->
- <div class="progress">
-              <span class="skill"><span>Members Participation</span> <i class="val">89%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="89"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-           
-          
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-    
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>committees</h2>
-        <p><span>Meet Our</span> committees<span
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-people"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>HR Committee</h3>
-              </a>
-              <p>Responsible for recruiting, managing members, and ensuring effective teamwork inside the branch..</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-cash-coin"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>FR Committee</h3>
-              </a>
-              <p>Responsible for building partnerships and securing sponsorships to support the branch financially.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>PR Committee</h3>
-              </a>
-              <p>Builds strong connections with external organizations, universities, and spreads awareness about the branch.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Logistics Committee</h3>
-              </a>
-              <p>Manages event organization, resources, and ensures everything runs smoothly during activities and sessions..</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Programming Committee</h3>
-              </a>
-              <p>Focuses on software development, coding sessions, and technical projects that enhance members’ skills.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-brush"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Media Committee</h3>
-              </a>
-              <p>Creates and manages visual content, designs, photography, and social media presence for the branch.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-diagram-3"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Core Committee</h3>
-              </a>
-              <p>The backbone of the branch, handling decision-making, supervision, and ensuring smooth operation of all activities..</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item --> <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-wifi"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>IOT Committee</h3>
-              </a>
-              <p>Specialized in Internet of Things projects, workshops, and innovation in connected devices and smart systems.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-   
-
-           
-
-            
-          
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>events</h2>
-        <p><span>Check Our&nbsp;</span> <span class="description-title">Events</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-         
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/lolo.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <a href="assets/img/lolo.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/jj.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <a href="assets/img/jj.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/yy.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <a href="assets/img/yy.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/xt.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                 <a href="assets/img/xt.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-              
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/kiki.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p> <a href="assets/img/kiki.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-             
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/hhh.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p> <a href="assets/img/hhh.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-             
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/b.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p> <a href="assets/img/b.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-               
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/c.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p> <a href="assets/img/c.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-               
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/a.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                 <a href="assets/img/a.jpeg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                
-              
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-<!-- ======= Supervisor Section ======= -->
-<section id="supervisor" class="team section-bg">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Supervisor</h2>
+<body>
+  <div id="root"></div>
+  <noscript>
+    <p style="padding:2rem">This site needs JavaScript to load.</p>
+  </noscript>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js" crossorigin="anonymous"></script>
+  <script>
+    const { useState, useEffect, useRef } = React, html = htm.bind(React.createElement);
+    const IMG = 'assets/img/', MAIL = 'ieee.ndeti.student.branch@gmail.com';
+    const still = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const events = ['lolo', 'jj', 'yy', 'xt', 'kiki', 'hhh', 'b', 'c', 'a'];
+    const COMMITTEES = [
+      ['HR', 'Recruits and manages members, and keeps teamwork effective inside the branch.', 'HR'],
+      ['FR', 'Builds partnerships and secures sponsorships to support the branch financially.', 'FR'],
+      ['PR', 'Builds connections with external organizations and universities, and spreads awareness about the branch.', 'PR'],
+      ['Logistics', 'Manages event organization and resources so activities and sessions run smoothly.', 'LG'],
+      ['Programming', 'Leads software development, coding sessions and technical projects that grow members\u2019 skills.', '</>'],
+      ['Media', 'Creates visual content, designs and photography, and runs the branch\u2019s social media presence.', 'MD'],
+      ['Core', 'The backbone of the branch: decision-making, supervision and smooth operation of all activities.', 'CR'],
+      ['IoT', 'Runs Internet of Things projects and workshops on connected devices and smart systems.', 'IoT']];
+    const BARS = [['Workshops organized', 50], ['Technical projects', 80], ['Competitions & hackathons', 40], ['Community engagement', 95], ['Industry collaboration', 60], ['Members participation', 89]];
+    const TEAM = [['kareem', 'Kareem Ibrahim', 'Chairman'], ['labanese', 'Seif-Eldin El-Labban', 'Vice-Chairman'], ['gelgel', 'Ahmed Galal', 'Secretary'], ['ezaby', 'Youssf El-Ezaby', 'Treasurer']];
+    const FAQ = [['How can I join the IEEE student branch?', 'Fill out the membership form on this page or attend one of our orientation sessions.'], ['Is there a fee for membership?', 'Yes. The fee helps support the branch\u2019s events and resources.'], ['What kind of events does the branch organize?', 'Workshops, competitions, technical seminars and field visits, on a regular schedule.'], ['How can I volunteer in branch activities?', 'Sign up on the volunteers list on our website, or contact us directly by email.']];
+
+    const ICONS = ['M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z', 'M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3 3-5 6-5s6 2 6 5M14 15c4 0 8 1 8 5', 'M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H4v1a3 3 0 0 0 4 3M16 6h4v1a3 3 0 0 1-4 3M12 13v4M8 20h8M10 17h4', 'M2 9l10-5 10 5-10 5-10-5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5', 'M13 2L4 14h7l-1 8 9-12h-7l1-8z', 'M4 5h16v11H4zM2 19h20', 'M3 5h18v14H3zM7 10l3 2-3 2M12 15h5', 'M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'];
+    const Ico = ({ n }) => html`<span className="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d=${ICONS[n]}/></svg></span>`;
+    const Img = ({ n, alt, ...p }) => html`<img src=${IMG + n + '.jpeg'} alt=${alt} ...${p}/>`;
+    function useInView(th = .35) { const r = useRef(), [v, s] = useState(false); useEffect(() => { const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { s(true); o.disconnect() } }, { threshold: th }); o.observe(r.current); return () => o.disconnect() }, []); return [r, v] }
+
+    function Progress() {
+      const [p, s] = useState(0);
+      useEffect(() => { const f = () => s(scrollY / Math.max(1, document.body.scrollHeight - innerHeight)); addEventListener('scroll', f, { passive: true }); return () => removeEventListener('scroll', f) }, []);
+      return html`<i className="prog" style=${{ transform: `scaleX(${p})` }}/>`
+    }
+
+    function Nav({ theme, toggle }) {
+      const [open, setOpen] = useState(false);
+      const L = [['about', 'About'], ['committees', 'Committees'], ['events', 'Events'], ['gallery', 'Gallery'], ['people', 'Our team'], ['faq', 'FAQ'], ['contact', 'Contact']];
+      return html`<nav><div className="wrap">
+  <a className="logo" href="#hero"><img src="assets/img/logo.jpeg" alt="IEEE NDETI SB Logo"/>IEEE <span>NDETI</span> SB</a>
+  <div className="nr">
+   <ul className=${open ? 'open' : ''} onClick=${() => setOpen(false)}>${L.map(l => html`<li key=${l[0]}><a href=${'#' + l[0]}>${l[1]}</a></li>`)}<li><a href="ar.html" lang="ar" hreflang="ar">العربية</a></li><li><a className="btn main" href="#join">Join</a></li></ul>
+   <button className="tt" onClick=${toggle} aria-label=${'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'}>${theme === 'dark' ? '\u2600' : '\u263E'}</button>
+   <button id="menu" aria-label="Toggle menu" aria-expanded=${open} onClick=${() => setOpen(!open)}>\u2630</button>
+  </div></div><${Progress}/></nav>`
+    }
+
+    function Signal() {
+      const ref = useRef();
+      useEffect(() => {
+        const c = ref.current, g = c.getContext('2d'); let raf, last = -1e4, pulses = [];
+        const fit = () => { const r = devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; g.setTransform(r, 0, 0, r, 0, 0); if (still) draw(0) };
+        const draw = t => {
+          const w = c.clientWidth, h = c.clientHeight, m = h / 2;
+          if (!still && t - last > 4200) { pulses.push({ x: -100, t }); last = t }
+          const xs = still ? [w * .6] : pulses.map(p => p.x + (t - p.t) * .17).filter(x => x < w + 160);
+          if (!still) pulses = pulses.filter(p => p.x + (t - p.t) * .17 < w + 160);
+          g.clearRect(0, 0, w, h);
+          const pts = []; for (let x = 0; x <= w; x += 3) { let y = m + Math.sin(x / 40 + t / 700) * 7; for (const px of xs) { const d = (x - px) / 16; y -= 62 * Math.exp(-d * d) * Math.cos(d * 1.6) } pts.push([x, y]) }
+          const path = () => { g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1])) };
+          g.lineJoin = 'round'; g.lineWidth = 2; g.strokeStyle = 'rgba(255,255,255,.35)'; path(); g.stroke();
+          g.save(); g.beginPath(); xs.forEach(x => g.rect(x - 110, 0, 220, h)); g.clip(); g.lineWidth = 3.5; g.strokeStyle = '#FFB81C'; g.shadowColor = '#FFB81C'; g.shadowBlur = 14; path(); g.stroke(); g.restore();
+          if (!still) raf = requestAnimationFrame(draw)
+        };
+        const click = e => { if (!still) pulses.push({ x: e.clientX - c.getBoundingClientRect().left, t: performance.now() }) };
+        fit(); addEventListener('resize', fit); c.addEventListener('click', click); if (!still) raf = requestAnimationFrame(draw);
+        return () => { cancelAnimationFrame(raf); removeEventListener('resize', fit); c.removeEventListener('click', click) }
+      }, []);
+      return html`<div className="sig"><canvas id="wave" ref=${ref} aria-hidden="true"/>${!still && html`<span className="hint">Click the signal to send a spark</span>`}</div>`
+    }
+
+    function Collage() {
+      const r = useRef();
+      const mv = e => { const b = r.current.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5; r.current.style.setProperty('--rx', (-y * 8) + 'deg'); r.current.style.setProperty('--ry', (x * 10) + 'deg') };
+      const lv = () => { r.current.style.setProperty('--rx', '0deg'); r.current.style.setProperty('--ry', '0deg') };
+      return html`<div className="collage" ref=${r} onMouseMove=${still ? null : mv} onMouseLeave=${lv}>${['lolo', 'jj', 'yy'].map((n, i) => html`<${Img} key=${n} n=${n} alt="IEEE NDETI event photo" loading=${i ? 'lazy' : 'eager'}/>`)}</div>`
+    }
+
+    function Hero() {
+      return html`<header className="hero" id="hero"><div className="wrap"><div>
+ <h1>We are the spark behind innovation.</h1>
+ <p>Build technical and leadership skills in workshops, hackathons and committees, alongside students who love engineering. IEEE NDETI Student Branch connects you to New Damietta and the global IEEE community.</p>
+ <div className="cta"><a className="btn main" href="#join">Join the branch</a><a className="btn ghost" href="#events">See our events</a></div>
+ </div><${Collage}/></div><${Signal}/></header>`
+    }
+
+    function Pillars() {
+      const P = [['Innovation & technology', 'Empowering students to create innovative solutions and advance technology for the benefit of humanity.'], ['Networking & community', 'Connecting students with experts, professors and peers through events and collaboration.'], ['Competitions & events', 'Hackathons, IEEE Xtreme and global IEEE challenges that build creativity and problem solving.'], ['Professional development', 'Workshops, training and mentoring programs that prepare members for careers in engineering.']];
+      return html`<div className="pillars"><div className="wrap">${P.map((p, i) => html`<div key=${p[0]}><${Ico} n=${i}/><h3>${p[0]}</h3><p>${p[1]}</p></div>`)}</div></div>`
+    }
+
+    function About() {
+      const [r, v] = useInView(.3);
+      const F = [['Who we are', 'A student branch that connects engineering and technology students with global IEEE resources.'], ['Our activities', 'Workshops, hackathons and training programs.'], ['Our community', 'Collaboration between students, professors and professionals.'], ['Our impact', 'Empowering innovation to solve real-world challenges.']];
+      return html`<section className="about" id="about"><div className="wrap">
+  <div className="pic"><${Img} n="koko" alt="IEEE NDETI Student Branch members" loading="lazy"/></div>
+  <div><h2>About the branch</h2>
+   <p className="lead">IEEE NDETI Student Branch is a community of passionate students dedicated to advancing technology and creating opportunities for professional growth.</p>
+   <div className="facts">${F.map(f => html`<div key=${f[0]}><h3>${f[0]}</h3><p>${f[1]}</p></div>`)}</div>
+   <div className=${'bars' + (v || still ? ' in' : '')} ref=${r}>${BARS.map(b => html`<div className="bar" key=${b[0]} style=${{ '--v': b[1] + '%' }}><span>${b[0]}</span><div className="t"><i></i></div><b>${b[1]}%</b></div>`)}</div>
+  </div></div></section>`}
+
+    function Committees() {
+      const [i, setI] = useState(0), c = COMMITTEES[i];
+      return html`<section className="committees" id="committees"><div className="wrap"><h2>Our committees</h2><div className="cm">
+  <div className="cm-list" role="tablist" aria-label="Committees">${COMMITTEES.map((x, k) => html`<button key=${x[0]} role="tab" aria-selected=${k === i} className=${k === i ? 'on' : ''} onClick=${() => setI(k)}>${x[0]}</button>`)}</div>
+  <div className="cm-panel" key=${i} role="tabpanel"><span className="mono" aria-hidden="true">${c[2]}</span><h3>${c[0]} committee</h3><p>${c[1]}</p>
+   <a className="btn main" href=${`mailto:${MAIL}?subject=${encodeURIComponent('Joining the ' + c[0] + ' committee')}`}>Join the ${c[0]} committee</a></div>
+ </div></div></section>`}
+
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyx1i2GvBTk1_6hcznqg7NDW14Wc3ZjVZvFKvsJeyGgARWNTA6D3_CwlydmVA5Rsao/exec';
+    const LOCAL = events.map((n, i) => ({ url: IMG + n + '.jpeg', name: 'IEEE NDETI event photo ' + (i + 1) }));
+    function jsonp(url) {
+      return new Promise((res, rej) => {
+        const cb = '__drive_' + Math.random().toString(36).slice(2), sc = document.createElement('script'); let t;
+        const done = () => { clearTimeout(t); sc.remove(); delete window[cb] };
+        t = setTimeout(() => { done(); rej(new Error('timeout')) }, 45000);
+        window[cb] = d => { done(); res(d) }; sc.onerror = () => { done(); rej(new Error('script error')) };
+        sc.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + cb; document.head.appendChild(sc)
+      })
+    }
+    function formatDriveImg(img) {
+      const u = img.url || '', m = u.match(/\/d\/([a-zA-Z0-9_-]+)/) || u.match(/id=([a-zA-Z0-9_-]+)/);
+      return { id: m ? m[1] : '', url: m ? srcs(m[1], 480)[0] : u, name: img.name || 'IEEE NDETI event photo' }
+    }
+    const srcs = (id, w) => ['https://lh3.googleusercontent.com/d/' + id + '=w' + w, 'https://drive.google.com/thumbnail?id=' + id + '&sz=w' + w, 'https://drive.google.com/uc?export=view&id=' + id];
+    const fb = e => {
+      const i = e.target, id = i.dataset.id; i.classList.remove('broken');
+      if (id) {
+        const k = +(i.dataset.n || 0), w = +(i.dataset.w || 800);
+        if (k === 0 && !i.dataset.r) { i.dataset.r = 1; setTimeout(() => { i.src = srcs(id, w)[0] }, 1200 + Math.random() * 1800); return }
+        if (k < 2) { i.dataset.n = k + 1; i.src = srcs(id, w)[k + 1]; return }
+      }
+      if (!i.dataset.fb) { i.dataset.fb = 1; i.src = IMG + 'logo.jpeg' } else i.classList.add('broken')
+    };
+    const AlbumTabs = ({ albums, selected, setSelected }) => html`<div className="album-tabs" role="tablist">${albums.map((a, i) => html`<button key=${i} className=${'album-tab' + (i === selected ? ' active' : '')} role="tab" aria-selected=${i === selected} onClick=${() => setSelected(i)}>${a.title || ('Album ' + (i + 1))}</button>`)}</div>`;
+
+    function Gallery() {
+      const [albums, setAlbums] = useState([]), [sel, setSel] = useState(0), [loading, setLoading] = useState(true), [o, setO] = useState(null); let sx = 0;
+      useEffect(() => {
+        const cap = setTimeout(() => setLoading(false), 8000);
+        fetch(SCRIPT_URL).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json() }).catch(() => jsonp(SCRIPT_URL))
+          .then(d => { const a = d && Array.isArray(d.albums) ? d.albums : Array.isArray(d) ? [{ title: 'Photos', images: d }] : []; setAlbums(a.filter(x => Array.isArray(x.images) && x.images.length)) })
+          .catch(err => console.warn('Drive gallery unavailable, showing local photos:', err))
+          .finally(() => { clearTimeout(cap); setLoading(false) })
+      }, []);
+      const drive = albums.length ? albums[Math.min(sel, albums.length - 1)].images.map(formatDriveImg) : [];
+      const items = (drive.length ? drive : LOCAL).slice(0, 12), N = items.length;
+      useEffect(() => { setO(null) }, [sel]);
+      useEffect(() => { if (o === null) return; const k = e => { if (e.key === 'Escape') setO(null); if (e.key === 'ArrowLeft') setO(i => (i + N - 1) % N); if (e.key === 'ArrowRight') setO(i => (i + 1) % N) }; addEventListener('keydown', k); return () => removeEventListener('keydown', k) }, [o, N]);
+      const go = d => e => { e.stopPropagation(); setO((o + d + N) % N) };
+      return html`<${React.Fragment}>
+  <section id="events"><div className="wrap">
+   <h2>Events &amp; Activities</h2>
+   <${Activities}/>
+  </div></section>
+  <section id="gallery" className="gallery-section"><div className="wrap">
+   <div className="gallery-header">
+    <div>
+     <h2 style=${{ margin: 0 }}>Photo Gallery</h2>
+     <p className="gallery-sub">Moments from our workshops, hackathons &amp; events</p>
     </div>
+    <a className="btn main" href="gallery.html">View all photos \u2192</a>
+   </div>
+   ${albums.length > 1 && html`<${AlbumTabs} albums=${albums} selected=${sel} setSelected=${setSel}/>`}
+   <div className="gallery">
+    ${loading
+      ? html`<div className="gallery-loading"><div className="spinner"></div><p>Loading photos...</p></div>`
+      : items.map((img, i) => html`<button key=${img.url || i} onClick=${() => setO(i)} aria-label=${'Open photo ' + (i + 1)} className="gal-btn"><img src=${img.url} alt=${img.name} loading=${i < 3 ? 'eager' : 'lazy'} fetchpriority=${i === 0 ? 'high' : 'auto'} data-id=${img.id} data-w="480" onError=${fb}/><span>View photo</span></button>`)}
+   </div>
+  </div></section>
+  ${o !== null && items[o] && html`<div id="lb" className="open" role="dialog" aria-label="Photo viewer" onClick=${() => setO(null)} onTouchStart=${e => { sx = e.touches[0].clientX }} onTouchEnd=${e => { const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50) setO((o + (d < 0 ? 1 : N - 1)) % N) }}>
+   <button className="x" aria-label="Close">\u00D7</button><button className="p" aria-label="Previous" onClick=${go(-1)}>\u2039</button>
+   <img key=${o} src=${items[o].id ? srcs(items[o].id, 2000)[0] : items[o].url} alt=${items[o].name} data-id=${items[o].id} data-w="2000" onError=${fb}/><button className="n" aria-label="Next" onClick=${go(1)}>\u203A</button></div>`}
+  <//>`}
 
-    <div class="row justify-content-center">
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-        <div class="member">
-          <div class="member-img">
-            <img src="assets/img/WhatsApp Image 2026-01-19 at 3.28.11 AM.jpeg" class="img-fluid" alt="">
-          </div>
-          <div class="member-info text-center">
-            <h4>Dr Rania Hamdy</h4>
-            <span>Supervisor</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    function Counter({ to, suffix = '', label }) {
+      const [r, v] = useInView(.5), [n, setN] = useState(0);
+      useEffect(() => { if (!v) return; if (still) { setN(to); return } let s; const f = t => { s = s || t; const p = Math.min((t - s) / 1400, 1); setN(Math.round(to * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(f) }; requestAnimationFrame(f) }, [v]);
+      return html`<div ref=${r}><strong>${n}${suffix}</strong><span>${label}</span></div>`
+    }
+    const Numbers = () => html`<div className="numbers"><div className="wrap"><${Counter} to=${100} suffix="+" label="Members"/><${Counter} to=${10} suffix="+" label="Workshops conducted"/><${Counter} to=${8} label="Committees"/></div></div>`;
 
-  </div>
-</section>
-<!-- End Supervisor Section -->
+    const People = () => html`<section className="people" id="people"><div className="wrap"><h2>Our team</h2>
+ <div className="sup"><${Img} n="tasneem" alt="Tasneem Mostafa" loading="lazy"/><div><p>Consultant</p><h3>Tasneem Mostafa</h3></div></div>
+ <h3 className="sub">High board</h3>
+ <div className="team">${TEAM.map(t => html`<div className="person" key=${t[0]}><div className="ph"><${Img} n=${t[0]} alt=${t[1]} loading="lazy"/></div><h3>${t[1]}</h3><p>${t[2]}</p></div>`)}</div></div></section>`;
 
+    function Faq() {
+      const [o, setO] = useState(0);
+      return html`<section className="faq" id="faq"><div className="wrap"><h2>Frequently asked questions</h2>${FAQ.map((q, i) => html`<div key=${i} className=${'qa' + (o === i ? ' open' : '')}><button aria-expanded=${o === i} onClick=${() => setO(o === i ? -1 : i)}>${q[0]}</button><div className="ans"><div><p>${q[1]}</p></div></div></div>`)}</div></section>`
+    }
 
-    <!-- Team Section -->
-    <section id="team" class="team section light-background">
+    function Join() {
+      const [f, setF] = useState({ name: '', email: '', com: 'Not sure yet', msg: '' }), [er, setEr] = useState({}), [sent, setSent] = useState(false);
+      const set = k => e => setF({ ...f, [k]: e.target.value });
+      const submit = e => {
+        e.preventDefault(); const x = {};
+        if (!f.name.trim()) x.name = 'Enter your name.';
+        if (!/^\S+@\S+\.\S+$/.test(f.email)) x.email = 'Enter a valid email address.';
+        setEr(x); if (Object.keys(x).length) return;
+        const body = 'Name: ' + f.name + '\nEmail: ' + f.email + '\nCommittee: ' + f.com + '\n\n' + f.msg;
+        location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Membership request: ' + f.name) + '&body=' + encodeURIComponent(body); setSent(true)
+      };
+      return html`<section className="join" id="join"><div className="wrap">
+  <div><h2>Join the branch</h2><p>Tell us who you are and which committee interests you. Your request opens as an email to the branch, and we reply with the next orientation session and membership details.</p><p style=${{ marginTop: '1rem' }}>Membership requires a fee that supports the branch\u2019s events and resources.</p></div>
+  <form onSubmit=${submit} noValidate>
+   <label>Full name<input value=${f.name} onInput=${set('name')} aria-invalid=${!!er.name} autoComplete="name"/>${er.name && html`<span className="err">${er.name}</span>`}</label>
+   <label>Email<input type="email" value=${f.email} onInput=${set('email')} aria-invalid=${!!er.email} autoComplete="email"/>${er.email && html`<span className="err">${er.email}</span>`}</label>
+   <label>Committee you are interested in<select value=${f.com} onChange=${set('com')}><option>Not sure yet</option>${COMMITTEES.map(c => html`<option key=${c[0]}>${c[0]}</option>`)}</select></label>
+   <label>Message (optional)<textarea rows="3" value=${f.msg} onInput=${set('msg')}></textarea></label>
+   <button className="btn main" type="submit">Send membership request</button>
+   ${sent && html`<p className="ok" role="status">Your email app should open with the request ready to send. If nothing opens, write to ${MAIL}.</p>`}
+  </form></div></section>`}
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>High board</h2>
-        <p><span>Our High boards</span> <span class="description-title"></span></p>
-      </div><!-- End Section Title -->
-<div class="container">
+    const Contact = () => html`<section className="contact" id="contact"><div className="wrap"><div>
+ <h2>Need help? Contact us</h2>
+ <h3>Address</h3><p>Central Area, Fourth District, New Damietta, Damietta Governorate, Egypt.</p>
+ <h3>Email</h3><p><a href=${'mailto:' + MAIL}>${MAIL}</a></p>
+ <h3>Follow us</h3><div className="social">
+  <a href="https://www.facebook.com/share/1FF6kMpaya/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+  <a href="https://www.instagram.com/ieee_ndeti?igsh=MXRqc2ZvaTljd2Vyag==" target="_blank" rel="noopener">Instagram</a>
+  <a href="https://www.linkedin.com/in/ieee-ndeti" target="_blank" rel="noopener">LinkedIn</a></div><${ContactForm}/></div>
+ <iframe title="Map of New Damietta" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.2227230490714!2d31.6666!3d31.4166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzAwLjAiTiAzMcKwNDAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg"></iframe></div></section>`;
 
-        <div class="row gy-4 justify-content-center"> <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/akram.jpeg" class="img-fluid" alt="Ahmed Akram">
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Ahmed Akram</h4>
-                <span>Chairman</span>
-              </div>
-            </div>
-          </div><div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/tasneem.jpeg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Tasneem Mostafa</h4>
-                <span>Vice-Chairman</span>
-              </div>
-            </div>
-          </div><div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/khaled.jpeg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Khalid Ali</h4>
-                <span>secretary</span>
-              </div>
-            </div>
-          </div><div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/kareem.jpeg" class="img-fluid" alt="">
-                <div class="social">
-                  
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Kareem Ibrahim</h4>
-                <span>treasure</span>
-              </div>
-            </div>
-          </div><div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/malak.jpeg" class="img-fluid" alt="Malak Hassan">
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Malak Hassan</h4>
-                <span>Web Master</span>
-              </div>
-            </div>
-          </div></div> </div> 
+    const Footer = () => html`<footer><div className="wrap"><div><strong>We are the spark behind innovation.</strong>IEEE NDETI Student Branch, New Damietta</div>
+ <div>\u00A9 ${new Date().getFullYear()} IEEE NDETI Student Branch. All rights reserved.<br/>Designed & developed by Malak Hassan, Webmaster.</div></div></footer>`;
 
+    const ACTIVITIES = [
+      ['Hackathons', 'Build a working project with your team against the clock and sharpen your problem solving. This is also how we prepare for IEEE Xtreme and other global IEEE challenges.'],
+      ['Workshops', 'Hands-on sessions led by members and guest experts that take you from theory to something you can build.'],
+      ['Coding sessions', 'Regular programming sessions run by our Programming Committee, from your first lines of code to full technical projects.'],
+      ['Seminars & field visits', 'Technical seminars and field visits that show you how engineering works outside the classroom.']];
+    const Activities = () => html`<${React.Fragment}><div className="acts">${ACTIVITIES.map((a, i) => html`<article key=${a[0]} style=${{ '--c': i % 2 ? 'var(--spark)' : 'var(--blue)' }}><${Ico} n=${i + 4}/><h3>${a[0]}</h3><p>${a[1]}</p></article>`)}</div><h3 className="sub2">Photos from our events</h3><//>`;
 
+    const SAMPLE = true; // set to false once the quotes below are real ones from members
+    const QUOTES = [
+      ['I joined to learn to code and ended up leading a team. The branch is where I first practised speaking in front of a group.', 'Member name', 'Committee and year'],
+      ['The workshops gave me skills I use in my coursework, and the people made it easy to ask questions.', 'Member name', 'Committee and year'],
+      ['Working in a committee taught me how to plan, share tasks and deliver on time.', 'Member name', 'Committee and year']];
+    const Testimonials = () => html`<section className="voices" id="voices"><div className="wrap"><h2>What members say</h2>
+ ${SAMPLE && html`<p className="draft">Sample text. Replace it with real quotes from members before you publish.</p>`}
+ <div className="vq">${QUOTES.map((q, i) => html`<figure key=${i} className=${i ? '' : 'big'}><blockquote>${q[0]}</blockquote><figcaption><b>${q[1]}</b>${q[2]}</figcaption></figure>`)}</div></div></section>`;
 
+    function ContactForm() {
+      const [f, setF] = useState({ name: '', email: '', msg: '' }), [er, setEr] = useState({}), [sent, setSent] = useState(false);
+      const set = k => e => setF({ ...f, [k]: e.target.value });
+      const submit = e => {
+        e.preventDefault(); const x = {};
+        if (!f.name.trim()) x.name = 'Enter your name.';
+        if (!/^\S+@\S+\.\S+$/.test(f.email)) x.email = 'Enter a valid email address.';
+        if (!f.msg.trim()) x.msg = 'Write a short message.';
+        setEr(x); if (Object.keys(x).length) return;
+        location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Message from ' + f.name) + '&body=' + encodeURIComponent(f.msg + '\n\nFrom: ' + f.name + ' (' + f.email + ')'); setSent(true)
+      };
+      return html`<form onSubmit=${submit} noValidate><h3>Send us a message</h3>
+  <label>Name<input value=${f.name} onInput=${set('name')} aria-invalid=${!!er.name} autoComplete="name"/>${er.name && html`<span className="err">${er.name}</span>`}</label>
+  <label>Email<input type="email" value=${f.email} onInput=${set('email')} aria-invalid=${!!er.email} autoComplete="email"/>${er.email && html`<span className="err">${er.email}</span>`}</label>
+  <label>Message<textarea rows="4" value=${f.msg} onInput=${set('msg')} aria-invalid=${!!er.msg}></textarea>${er.msg && html`<span className="err">${er.msg}</span>`}</label>
+  <button className="btn main" type="submit">Send message</button>
+  ${sent && html`<p className="ok" role="status">Your email app should open with the message ready to send. If nothing opens, write to ${MAIL}.</p>`}</form>`
+    }
 
+    const CtaBanner = () => html`<section className="final"><div className="wrap"><div><h2>Ready to build something with us?</h2><p>Join 100+ students learning, competing and leading at IEEE NDETI Student Branch.</p></div><a className="btn dark" href="#join">Join Us Now</a></div></section>`;
 
-
-          
-
-        </div>
-
-      </div>
-
-    </section><!-- /Team Section -->
-<section id="achievements" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="mb-4">Our Achievements</h2>
-    
-    <div class="row justify-content-center">
-      
-      <div class="col-md-4 col-sm-6 mb-4">
-        <h3 class="display-4 text-primary" style="font-weight: bold;">100+</h3>
-        <p class="lead">Members</p>
-      </div>
-     
-      <div class="col-md-4 col-sm-6 mb-4">
-        <h3 class="display-4 text-primary" style="font-weight: bold;">10+</h3>
-        <p class="lead">Workshops Conducted</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-    
-
-         
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>F.A.Q</h2>
-        <p><span>Frequently Asked</span> <span class="description-title">Questions</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="faq-container">
-
-              <div class="faq-item faq-active">
-                <h3>How can I join the IEEE student branch?</h3>
-                <div class="faq-content">
-                  <p>You can join by filling out the membership form on our website or attending one of our orientation sessions..</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Is there a fee for membership?</h3>
-                <div class="faq-content">
-                  <p>Yes, membership requires a fee. This fee helps support the branch’s events and resources.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>What kind of events does the branch organize?</h3>
-                <div class="faq-content">
-                  <p>The branch organizes workshops, competitions, technical seminars, and field visits regularly.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>How can I volunteer in branch activities?</h3>
-                <div class="faq-content">
-                  <p>You can volunteer by logging into our website and signing up on the volunteers list or by contacting us directly via emai.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              
-
-        </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-      <h2 class="text-center">Contact</h2>
-      <p class="text-center"><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
-    </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-     </div>
-
-</section>
-
-      <!-- Section Title -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-12">
-            <div class="info-wrap p-5">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <i class="bi bi-geo-alt flex-shrink-0"></i>
-                    <div>
-                      <h3>Address</h3>
-                      <p>Central Area, Fourth District, New Damietta, Damietta Governorate, Egypt.</p>
-                    </div>
-                  </div>
-                </div><div class="col-md-6">
-                  <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                    <i class="bi bi-envelope flex-shrink-0"></i>
-                    <div>
-                      <h3>Email Us</h3>
-                      <p>ieee.ndeti.student.branch@gmail.com</p>
-                    </div>
-                  </div>
-                </div></div>
-
-              <div class="mt-4" data-aos="fade-up" data-aos-delay="500">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.2227230490714!2d31.6666!3d31.4166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzAwLjAiTiAzMcKwNDAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" 
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer">
-
-  
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">IEEE NDETI SB</span>
-          </a>
-          <div class="footer-contact pt-3">
-            
-            <p>New Damietta</p>
-            
-            <p><strong>Email:</strong> <span>ieee.ndeti.student.branch@gmail.com</span></p>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About </a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Committees</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Events</a></li>
-             <li><i class="bi bi-chevron-right"></i> <a href="#">Highboard</a></li>
-          </ul>
-        </div>
-
-       
-
-        <div class="col-lg-4 col-md-12">
-          <h4>Follow Us</h4>
-          <p>IEEE NDETI SB</p>
-          <div class="social-links d-flex">
-          
-            <a href="https://www.facebook.com/share/1FF6kMpaya/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/ieee_ndeti?igsh=MXRqc2ZvaTljd2Vyag=="><i class="bi bi-instagram"></i></a>
-            
-          </div>
-        </div>
-
-      </div>
-    </div>  <!-- Main JS File -->
-  
-
-    
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-   <footer id="footer" class="footer">
-    <div class="container text-center">
-      <p>© 2025 IEEE NDETI Student Branch. All Rights Reserved.</p>
-      <p class="small">Website designed & developed by <strong>Malak Hassan</strong> – Webmaster</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-
+    const initTheme = () => { try { const s = localStorage.getItem('theme'); if (s) return s } catch (e) { } return matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light' };
+    function App() {
+      const [theme, setTheme] = useState(initTheme);
+      useEffect(() => { document.documentElement.dataset.theme = theme; try { localStorage.setItem('theme', theme) } catch (e) { } }, [theme]);
+      return html`<${React.Fragment}><${Nav} theme=${theme} toggle=${() => setTheme(theme === 'dark' ? 'light' : 'dark')}/><${Hero}/><${Pillars}/><${About}/><${Committees}/><${Gallery}/><${Numbers}/><${People}/><${Testimonials}/><${Faq}/><${Join}/><${Contact}/><${CtaBanner}/><${Footer}/><//>`
+    }
+    document.addEventListener('error', e => { if (e.target.tagName === 'IMG') e.target.classList.add('broken') }, true);
+    ReactDOM.createRoot(document.getElementById('root')).render(html`<${App}/>`);
+  </script>
 </body>
 
 </html>
