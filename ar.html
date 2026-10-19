@@ -1,490 +1,1845 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IEEE NDETI SB | الشرارة وراء الابتكار</title>
-<meta name="description" content="الموقع الرسمي لفرع IEEE NDETI الطلابي في دمياط الجديدة: ورش عمل وهاكاثونات ومجتمع من طلاب الهندسة.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--blue:#00629B;--deep:#003A5A;--paper:#F3F6F9;--ink:#10243A;--mute:#556A7F;--spark:#FFB81C;--line:#D3DDE6;--display:'Cairo','Segoe UI',Tahoma,sans-serif;--body:'Tajawal','Segoe UI',Tahoma,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;font-size:1.0625rem}
-img{display:block;max-width:100%;object-fit:cover;background:var(--line)}
-img.broken{visibility:hidden}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--spark);outline-offset:3px}
-.wrap{width:min(1120px,92%);margin-inline:auto}
-h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.02em}
-h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin-bottom:1.5rem}
-section{padding:96px 0}
-.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,background .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.main{background:var(--spark);color:var(--deep)}
-.btn.ghost{border:2px solid #ffffff66;color:#fff}
-.btn.ghost:hover{background:#ffffff1a}
-/* nav */
-nav{position:fixed;inset:0 0 auto;z-index:20;background:#003a5aeb;backdrop-filter:blur(10px);color:#fff}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:var(--display);font-weight:800;text-decoration:none;font-size:1.15rem}
-.logo span{color:var(--spark)}
-nav ul{display:flex;gap:1.6rem;list-style:none;font-size:.95rem}
-nav ul a{text-decoration:none;opacity:.85}
-nav ul a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--spark);text-underline-offset:6px}
-#menu{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
-/* hero */
-.hero{background:linear-gradient(160deg,var(--blue),var(--deep) 75%);color:#fff;padding:140px 0 0;position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
-.hero h1{font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800}
-.hero p{max-width:34rem;margin:1.4rem 0 2rem;font-size:1.15rem;color:#dbe9f3}
-.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
-.collage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.collage img{width:100%;height:100%;min-height:150px;border-radius:14px;border:3px solid #ffffff33}
-.collage img:first-child{grid-row:span 2;transform:rotate(-2deg)}
-.collage img:nth-child(2){transform:rotate(2deg)}
-.collage img:nth-child(3){transform:rotate(-1deg)}
-#wave{display:block;width:100%;height:130px;margin-top:2rem}
-/* pillars */
-.pillars{background:var(--paper);padding:56px 0}
-.pillars .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-.pillars div{border-top:3px solid var(--blue);padding-top:1rem}
-.pillars h3{font-size:1.2rem;margin-bottom:.4rem}
-.pillars p{color:var(--mute);font-size:.98rem}
-/* about */
-.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.5rem;align-items:start}
-.about .pic img{width:100%;aspect-ratio:4/5;border-radius:20px}
-.about .lead{color:var(--mute);margin-bottom:2rem;max-width:36rem}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2rem;margin-bottom:2.5rem}
-.facts h3{font-size:1.1rem;color:var(--blue)}
-.facts p{color:var(--mute);font-size:.97rem}
-.bars{display:grid;gap:.9rem}
-.bar{display:grid;grid-template-columns:11rem 1fr 3rem;gap:1rem;align-items:center;font-size:.95rem}
-.bar b{text-align:right;font-family:var(--display)}
-.bar .t{height:8px;background:var(--line);border-radius:9px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--spark));border-radius:9px;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
-.bar.in i{width:var(--v)}
-/* committees */
-.committees{background:var(--paper)}
-.rows{border-bottom:1px solid var(--line)}
-.row{display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;padding:1.4rem .8rem;border-top:1px solid var(--line);transition:background .2s,padding-left .2s}
-.row:hover{background:var(--white);padding-left:1.4rem}
-.row h3{font-size:1.5rem}
-.row p{color:var(--mute)}
-/* events */
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));grid-auto-rows:210px;grid-auto-flow:dense;gap:12px}
-.gallery button{border:0;padding:0;cursor:zoom-in;border-radius:14px;overflow:hidden;background:var(--line)}
-.gallery button:nth-child(1),.gallery button:nth-child(6){grid-column:span 2;grid-row:span 2}
-.gallery img{width:100%;height:100%;transition:transform .5s}
-.gallery button:hover img{transform:scale(1.06)}
-#lb{position:fixed;inset:0;background:#000d;z-index:50;display:none;place-items:center;padding:2rem}
-#lb.open{display:grid}
-#lb img{max-height:88vh;max-width:92vw;border-radius:10px;object-fit:contain}
-#lb button{position:absolute;background:#fff2;border:0;color:#fff;font-size:2rem;width:48px;height:48px;border-radius:50%;cursor:pointer}
-#lb .x{top:18px;right:18px}#lb .p{left:18px}#lb .n{right:18px}
-/* numbers */
-.numbers{background:var(--deep);color:#fff;padding:64px 0}
-.numbers .wrap{display:flex;gap:4rem;flex-wrap:wrap;align-items:baseline}
-.numbers strong{font-family:var(--display);font-size:clamp(3rem,8vw,5.5rem);color:var(--spark);font-weight:800;line-height:1}
-.numbers span{display:block;font-size:1.1rem;color:#cfe1ee}
-/* people */
-.sup{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;margin-bottom:4rem}
-.sup img{width:200px;height:240px;border-radius:20px}
-.sup h3{font-size:2rem}
-.sup p,.person p{color:var(--mute)}
-.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.4rem}
-.person img{width:100%;aspect-ratio:1;border-radius:16px;margin-bottom:.8rem}
-.person h3{font-size:1.2rem}
-.people h2+.sup{margin-top:0}
-.people h3.sub{font-size:1.6rem;margin-bottom:1.4rem}
-/* faq */
-.faq{background:var(--paper)}
-.faq .wrap{max-width:820px}
-details{border-top:1px solid var(--line);padding:1.1rem 0}
-details:last-child{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:1.2rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
-summary::after{content:"+";color:var(--blue);font-size:1.5rem;line-height:1;transition:transform .25s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--mute);margin-top:.7rem}
-/* contact */
-.contact .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem}
-.contact h3{font-size:1.1rem;color:var(--blue);margin:1.4rem 0 .2rem}
-.contact h3:first-of-type{margin-top:0}
-.social{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
-.social a{border:2px solid var(--blue);color:var(--blue);padding:.4rem 1rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem}
-.social a:hover{background:var(--blue);color:#fff}
-iframe{width:100%;height:100%;min-height:340px;border:0;border-radius:18px;background:var(--line)}
-footer{background:var(--deep);color:#cfe1ee;padding:48px 0;font-size:.95rem}
-footer .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:end}
-footer strong{display:block;font-family:var(--display);font-size:1.6rem;color:#fff}
-@media(max-width:860px){
- section{padding:72px 0}
- #menu{display:block}
- nav ul{display:none;position:absolute;top:64px;left:0;right:0;background:var(--deep);flex-direction:column;padding:1rem 4%;gap:1rem}
- nav ul.open{display:flex}
- .hero .wrap,.about .wrap,.contact .wrap{grid-template-columns:1fr}
- .pillars .wrap{grid-template-columns:1fr 1fr}
- .row{grid-template-columns:1fr;gap:.4rem}
- .bar{grid-template-columns:8.5rem 1fr 2.6rem}
- .sup{grid-template-columns:1fr}
- .gallery{grid-auto-rows:170px}
-}
-@media(max-width:520px){.pillars .wrap,.facts{grid-template-columns:1fr}.bar{grid-template-columns:1fr 3rem}.bar span{grid-column:1/-1}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IEEE NDETI SB | الشرارة وراء الابتكار</title>
+  <meta name="description" content="الموقع الرسمي لفرع IEEE NDETI الطلابي في دمياط الجديدة: ورش عمل وهاكاثونات ومجتمع من طلاب الهندسة.">
+  <meta name="theme-color" content="#003A5A">
+  <!-- Performance: DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+  <!-- Preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload critical hero logo -->
+  <link rel="preload" href="assets/img/logo.jpeg" as="image">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #00629B;
+      --deep: #003A5A;
+      --paper: #F3F6F9;
+      --ink: #10243A;
+      --mute: #556A7F;
+      --spark: #FFB81C;
+      --line: #D3DDE6;
+      --display: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+      --body: 'Tajawal', 'Segoe UI', Tahoma, sans-serif
+    }
 
-:root{--white:#fff}
-[data-theme=dark]{--white:#0A1726;--paper:#0E2034;--ink:#E7EFF7;--mute:#9DB2C5;--line:#213A52;--blue:#3FAAEA;color-scheme:dark}
-[data-theme=dark] .hero{background:linear-gradient(160deg,#004f7d,#00263d 75%)}
-[data-theme=dark] nav,[data-theme=dark] .numbers,[data-theme=dark] footer{background:#001d2f}
-[data-theme=dark] .social a:hover{color:#00263d}
-/* progress + nav extras */
-.prog{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--spark);transform-origin:0 50%}
-.nr{display:flex;align-items:center;gap:1.2rem}
-.tt{background:none;border:2px solid #ffffff55;color:#fff;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;line-height:1}
-.tt:hover{background:#ffffff1f}
-nav ul a.btn{opacity:1;color:var(--deep);padding:.4rem 1.1rem}
-nav ul a.btn:hover{text-decoration:none}
-/* hero upgrades */
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff10 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 75%)}
-.hero .wrap,.sig{position:relative;z-index:1}
-.collage{position:relative;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out}
-.collage::before{content:"";position:absolute;inset:-12% -8%;background:radial-gradient(circle at 60% 40%,#FFB81C45,transparent 60%);filter:blur(22px);z-index:-1}
-#wave{cursor:pointer}
-.hint{position:absolute;right:4%;bottom:10px;font-size:.85rem;color:#ffffffb8;pointer-events:none}
-.about .pic{isolation:isolate;position:relative}
-.about .pic::after{content:"";position:absolute;inset:18px -14px -14px 18px;border:3px solid var(--spark);border-radius:22px;z-index:-1}
-.bars.in .bar i{width:var(--v)}
-/* committees master-detail */
-.cm{display:grid;grid-template-columns:.8fr 1.4fr;gap:2rem}
-.cm-list{display:grid;gap:.4rem;align-content:start}
-.cm-list button{font:700 1.3rem var(--display);text-align:left;padding:.9rem 1.2rem;border:0;border-radius:12px;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,padding-left .2s}
-.cm-list button:hover{background:var(--white)}
-.cm-list button.on{background:var(--blue);color:#fff;padding-left:1.8rem}
-.cm-panel{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:2.4rem;min-height:340px;display:flex;flex-direction:column;justify-content:center;gap:1rem;animation:swap .35s}
-.cm-panel .mono{position:absolute;right:-.5rem;bottom:-2.2rem;font:800 11rem/1 var(--display);color:var(--blue);opacity:.09;pointer-events:none}
-.cm-panel h3{font-size:2.2rem}
-.cm-panel p{color:var(--mute);max-width:32rem;font-size:1.15rem}
-.cm-panel .btn{align-self:flex-start;margin-top:.6rem;position:relative}
-@keyframes swap{from{opacity:0;transform:translateY(10px)}}
-/* gallery + people polish */
-.gallery button{position:relative}
-.gallery button span{position:absolute;inset:auto 0 0;padding:1.6rem .9rem .7rem;background:linear-gradient(transparent,#003a5acc);color:#fff;font-weight:600;text-align:left;opacity:0;transition:opacity .25s}
-.gallery button:hover span,.gallery button:focus-visible span{opacity:1}
-.person .ph{overflow:hidden;border-radius:16px;margin-bottom:.8rem;border-bottom:4px solid var(--spark)}
-.person .ph img{margin:0;border-radius:0;transition:transform .5s}
-.person:hover .ph img{transform:scale(1.06)}
-/* faq accordion */
-.qa{border-top:1px solid var(--line)}
-.qa:last-child{border-bottom:1px solid var(--line)}
-.qa>button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;padding:1.1rem 0;font-family:var(--display);font-weight:700;font-size:1.2rem;display:flex;justify-content:space-between;gap:1rem}
-.qa>button::after{content:"+";color:var(--blue);font-size:1.5rem;line-height:1;transition:transform .25s}
-.qa.open>button::after{transform:rotate(45deg)}
-.qa>button:focus-visible{outline:3px solid var(--spark);outline-offset:3px}
-.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}
-.qa.open .ans{grid-template-rows:1fr}
-.ans>div{overflow:hidden}
-.ans p{color:var(--mute);padding-bottom:1.1rem}
-/* join form */
-.join{background:linear-gradient(160deg,var(--blue),var(--deep));color:#fff}
-.join .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
-.join p{color:#dbe9f3;max-width:30rem}
-.join form{--ink:#10243A;--mute:#556A7F;--line:#D3DDE6;display:grid;gap:1rem;background:#fff;color:var(--ink);padding:1.8rem;border-radius:20px}
-.join label{display:grid;gap:.3rem;font-weight:600;font-size:.95rem}
-.join input,.join select,.join textarea{font:inherit;padding:.7rem .9rem;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
-.join input:focus,.join select:focus,.join textarea:focus{border-color:#00629B;outline:none}
-.join [aria-invalid=true]{border-color:#B42318}
-.join .err{color:#B42318;font-size:.88rem;font-weight:500}
-.join .ok{color:#067647;font-weight:600;max-width:none}
-.join button.btn{border:0;cursor:pointer;font:600 1rem var(--body)}
-.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-bottom:3rem}
-.acts article{border-top:4px solid var(--c);background:var(--paper);padding:1.4rem 1.2rem 1.6rem;border-radius:0 0 14px 14px;transition:transform .25s}
-.acts article:hover{transform:translateY(-4px)}
-.acts h3{font-size:1.3rem;margin-bottom:.5rem}
-.acts p{color:var(--mute);font-size:.97rem}
-.sub2{font-size:1.5rem;margin-bottom:1.2rem}
-.voices{background:var(--paper)}
-.draft{background:#FFF4D6;color:#5C4400;border-left:4px solid var(--spark);padding:.6rem 1rem;border-radius:6px;margin:-.6rem 0 1.6rem;font-size:.95rem;max-width:40rem}
-.vq{display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem}
-.vq figure{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:1.8rem;position:relative}
-.vq figure::before{content:"\201C";position:absolute;top:.2rem;left:1.1rem;font:800 4.5rem/1 var(--display);color:var(--spark)}
-.vq blockquote{padding-top:2.2rem;font-size:1.1rem}
-.vq figcaption{margin-top:1.2rem;color:var(--mute);font-size:.92rem}
-.vq figcaption b{display:block;color:var(--ink)}
-.vq .big{grid-row:span 2;background:var(--deep);border:0;color:#fff;display:flex;flex-direction:column;justify-content:center}
-.vq .big blockquote{font:700 clamp(1.4rem,2.6vw,2rem)/1.3 var(--display);letter-spacing:-.01em}
-.vq .big figcaption{color:#cfe1ee}
-.vq .big figcaption b{color:#fff}
-.contact form{display:grid;gap:.9rem;margin-top:2rem}
-.contact label{display:grid;gap:.3rem;font-weight:600;font-size:.95rem}
-.contact input,.contact textarea{font:inherit;padding:.7rem .9rem;border:2px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink)}
-.contact input:focus,.contact textarea:focus{border-color:var(--blue);outline:none}
-.contact [aria-invalid=true]{border-color:#B42318}
-.contact .err{color:#B42318;font-size:.88rem;font-weight:500}
-.contact .ok{color:#067647;font-weight:600}
-.contact button.btn{border:0;cursor:pointer;font:600 1rem var(--body);justify-self:start}
-.final{background:var(--spark);color:var(--deep);padding:72px 0}
-.final .wrap{display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.final h2{margin-bottom:.4rem}
-.final p{font-size:1.15rem;font-weight:500}
-.btn.dark{background:var(--deep);color:#fff;font-size:1.1rem;padding:1rem 2rem}
-@media(max-width:860px){.acts{grid-template-columns:1fr 1fr}.vq{grid-template-columns:1fr}.vq .big{grid-row:auto}}
-@media(max-width:520px){.acts{grid-template-columns:1fr}}
-@media(max-width:860px){.cm,.join .wrap{grid-template-columns:1fr}.cm-list{grid-template-columns:1fr 1fr}.cm-panel .mono{font-size:8rem}}
-@media(max-width:1020px){nav ul{gap:1rem;font-size:.9rem}}
-.album-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.album-tab{font:600 .95rem var(--body);padding:.55rem 1.2rem;border:2px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-.album-tab:hover{border-color:var(--blue)}
-.album-tab.active{background:var(--blue);border-color:var(--blue);color:#fff}
-[dir=rtl] *{letter-spacing:0!important}
-[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{line-height:1.35}
-[dir=rtl] .hero h1{line-height:1.25}
-.bar b{text-align:left}
-.bar i{background:linear-gradient(270deg,var(--blue),var(--spark))}
-.prog{transform-origin:100% 50%}
-.hero::before{-webkit-mask-image:radial-gradient(ellipse at 30% 30%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 30% 30%,#000,transparent 75%)}
-.hint{right:auto;left:4%}
-.about .pic::after{inset:18px 18px -14px -14px}
-.cm-list button{text-align:right}
-.cm-list button.on{padding-left:1.2rem;padding-right:1.8rem}
-.cm-panel .mono{right:auto;left:-.5rem}
-.gallery button span{text-align:right}
-#lb .p{left:auto;right:18px}
-#lb .n{right:auto;left:18px}
-.vq figure::before{left:auto;right:1.1rem}
-.draft{border-left:0;border-right:4px solid var(--spark)}
-.numbers strong{direction:ltr;unicode-bidi:isolate;display:inline-block}
-.contact a[href^="mailto"]{direction:ltr;unicode-bidi:isolate;display:inline-block}
-input[type=email]{direction:ltr}
-.ico{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;margin-bottom:.9rem;color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent)}
-.ico svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.acts article:nth-child(even) .ico{color:var(--deep);background:#FFB81C66}
-[data-theme=dark] .acts article:nth-child(even) .ico{color:var(--spark)}
-</style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px
+    }
+
+    body {
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      font-size: 1.0625rem
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+      background: var(--line)
+    }
+
+    img.broken {
+      visibility: hidden
+    }
+
+    a {
+      color: inherit
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--spark);
+      outline-offset: 3px
+    }
+
+    .wrap {
+      width: min(1120px, 92%);
+      margin-inline: auto
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      line-height: 1.1;
+      letter-spacing: -.02em
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem
+    }
+
+    section {
+      padding: 96px 0
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .85rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, background .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn.main {
+      background: var(--spark);
+      color: var(--deep)
+    }
+
+    .btn.ghost {
+      border: 2px solid #ffffff66;
+      color: #fff
+    }
+
+    .btn.ghost:hover {
+      background: #ffffff1a
+    }
+
+    /* nav */
+    nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: #003a5aeb;
+      backdrop-filter: blur(10px);
+      color: #fff
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem
+    }
+
+    .logo img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--spark);
+      background: #fff;
+      flex-shrink: 0;
+      padding: 2px
+    }
+
+    .logo span {
+      color: var(--spark)
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.6rem;
+      list-style: none;
+      font-size: .95rem
+    }
+
+    nav ul a {
+      text-decoration: none;
+      opacity: .85
+    }
+
+    nav ul a:hover {
+      opacity: 1;
+      text-decoration: underline;
+      text-decoration-color: var(--spark);
+      text-underline-offset: 6px
+    }
+
+    #menu {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(160deg, var(--blue), var(--deep) 75%);
+      color: #fff;
+      padding: 140px 0 0;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 3rem;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6.5vw, 5rem);
+      font-weight: 800
+    }
+
+    .hero p {
+      max-width: 34rem;
+      margin: 1.4rem 0 2rem;
+      font-size: 1.15rem;
+      color: #dbe9f3
+    }
+
+    .hero .cta {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap
+    }
+
+    .collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .collage img {
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      border-radius: 14px;
+      border: 3px solid #ffffff33
+    }
+
+    .collage img:first-child {
+      grid-row: span 2;
+      transform: rotate(-2deg)
+    }
+
+    .collage img:nth-child(2) {
+      transform: rotate(2deg)
+    }
+
+    .collage img:nth-child(3) {
+      transform: rotate(-1deg)
+    }
+
+    #wave {
+      display: block;
+      width: 100%;
+      height: 130px;
+      margin-top: 2rem
+    }
+
+    /* pillars */
+    .pillars {
+      background: var(--paper);
+      padding: 56px 0
+    }
+
+    .pillars .wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem
+    }
+
+    .pillars div {
+      border-top: 3px solid var(--blue);
+      padding-top: 1rem
+    }
+
+    .pillars h3 {
+      font-size: 1.2rem;
+      margin-bottom: .4rem
+    }
+
+    .pillars p {
+      color: var(--mute);
+      font-size: .98rem
+    }
+
+    /* about */
+    .about .wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start
+    }
+
+    .about .pic img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px
+    }
+
+    .about .lead {
+      color: var(--mute);
+      margin-bottom: 2rem;
+      max-width: 36rem
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem 2rem;
+      margin-bottom: 2.5rem
+    }
+
+    .facts h3 {
+      font-size: 1.1rem;
+      color: var(--blue)
+    }
+
+    .facts p {
+      color: var(--mute);
+      font-size: .97rem
+    }
+
+    .bars {
+      display: grid;
+      gap: .9rem
+    }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 11rem 1fr 3rem;
+      gap: 1rem;
+      align-items: center;
+      font-size: .95rem
+    }
+
+    .bar b {
+      text-align: right;
+      font-family: var(--display)
+    }
+
+    .bar .t {
+      height: 8px;
+      background: var(--line);
+      border-radius: 9px;
+      overflow: hidden
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--blue), var(--spark));
+      border-radius: 9px;
+      transition: width 1.2s cubic-bezier(.2, .7, .2, 1)
+    }
+
+    .bar.in i {
+      width: var(--v)
+    }
+
+    /* committees */
+    .committees {
+      background: var(--paper)
+    }
+
+    .rows {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 2rem;
+      padding: 1.4rem .8rem;
+      border-top: 1px solid var(--line);
+      transition: background .2s, padding-left .2s
+    }
+
+    .row:hover {
+      background: var(--white);
+      padding-left: 1.4rem
+    }
+
+    .row h3 {
+      font-size: 1.5rem
+    }
+
+    .row p {
+      color: var(--mute)
+    }
+
+    /* events */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      grid-auto-rows: 210px;
+      grid-auto-flow: dense;
+      gap: 12px
+    }
+
+    .gallery button {
+      border: 0;
+      padding: 0;
+      cursor: zoom-in;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--line)
+    }
+
+    .gallery button:nth-child(1),
+    .gallery button:nth-child(6) {
+      grid-column: span 2;
+      grid-row: span 2
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      transition: transform .5s
+    }
+
+    .gallery button:hover img {
+      transform: scale(1.06)
+    }
+
+    #lb {
+      position: fixed;
+      inset: 0;
+      background: #000d;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 2rem
+    }
+
+    #lb.open {
+      display: grid
+    }
+
+    #lb img {
+      max-height: 88vh;
+      max-width: 92vw;
+      border-radius: 10px;
+      object-fit: contain
+    }
+
+    #lb button {
+      position: absolute;
+      background: #fff2;
+      border: 0;
+      color: #fff;
+      font-size: 2rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer
+    }
+
+    #lb .x {
+      top: 18px;
+      right: 18px
+    }
+
+    #lb .p {
+      left: 18px
+    }
+
+    #lb .n {
+      right: 18px
+    }
+
+    /* numbers */
+    .numbers {
+      background: var(--deep);
+      color: #fff;
+      padding: 64px 0
+    }
+
+    .numbers .wrap {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+      align-items: baseline
+    }
+
+    .numbers strong {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      color: var(--spark);
+      font-weight: 800;
+      line-height: 1
+    }
+
+    .numbers span {
+      display: block;
+      font-size: 1.1rem;
+      color: #cfe1ee
+    }
+
+    /* people */
+    .sup {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 4rem
+    }
+
+    .sup img {
+      width: 200px;
+      height: 240px;
+      border-radius: 20px
+    }
+
+    .sup h3 {
+      font-size: 2rem
+    }
+
+    .sup p,
+    .person p {
+      color: var(--mute)
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.4rem
+    }
+
+    .person img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      margin-bottom: .8rem
+    }
+
+    .person h3 {
+      font-size: 1.2rem
+    }
+
+    .people h2+.sup {
+      margin-top: 0
+    }
+
+    .people h3.sub {
+      font-size: 1.6rem;
+      margin-bottom: 1.4rem
+    }
+
+    /* supervisor box (no photo) */
+    .sup-top {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(160deg, var(--blue), var(--deep));
+      color: #fff;
+      border-radius: 24px;
+      border-inline-start: 6px solid var(--spark);
+      padding: 2.8rem 3rem;
+      margin-bottom: 2.4rem
+    }
+
+    .sup-top::after {
+      content: "";
+      position: absolute;
+      inset: -40% -10% auto auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, #FFB81C40, transparent 65%);
+      z-index: -1;
+      pointer-events: none
+    }
+
+    .sup-top p {
+      color: var(--spark);
+      font-weight: 600;
+      font-size: .95rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .5rem
+    }
+
+    .sup-top h3 {
+      font-size: clamp(2rem, 4.5vw, 3rem)
+    }
+
+    [data-theme=dark] .sup-top {
+      background: linear-gradient(160deg, #004f7d, #00263d 75%)
+    }
+
+    @media(max-width:520px) {
+      .sup-top {
+        padding: 2rem 1.5rem
+      }
+    }
+
+    /* faq */
+    .faq {
+      background: var(--paper)
+    }
+
+    .faq .wrap {
+      max-width: 820px
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding: 1.1rem 0
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    summary::after {
+      content: "+";
+      color: var(--blue);
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: transform .25s
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg)
+    }
+
+    details p {
+      color: var(--mute);
+      margin-top: .7rem
+    }
+
+    /* contact */
+    .contact .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem
+    }
+
+    .contact h3 {
+      font-size: 1.1rem;
+      color: var(--blue);
+      margin: 1.4rem 0 .2rem
+    }
+
+    .contact h3:first-of-type {
+      margin-top: 0
+    }
+
+    .social {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-top: .6rem
+    }
+
+    .social a {
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .social a:hover {
+      background: var(--blue);
+      color: #fff
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      border: 0;
+      border-radius: 18px;
+      background: var(--line)
+    }
+
+    footer {
+      background: var(--deep);
+      color: #cfe1ee;
+      padding: 48px 0;
+      font-size: .95rem
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: end
+    }
+
+    footer strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.6rem;
+      color: #fff
+    }
+
+    @media(max-width:860px) {
+      section {
+        padding: 72px 0
+      }
+
+      #menu {
+        display: block
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--deep);
+        flex-direction: column;
+        padding: 1rem 4%;
+        gap: 1rem
+      }
+
+      nav ul.open {
+        display: flex
+      }
+
+      .hero .wrap,
+      .about .wrap,
+      .contact .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .pillars .wrap {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: .4rem
+      }
+
+      .bar {
+        grid-template-columns: 8.5rem 1fr 2.6rem
+      }
+
+      .sup {
+        grid-template-columns: 1fr
+      }
+
+      .gallery {
+        grid-auto-rows: 170px
+      }
+    }
+
+    @media(max-width:520px) {
+
+      .pillars .wrap,
+      .facts {
+        grid-template-columns: 1fr
+      }
+
+      .bar {
+        grid-template-columns: 1fr 3rem
+      }
+
+      .bar span {
+        grid-column: 1/-1
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+    }
+
+    :root {
+      --white: #fff
+    }
+
+    [data-theme=dark] {
+      --white: #0A1726;
+      --paper: #0E2034;
+      --ink: #E7EFF7;
+      --mute: #9DB2C5;
+      --line: #213A52;
+      --blue: #3FAAEA;
+      color-scheme: dark
+    }
+
+    [data-theme=dark] .hero {
+      background: linear-gradient(160deg, #004f7d, #00263d 75%)
+    }
+
+    [data-theme=dark] nav,
+    [data-theme=dark] .numbers,
+    [data-theme=dark] footer {
+      background: #001d2f
+    }
+
+    [data-theme=dark] .social a:hover {
+      color: #00263d
+    }
+
+    /* progress + nav extras */
+    .prog {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      background: var(--spark);
+      transform-origin: 0 50%
+    }
+
+    .nr {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem
+    }
+
+    .tt {
+      background: none;
+      border: 2px solid #ffffff55;
+      color: #fff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1
+    }
+
+    .tt:hover {
+      background: #ffffff1f
+    }
+
+    nav ul a.btn {
+      opacity: 1;
+      color: var(--deep);
+      padding: .4rem 1.1rem
+    }
+
+    nav ul a.btn:hover {
+      text-decoration: none
+    }
+
+    /* hero upgrades */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#ffffff10 1px, transparent 1px), linear-gradient(90deg, #ffffff10 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000, transparent 75%);
+      mask-image: radial-gradient(ellipse at 70% 30%, #000, transparent 75%)
+    }
+
+    .hero .wrap,
+    .sig {
+      position: relative;
+      z-index: 1
+    }
+
+    .collage {
+      position: relative;
+      transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      transition: transform .25s ease-out
+    }
+
+    .collage::before {
+      content: "";
+      position: absolute;
+      inset: -12% -8%;
+      background: radial-gradient(circle at 60% 40%, #FFB81C45, transparent 60%);
+      filter: blur(22px);
+      z-index: -1
+    }
+
+    #wave {
+      cursor: pointer
+    }
+
+    .hint {
+      position: absolute;
+      right: 4%;
+      bottom: 10px;
+      font-size: .85rem;
+      color: #ffffffb8;
+      pointer-events: none
+    }
+
+    .about .pic {
+      isolation: isolate;
+      position: relative
+    }
+
+    .about .pic::after {
+      content: "";
+      position: absolute;
+      inset: 18px -14px -14px 18px;
+      border: 3px solid var(--spark);
+      border-radius: 22px;
+      z-index: -1
+    }
+
+    .bars.in .bar i {
+      width: var(--v)
+    }
+
+    /* committees master-detail */
+    .cm {
+      display: grid;
+      grid-template-columns: .8fr 1.4fr;
+      gap: 2rem
+    }
+
+    .cm-list {
+      display: grid;
+      gap: .4rem;
+      align-content: start
+    }
+
+    .cm-list button {
+      font: 700 1.3rem var(--display);
+      text-align: left;
+      padding: .9rem 1.2rem;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .2s, padding-left .2s
+    }
+
+    .cm-list button:hover {
+      background: var(--white)
+    }
+
+    .cm-list button.on {
+      background: var(--blue);
+      color: #fff;
+      padding-left: 1.8rem
+    }
+
+    .cm-panel {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 2.4rem;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      animation: swap .35s
+    }
+
+    .cm-panel .mono {
+      position: absolute;
+      right: -.5rem;
+      bottom: -2.2rem;
+      font: 800 11rem/1 var(--display);
+      color: var(--blue);
+      opacity: .09;
+      pointer-events: none
+    }
+
+    .cm-panel h3 {
+      font-size: 2.2rem
+    }
+
+    .cm-panel p {
+      color: var(--mute);
+      max-width: 32rem;
+      font-size: 1.15rem
+    }
+
+    .cm-panel .btn {
+      align-self: flex-start;
+      margin-top: .6rem;
+      position: relative
+    }
+
+    @keyframes swap {
+      from {
+        opacity: 0;
+        transform: translateY(10px)
+      }
+    }
+
+    /* gallery + people polish */
+    .gallery button {
+      position: relative
+    }
+
+    .gallery button span {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 1.6rem .9rem .7rem;
+      background: linear-gradient(transparent, #003a5acc);
+      color: #fff;
+      font-weight: 600;
+      text-align: left;
+      opacity: 0;
+      transition: opacity .25s
+    }
+
+    .gallery button:hover span,
+    .gallery button:focus-visible span {
+      opacity: 1
+    }
+
+    .person .ph {
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: .8rem;
+      border-bottom: 4px solid var(--spark)
+    }
+
+    .person .ph img {
+      margin: 0;
+      border-radius: 0;
+      transition: transform .5s
+    }
+
+    .person:hover .ph img {
+      transform: scale(1.06)
+    }
+
+    /* faq accordion */
+    .qa {
+      border-top: 1px solid var(--line)
+    }
+
+    .qa:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .qa>button {
+      all: unset;
+      box-sizing: border-box;
+      width: 100%;
+      cursor: pointer;
+      padding: 1.1rem 0;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem
+    }
+
+    .qa>button::after {
+      content: "+";
+      color: var(--blue);
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: transform .25s
+    }
+
+    .qa.open>button::after {
+      transform: rotate(45deg)
+    }
+
+    .qa>button:focus-visible {
+      outline: 3px solid var(--spark);
+      outline-offset: 3px
+    }
+
+    .ans {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .3s
+    }
+
+    .qa.open .ans {
+      grid-template-rows: 1fr
+    }
+
+    .ans>div {
+      overflow: hidden
+    }
+
+    .ans p {
+      color: var(--mute);
+      padding-bottom: 1.1rem
+    }
+
+    /* join form */
+    .join {
+      background: linear-gradient(160deg, var(--blue), var(--deep));
+      color: #fff
+    }
+
+    .join .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start
+    }
+
+    .join p {
+      color: #dbe9f3;
+      max-width: 30rem
+    }
+
+    .join form {
+      --ink: #10243A;
+      --mute: #556A7F;
+      --line: #D3DDE6;
+      display: grid;
+      gap: 1rem;
+      background: #fff;
+      color: var(--ink);
+      padding: 1.8rem;
+      border-radius: 20px
+    }
+
+    .join label {
+      display: grid;
+      gap: .3rem;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .join input,
+    .join select,
+    .join textarea {
+      font: inherit;
+      padding: .7rem .9rem;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink)
+    }
+
+    .join input:focus,
+    .join select:focus,
+    .join textarea:focus {
+      border-color: #00629B;
+      outline: none
+    }
+
+    .join [aria-invalid=true] {
+      border-color: #B42318
+    }
+
+    .join .err {
+      color: #B42318;
+      font-size: .88rem;
+      font-weight: 500
+    }
+
+    .join .ok {
+      color: #067647;
+      font-weight: 600;
+      max-width: none
+    }
+
+    .join button.btn {
+      border: 0;
+      cursor: pointer;
+      font: 600 1rem var(--body)
+    }
+
+    .acts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      margin-bottom: 3rem
+    }
+
+    .acts article {
+      border-top: 4px solid var(--c);
+      background: var(--paper);
+      padding: 1.4rem 1.2rem 1.6rem;
+      border-radius: 0 0 14px 14px;
+      transition: transform .25s
+    }
+
+    .acts article:hover {
+      transform: translateY(-4px)
+    }
+
+    .acts h3 {
+      font-size: 1.3rem;
+      margin-bottom: .5rem
+    }
+
+    .acts p {
+      color: var(--mute);
+      font-size: .97rem
+    }
+
+    .sub2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem
+    }
+
+    .voices {
+      background: var(--paper)
+    }
+
+    .draft {
+      background: #FFF4D6;
+      color: #5C4400;
+      border-left: 4px solid var(--spark);
+      padding: .6rem 1rem;
+      border-radius: 6px;
+      margin: -.6rem 0 1.6rem;
+      font-size: .95rem;
+      max-width: 40rem
+    }
+
+    .vq {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.4rem
+    }
+
+    .vq figure {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.8rem;
+      position: relative
+    }
+
+    .vq figure::before {
+      content: "\201C";
+      position: absolute;
+      top: .2rem;
+      left: 1.1rem;
+      font: 800 4.5rem/1 var(--display);
+      color: var(--spark)
+    }
+
+    .vq blockquote {
+      padding-top: 2.2rem;
+      font-size: 1.1rem
+    }
+
+    .vq figcaption {
+      margin-top: 1.2rem;
+      color: var(--mute);
+      font-size: .92rem
+    }
+
+    .vq figcaption b {
+      display: block;
+      color: var(--ink)
+    }
+
+    .vq .big {
+      grid-row: span 2;
+      background: var(--deep);
+      border: 0;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .vq .big blockquote {
+      font: 700 clamp(1.4rem, 2.6vw, 2rem)/1.3 var(--display);
+      letter-spacing: -.01em
+    }
+
+    .vq .big figcaption {
+      color: #cfe1ee
+    }
+
+    .vq .big figcaption b {
+      color: #fff
+    }
+
+    .contact form {
+      display: grid;
+      gap: .9rem;
+      margin-top: 2rem
+    }
+
+    .contact label {
+      display: grid;
+      gap: .3rem;
+      font-weight: 600;
+      font-size: .95rem
+    }
+
+    .contact input,
+    .contact textarea {
+      font: inherit;
+      padding: .7rem .9rem;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--ink)
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      border-color: var(--blue);
+      outline: none
+    }
+
+    .contact [aria-invalid=true] {
+      border-color: #B42318
+    }
+
+    .contact .err {
+      color: #B42318;
+      font-size: .88rem;
+      font-weight: 500
+    }
+
+    .contact .ok {
+      color: #067647;
+      font-weight: 600
+    }
+
+    .contact button.btn {
+      border: 0;
+      cursor: pointer;
+      font: 600 1rem var(--body);
+      justify-self: start
+    }
+
+    .final {
+      background: var(--spark);
+      color: var(--deep);
+      padding: 72px 0
+    }
+
+    .final .wrap {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap
+    }
+
+    .final h2 {
+      margin-bottom: .4rem
+    }
+
+    .final p {
+      font-size: 1.15rem;
+      font-weight: 500
+    }
+
+    .btn.dark {
+      background: var(--deep);
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 1rem 2rem
+    }
+
+    @media(max-width:860px) {
+      .acts {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .vq {
+        grid-template-columns: 1fr
+      }
+
+      .vq .big {
+        grid-row: auto
+      }
+    }
+
+    @media(max-width:520px) {
+      .acts {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:860px) {
+
+      .cm,
+      .join .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .cm-list {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cm-panel .mono {
+        font-size: 8rem
+      }
+    }
+
+    @media(max-width:1020px) {
+      nav ul {
+        gap: 1rem;
+        font-size: .9rem
+      }
+    }
+
+    .album-tabs {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem
+    }
+
+    .album-tab {
+      font: 600 .95rem var(--body);
+      padding: .55rem 1.2rem;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s
+    }
+
+    .album-tab:hover {
+      border-color: var(--blue)
+    }
+
+    .album-tab.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff
+    }
+
+    .ico {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      margin-bottom: .9rem;
+      color: var(--blue);
+      background: color-mix(in srgb, var(--blue) 12%, transparent)
+    }
+
+    .ico svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .acts article:nth-child(even) .ico {
+      color: var(--deep);
+      background: #FFB81C66
+    }
+
+    [data-theme=dark] .acts article:nth-child(even) .ico {
+      color: var(--spark)
+    }
+
+    /* ── Gallery Section ── */
+    .gallery-section {
+      background: var(--ink);
+      padding: 96px 0;
+      contain: layout
+    }
+
+    [data-theme=dark] .gallery-section {
+      background: #000d1a
+    }
+
+    .gallery-section h2 {
+      color: #fff
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem
+    }
+
+    .gallery-sub {
+      color: #8dafc9;
+      margin-top: .4rem;
+      font-size: 1.05rem
+    }
+
+    .gallery-loading {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 4rem 1rem;
+      color: var(--mute)
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #ffffff22;
+      border-top-color: var(--spark);
+      border-radius: 50%;
+      animation: spin .7s linear infinite
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg) }
+    }
+
+    .gal-btn {
+      contain: strict
+    }
+
+    /* Performance: reduce paint for offscreen images */
+    .gallery img {
+      content-visibility: auto
+    }
+
+    @media(max-width:860px) {
+      .gallery-header { flex-direction: column; align-items: flex-start }
+    }
+
+    /* ── RTL (Arabic) ── */
+    [dir=rtl] * { letter-spacing: 0 !important }
+    [dir=rtl] h1, [dir=rtl] h2, [dir=rtl] h3 { line-height: 1.35 }
+    [dir=rtl] .hero h1 { line-height: 1.25 }
+    .bar b { text-align: left }
+    .bar i { background: linear-gradient(270deg, var(--blue), var(--spark)) }
+    .prog { transform-origin: 100% 50% }
+    .hero::before { -webkit-mask-image: radial-gradient(ellipse at 30% 30%, #000, transparent 75%); mask-image: radial-gradient(ellipse at 30% 30%, #000, transparent 75%) }
+    .hint { right: auto; left: 4% }
+    .about .pic::after { inset: 18px 18px -14px -14px }
+    .cm-list button { text-align: right }
+    .cm-list button.on { padding-left: 1.2rem; padding-right: 1.8rem }
+    .cm-panel .mono { right: auto; left: -.5rem }
+    .gallery button span { text-align: right }
+    #lb .p { left: auto; right: 18px }
+    #lb .n { right: auto; left: 18px }
+    .vq figure::before { left: auto; right: 1.1rem }
+    .draft { border-left: 0; border-right: 4px solid var(--spark) }
+    .numbers strong { direction: ltr; unicode-bidi: isolate; display: inline-block }
+    .contact a[href^="mailto"] { direction: ltr; unicode-bidi: isolate; display: inline-block }
+    input[type=email] { direction: ltr }
+  </style>
 </head>
+
 <body>
-<div id="root"></div>
-<noscript><p style="padding:2rem">يحتاج الموقع إلى تفعيل JavaScript ليعمل.</p></noscript>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
-<script>
-const {useState,useEffect,useRef}=React, html=htm.bind(React.createElement);
-const IMG='assets/img/', MAIL='ieee.ndeti.student.branch@gmail.com';
-const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const events=['lolo','jj','yy','xt','kiki','hhh','b','c','a'];
-const COMMITTEES=[
- ['الموارد البشرية','تستقطب الأعضاء وتديرهم وتحافظ على فعالية العمل الجماعي داخل الفرع.','HR'],
- ['جمع التمويل','تبني الشراكات وتؤمّن الرعاة لدعم الفرع ماليًا.','FR'],
- ['العلاقات العامة','تبني علاقات مع الجهات والجامعات الخارجية وتنشر الوعي بالفرع.','PR'],
- ['اللوجستيات','تنظّم الفعاليات وتدير الموارد لتسير الأنشطة والجلسات بسلاسة.','LG'],
- ['البرمجة','تقود تطوير البرمجيات وجلسات الكود والمشروعات التقنية التي تنمّي مهارات الأعضاء.','</>'],
- ['الميديا','تصنع المحتوى المرئي والتصميمات والتصوير وتدير حضور الفرع على وسائل التواصل.','MD'],
- ['اللجنة الأساسية','عمود الفرع الفقري: اتخاذ القرارات والإشراف وتشغيل جميع الأنشطة بسلاسة.','CR'],
- ['إنترنت الأشياء','تنفّذ مشروعات وورش إنترنت الأشياء والأجهزة المتصلة والأنظمة الذكية.','IoT']];
-const BARS=[['ورش العمل المنفّذة',50],['المشروعات التقنية',80],['المسابقات والهاكاثونات',40],['المشاركة المجتمعية',95],['التعاون مع الصناعة',60],['مشاركة الأعضاء',89]];
-const TEAM=[['akram','أحمد أكرم','رئيس الفرع'],['tasneem','تسنيم مصطفى','نائب الرئيس'],['khaled','خالد علي','أمين السر'],['kareem','كريم إبراهيم','أمين الصندوق'],['malak','ملك حسن','مسؤول الموقع']];
-const FAQ=[['كيف أنضم إلى فرع IEEE الطلابي؟','املأ نموذج العضوية في هذه الصفحة أو احضر إحدى جلسات التعريف.'],['هل الاشتراك في العضوية بمقابل؟','نعم، الرسوم تدعم فعاليات الفرع ومواردها.'],['ما نوع الفعاليات التي ينظمها الفرع؟','ورش عمل ومسابقات وندوات تقنية وزيارات ميدانية بشكل منتظم.'],['كيف أتطوع في أنشطة الفرع؟','سجّل في قائمة المتطوعين على موقعنا أو تواصل معنا مباشرة عبر البريد.']];
+  <div id="root"></div>
+  <noscript>
+    <p style="padding:2rem">يحتاج الموقع إلى تفعيل JavaScript ليعمل.</p>
+  </noscript>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js" crossorigin="anonymous"></script>
+  <script>
+    const { useState, useEffect, useRef } = React, html = htm.bind(React.createElement);
+    const IMG = 'assets/img/', MAIL = 'ieee.ndeti.student.branch@gmail.com';
+    const still = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const events = ['lolo', 'jj', 'yy', 'xt', 'kiki', 'hhh', 'b', 'c', 'a'];
+    const COMMITTEES = [
+      ['الموارد البشرية', 'تستقطب الأعضاء وتديرهم وتحافظ على فعالية العمل الجماعي داخل الفرع.', 'HR'],
+      ['جمع التمويل', 'تبني الشراكات وتؤمّن الرعاة لدعم الفرع ماليًا.', 'FR'],
+      ['العلاقات العامة', 'تبني علاقات مع الجهات والجامعات الخارجية وتنشر الوعي بالفرع.', 'PR'],
+      ['اللوجستيات', 'تنظّم الفعاليات وتدير الموارد لتسير الأنشطة والجلسات بسلاسة.', 'LG'],
+      ['البرمجة', 'تقود تطوير البرمجيات وجلسات الكود والمشروعات التقنية التي تنمّي مهارات الأعضاء.', '</>'],
+      ['الميديا', 'تصنع المحتوى المرئي والتصميمات والتصوير وتدير حضور الفرع على وسائل التواصل.', 'MD'],
+      ['اللجنة الأساسية', 'عمود الفرع الفقري: اتخاذ القرارات والإشراف وتشغيل جميع الأنشطة بسلاسة.', 'CR'],
+      ['إنترنت الأشياء', 'تنفّذ مشروعات وورش إنترنت الأشياء والأجهزة المتصلة والأنظمة الذكية.', 'IoT']];
+    const BARS = [['ورش العمل المنفّذة', 50], ['المشروعات التقنية', 80], ['المسابقات والهاكاثونات', 40], ['المشاركة المجتمعية', 95], ['التعاون مع الصناعة', 60], ['مشاركة الأعضاء', 89]];
+    const TEAM = [['kareem', 'كريم إبراهيم', 'رئيس الفرع'], ['labanese', 'سيف الدين اللبان', 'نائب الرئيس'], ['gelgel', 'أحمد جلال', 'أمين السر'], ['ezaby', 'يوسف العزبي', 'أمين الصندوق']];
+    const FAQ = [['كيف أنضم إلى فرع IEEE الطلابي؟', 'املأ نموذج العضوية في هذه الصفحة أو احضر إحدى جلسات التعريف.'], ['هل الاشتراك في العضوية بمقابل؟', 'نعم، الرسوم تدعم فعاليات الفرع ومواردها.'], ['ما نوع الفعاليات التي ينظمها الفرع؟', 'ورش عمل ومسابقات وندوات تقنية وزيارات ميدانية بشكل منتظم.'], ['كيف أتطوع في أنشطة الفرع؟', 'سجّل في قائمة المتطوعين على موقعنا أو تواصل معنا مباشرة عبر البريد.']];
 
-const ICONS=['M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z','M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3 3-5 6-5s6 2 6 5M14 15c4 0 8 1 8 5','M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H4v1a3 3 0 0 0 4 3M16 6h4v1a3 3 0 0 1-4 3M12 13v4M8 20h8M10 17h4','M2 9l10-5 10 5-10 5-10-5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5','M13 2L4 14h7l-1 8 9-12h-7l1-8z','M4 5h16v11H4zM2 19h20','M3 5h18v14H3zM7 10l3 2-3 2M12 15h5','M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'];
-const Ico=({n})=>html`<span className="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d=${ICONS[n]}/></svg></span>`;
-const Img=({n,alt,...p})=>html`<img src=${IMG+n+'.jpeg'} alt=${alt} ...${p}/>`;
-function useInView(th=.35){const r=useRef(),[v,s]=useState(false);useEffect(()=>{const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){s(true);o.disconnect()}},{threshold:th});o.observe(r.current);return()=>o.disconnect()},[]);return[r,v]}
+    const ICONS = ['M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z', 'M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3 3-5 6-5s6 2 6 5M14 15c4 0 8 1 8 5', 'M8 4h8v5a4 4 0 0 1-8 0V4zM8 6H4v1a3 3 0 0 0 4 3M16 6h4v1a3 3 0 0 1-4 3M12 13v4M8 20h8M10 17h4', 'M2 9l10-5 10 5-10 5-10-5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5', 'M13 2L4 14h7l-1 8 9-12h-7l1-8z', 'M4 5h16v11H4zM2 19h20', 'M3 5h18v14H3zM7 10l3 2-3 2M12 15h5', 'M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'];
+    const Ico = ({ n }) => html`<span className="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d=${ICONS[n]}/></svg></span>`;
+    const Img = ({ n, alt, ...p }) => html`<img src=${IMG + n + '.jpeg'} alt=${alt} ...${p}/>`;
+    function useInView(th = .35) { const r = useRef(), [v, s] = useState(false); useEffect(() => { const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { s(true); o.disconnect() } }, { threshold: th }); o.observe(r.current); return () => o.disconnect() }, []); return [r, v] }
 
-function Progress(){const[p,s]=useState(0);
- useEffect(()=>{const f=()=>s(scrollY/Math.max(1,document.body.scrollHeight-innerHeight));addEventListener('scroll',f,{passive:true});return()=>removeEventListener('scroll',f)},[]);
- return html`<i className="prog" style=${{transform:`scaleX(${p})`}}/>`}
+    function Progress() {
+      const [p, s] = useState(0);
+      useEffect(() => { const f = () => s(scrollY / Math.max(1, document.body.scrollHeight - innerHeight)); addEventListener('scroll', f, { passive: true }); return () => removeEventListener('scroll', f) }, []);
+      return html`<i className="prog" style=${{ transform: `scaleX(${p})` }}/>`
+    }
 
-function Nav({theme,toggle}){const[open,setOpen]=useState(false);
- const L=[['about','من نحن'],['committees','اللجان'],['events','الفعاليات'],['people','فريقنا'],['faq','الأسئلة الشائعة'],['contact','تواصل معنا']];
- return html`<nav><div className="wrap">
-  <a className="logo" href="#hero">IEEE <span>NDETI</span> SB</a>
+    function Nav({ theme, toggle }) {
+      const [open, setOpen] = useState(false);
+      const L = [['about', 'من نحن'], ['committees', 'اللجان'], ['events', 'الفعاليات'], ['gallery', 'المعرض'], ['people', 'فريقنا'], ['faq', 'الأسئلة الشائعة'], ['contact', 'تواصل معنا']];
+      return html`<nav><div className="wrap">
+  <a className="logo" href="#hero"><img src="assets/img/logo.jpeg" alt="شعار IEEE NDETI SB"/>IEEE <span>NDETI</span> SB</a>
   <div className="nr">
-   <ul className=${open?'open':''} onClick=${()=>setOpen(false)}>${L.map(l=>html`<li key=${l[0]}><a href=${'#'+l[0]}>${l[1]}</a></li>`)}<li><a href="index.html" lang="en" hreflang="en">English</a></li><li><a className="btn main" href="#join">انضم</a></li></ul>
-   <button className="tt" onClick=${toggle} aria-label="تبديل المظهر">${theme==='dark'?'\u2600':'\u263E'}</button>
-   <button id="menu" aria-label="القائمة" aria-expanded=${open} onClick=${()=>setOpen(!open)}>\u2630</button>
-  </div></div><${Progress}/></nav>`}
+   <ul className=${open ? 'open' : ''} onClick=${() => setOpen(false)}>${L.map(l => html`<li key=${l[0]}><a href=${'#' + l[0]}>${l[1]}</a></li>`)}<li><a href="index.html" lang="en" hreflang="en">English</a></li><li><a className="btn main" href="#join">انضم</a></li></ul>
+   <button className="tt" onClick=${toggle} aria-label="تبديل المظهر">${theme === 'dark' ? '\u2600' : '\u263E'}</button>
+   <button id="menu" aria-label="القائمة" aria-expanded=${open} onClick=${() => setOpen(!open)}>\u2630</button>
+  </div></div><${Progress}/></nav>`
+    }
 
-function Signal(){const ref=useRef();
- useEffect(()=>{const c=ref.current,g=c.getContext('2d');let raf,last=-1e4,pulses=[];
-  const fit=()=>{const r=devicePixelRatio||1;c.width=c.clientWidth*r;c.height=c.clientHeight*r;g.setTransform(r,0,0,r,0,0);if(still)draw(0)};
-  const draw=t=>{const w=c.clientWidth,h=c.clientHeight,m=h/2;
-   if(!still&&t-last>4200){pulses.push({x:-100,t});last=t}
-   const xs=still?[w*.6]:pulses.map(p=>p.x+(t-p.t)*.17).filter(x=>x<w+160);
-   if(!still)pulses=pulses.filter(p=>p.x+(t-p.t)*.17<w+160);
-   g.clearRect(0,0,w,h);
-   const pts=[];for(let x=0;x<=w;x+=3){let y=m+Math.sin(x/40+t/700)*7;for(const px of xs){const d=(x-px)/16;y-=62*Math.exp(-d*d)*Math.cos(d*1.6)}pts.push([x,y])}
-   const path=()=>{g.beginPath();pts.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]))};
-   g.lineJoin='round';g.lineWidth=2;g.strokeStyle='rgba(255,255,255,.35)';path();g.stroke();
-   g.save();g.beginPath();xs.forEach(x=>g.rect(x-110,0,220,h));g.clip();g.lineWidth=3.5;g.strokeStyle='#FFB81C';g.shadowColor='#FFB81C';g.shadowBlur=14;path();g.stroke();g.restore();
-   if(!still)raf=requestAnimationFrame(draw)};
-  const click=e=>{if(!still)pulses.push({x:e.clientX-c.getBoundingClientRect().left,t:performance.now()})};
-  fit();addEventListener('resize',fit);c.addEventListener('click',click);if(!still)raf=requestAnimationFrame(draw);
-  return()=>{cancelAnimationFrame(raf);removeEventListener('resize',fit);c.removeEventListener('click',click)}},[]);
- return html`<div className="sig"><canvas id="wave" ref=${ref} aria-hidden="true"/>${!still&&html`<span className="hint">اضغط على الموجة لترسل شرارة</span>`}</div>`}
+    function Signal() {
+      const ref = useRef();
+      useEffect(() => {
+        const c = ref.current, g = c.getContext('2d'); let raf, last = -1e4, pulses = [];
+        const fit = () => { const r = devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = c.clientHeight * r; g.setTransform(r, 0, 0, r, 0, 0); if (still) draw(0) };
+        const draw = t => {
+          const w = c.clientWidth, h = c.clientHeight, m = h / 2;
+          if (!still && t - last > 4200) { pulses.push({ x: -100, t }); last = t }
+          const xs = still ? [w * .6] : pulses.map(p => p.x + (t - p.t) * .17).filter(x => x < w + 160);
+          if (!still) pulses = pulses.filter(p => p.x + (t - p.t) * .17 < w + 160);
+          g.clearRect(0, 0, w, h);
+          const pts = []; for (let x = 0; x <= w; x += 3) { let y = m + Math.sin(x / 40 + t / 700) * 7; for (const px of xs) { const d = (x - px) / 16; y -= 62 * Math.exp(-d * d) * Math.cos(d * 1.6) } pts.push([x, y]) }
+          const path = () => { g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1])) };
+          g.lineJoin = 'round'; g.lineWidth = 2; g.strokeStyle = 'rgba(255,255,255,.35)'; path(); g.stroke();
+          g.save(); g.beginPath(); xs.forEach(x => g.rect(x - 110, 0, 220, h)); g.clip(); g.lineWidth = 3.5; g.strokeStyle = '#FFB81C'; g.shadowColor = '#FFB81C'; g.shadowBlur = 14; path(); g.stroke(); g.restore();
+          if (!still) raf = requestAnimationFrame(draw)
+        };
+        const click = e => { if (!still) pulses.push({ x: e.clientX - c.getBoundingClientRect().left, t: performance.now() }) };
+        fit(); addEventListener('resize', fit); c.addEventListener('click', click); if (!still) raf = requestAnimationFrame(draw);
+        return () => { cancelAnimationFrame(raf); removeEventListener('resize', fit); c.removeEventListener('click', click) }
+      }, []);
+      return html`<div className="sig"><canvas id="wave" ref=${ref} aria-hidden="true"/>${!still && html`<span className="hint">اضغط على الموجة لترسل شرارة</span>`}</div>`
+    }
 
-function Collage(){const r=useRef();
- const mv=e=>{const b=r.current.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;r.current.style.setProperty('--rx',(-y*8)+'deg');r.current.style.setProperty('--ry',(x*10)+'deg')};
- const lv=()=>{r.current.style.setProperty('--rx','0deg');r.current.style.setProperty('--ry','0deg')};
- return html`<div className="collage" ref=${r} onMouseMove=${still?null:mv} onMouseLeave=${lv}>${['lolo','jj','yy'].map((n,i)=>html`<${Img} key=${n} n=${n} alt="صورة من فعاليات IEEE NDETI" loading=${i?'lazy':'eager'}/>`)}</div>`}
+    function Collage() {
+      const r = useRef();
+      const mv = e => { const b = r.current.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5; r.current.style.setProperty('--rx', (-y * 8) + 'deg'); r.current.style.setProperty('--ry', (x * 10) + 'deg') };
+      const lv = () => { r.current.style.setProperty('--rx', '0deg'); r.current.style.setProperty('--ry', '0deg') };
+      return html`<div className="collage" ref=${r} onMouseMove=${still ? null : mv} onMouseLeave=${lv}>${['lolo', 'jj', 'yy'].map((n, i) => html`<${Img} key=${n} n=${n} alt="صورة من فعاليات IEEE NDETI" loading=${i ? 'lazy' : 'eager'}/>`)}</div>`
+    }
 
-function Hero(){return html`<header className="hero" id="hero"><div className="wrap"><div>
+    function Hero() {
+      return html`<header className="hero" id="hero"><div className="wrap"><div>
  <h1>نحن الشرارة وراء الابتكار.</h1>
  <p>طوّر مهاراتك التقنية والقيادية في الورش والهاكاثونات واللجان، وسط طلاب يحبون الهندسة مثلك. فرع IEEE NDETI الطلابي يربطك بدمياط الجديدة وبمجتمع IEEE العالمي.</p>
  <div className="cta"><a className="btn main" href="#join">انضم إلى الفرع</a><a className="btn ghost" href="#events">شاهد فعالياتنا</a></div>
- </div><${Collage}/></div><${Signal}/></header>`}
+ </div><${Collage}/></div><${Signal}/></header>`
+    }
 
-function Pillars(){const P=[['الابتكار والتكنولوجيا','نمكّن الطلاب من ابتكار حلول جديدة وتطوير التكنولوجيا لخدمة الإنسانية.'],['التواصل والمجتمع','نربط الطلاب بالخبراء والأساتذة وزملائهم من خلال الفعاليات والتعاون.'],['المسابقات والفعاليات','هاكاثونات وIEEE Xtreme وتحديات IEEE العالمية تنمّي الإبداع وحل المشكلات.'],['التطوير المهني','ورش وتدريب وبرامج إرشاد تجهّز الأعضاء لمسيرتهم الهندسية.']];
- return html`<div className="pillars"><div className="wrap">${P.map((p,i)=>html`<div key=${p[0]}><${Ico} n=${i}/><h3>${p[0]}</h3><p>${p[1]}</p></div>`)}</div></div>`}
+    function Pillars() {
+      const P = [['الابتكار والتكنولوجيا', 'نمكّن الطلاب من ابتكار حلول جديدة وتطوير التكنولوجيا لخدمة الإنسانية.'], ['التواصل والمجتمع', 'نربط الطلاب بالخبراء والأساتذة وزملائهم من خلال الفعاليات والتعاون.'], ['المسابقات والفعاليات', 'هاكاثونات وIEEE Xtreme وتحديات IEEE العالمية تنمّي الإبداع وحل المشكلات.'], ['التطوير المهني', 'ورش وتدريب وبرامج إرشاد تجهّز الأعضاء لمسيرتهم الهندسية.']];
+      return html`<div className="pillars"><div className="wrap">${P.map((p, i) => html`<div key=${p[0]}><${Ico} n=${i}/><h3>${p[0]}</h3><p>${p[1]}</p></div>`)}</div></div>`
+    }
 
-function About(){const[r,v]=useInView(.3);
- const F=[['من نحن','فرع طلابي يربط طلاب الهندسة والتكنولوجيا بموارد IEEE العالمية.'],['أنشطتنا','ورش عمل وهاكاثونات وبرامج تدريبية.'],['مجتمعنا','تعاون بين الطلاب والأساتذة والمتخصصين.'],['أثرنا','ندعم الابتكار لحل مشكلات حقيقية.']];
- return html`<section className="about" id="about"><div className="wrap">
+    function About() {
+      const [r, v] = useInView(.3);
+      const F = [['من نحن', 'فرع طلابي يربط طلاب الهندسة والتكنولوجيا بموارد IEEE العالمية.'], ['أنشطتنا', 'ورش عمل وهاكاثونات وبرامج تدريبية.'], ['مجتمعنا', 'تعاون بين الطلاب والأساتذة والمتخصصين.'], ['أثرنا', 'ندعم الابتكار لحل مشكلات حقيقية.']];
+      return html`<section className="about" id="about"><div className="wrap">
   <div className="pic"><${Img} n="koko" alt="أعضاء فرع IEEE NDETI الطلابي" loading="lazy"/></div>
   <div><h2>عن الفرع</h2>
    <p className="lead">فرع IEEE NDETI الطلابي مجتمع من الطلاب الشغوفين بتطوير التكنولوجيا وصناعة فرص للنمو المهني.</p>
-   <div className="facts">${F.map(f=>html`<div key=${f[0]}><h3>${f[0]}</h3><p>${f[1]}</p></div>`)}</div>
-   <div className=${'bars'+(v||still?' in':'')} ref=${r}>${BARS.map(b=>html`<div className="bar" key=${b[0]} style=${{'--v':b[1]+'%'}}><span>${b[0]}</span><div className="t"><i></i></div><b>${b[1]}%</b></div>`)}</div>
+   <div className="facts">${F.map(f => html`<div key=${f[0]}><h3>${f[0]}</h3><p>${f[1]}</p></div>`)}</div>
+   <div className=${'bars' + (v || still ? ' in' : '')} ref=${r}>${BARS.map(b => html`<div className="bar" key=${b[0]} style=${{ '--v': b[1] + '%' }}><span>${b[0]}</span><div className="t"><i></i></div><b>${b[1]}%</b></div>`)}</div>
   </div></div></section>`}
 
-function Committees(){const[i,setI]=useState(0),c=COMMITTEES[i];
- return html`<section className="committees" id="committees"><div className="wrap"><h2>لجاننا</h2><div className="cm">
-  <div className="cm-list" role="tablist" aria-label="اللجان">${COMMITTEES.map((x,k)=>html`<button key=${x[0]} role="tab" aria-selected=${k===i} className=${k===i?'on':''} onClick=${()=>setI(k)}>${x[0]}</button>`)}</div>
+    function Committees() {
+      const [i, setI] = useState(0), c = COMMITTEES[i];
+      return html`<section className="committees" id="committees"><div className="wrap"><h2>لجاننا</h2><div className="cm">
+  <div className="cm-list" role="tablist" aria-label="اللجان">${COMMITTEES.map((x, k) => html`<button key=${x[0]} role="tab" aria-selected=${k === i} className=${k === i ? 'on' : ''} onClick=${() => setI(k)}>${x[0]}</button>`)}</div>
   <div className="cm-panel" key=${i} role="tabpanel"><span className="mono" aria-hidden="true">${c[2]}</span><h3>لجنة ${c[0]}</h3><p>${c[1]}</p>
-   <a className="btn main" href=${`mailto:${MAIL}?subject=${encodeURIComponent('الانضمام إلى لجنة '+c[0])}`}>انضم إلى لجنة ${c[0]}</a></div>
+   <a className="btn main" href=${`mailto:${MAIL}?subject=${encodeURIComponent('الانضمام إلى لجنة ' + c[0])}`}>انضم إلى لجنة ${c[0]}</a></div>
  </div></div></section>`}
 
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyx1i2GvBTk1_6hcznqg7NDW14Wc3ZjVZvFKvsJeyGgARWNTA6D3_CwlydmVA5Rsao/exec';
-const LOCAL=events.map((n,i)=>({url:IMG+n+'.jpeg',name:'صورة من فعاليات الفرع '+(i+1)}));
-function jsonp(url){return new Promise((res,rej)=>{
- const cb='__drive_'+Math.random().toString(36).slice(2),sc=document.createElement('script');let t;
- const done=()=>{clearTimeout(t);sc.remove();delete window[cb]};
- t=setTimeout(()=>{done();rej(new Error('timeout'))},45000);
- window[cb]=d=>{done();res(d)};sc.onerror=()=>{done();rej(new Error('script error'))};
- sc.src=url+(url.includes('?')?'&':'?')+'callback='+cb;document.head.appendChild(sc)})}
-function formatDriveImg(img){const u=img.url||'',m=u.match(/\/d\/([a-zA-Z0-9_-]+)/)||u.match(/id=([a-zA-Z0-9_-]+)/);
- return{id:m?m[1]:'',url:m?srcs(m[1],480)[0]:u,name:img.name||'صورة من فعاليات الفرع'}}
-const srcs=(id,w)=>['https://lh3.googleusercontent.com/d/'+id+'=w'+w,'https://drive.google.com/thumbnail?id='+id+'&sz=w'+w,'https://drive.google.com/uc?export=view&id='+id];
-const fb=e=>{const i=e.target,id=i.dataset.id;i.classList.remove('broken');
- if(id){const k=+(i.dataset.n||0),w=+(i.dataset.w||800);
-  if(k===0&&!i.dataset.r){i.dataset.r=1;setTimeout(()=>{i.src=srcs(id,w)[0]},1200+Math.random()*1800);return}
-  if(k<2){i.dataset.n=k+1;i.src=srcs(id,w)[k+1];return}}
- if(!i.dataset.fb){i.dataset.fb=1;i.src=IMG+'logo.jpeg'}else i.classList.add('broken')};
-const AlbumTabs=({albums,selected,setSelected})=>html`<div className="album-tabs" role="tablist">${albums.map((a,i)=>html`<button key=${i} className=${'album-tab'+(i===selected?' active':'')} role="tab" aria-selected=${i===selected} onClick=${()=>setSelected(i)}>${a.title||('ألبوم '+(i+1))}</button>`)}</div>`;
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyx1i2GvBTk1_6hcznqg7NDW14Wc3ZjVZvFKvsJeyGgARWNTA6D3_CwlydmVA5Rsao/exec';
+    const LOCAL = events.map((n, i) => ({ url: IMG + n + '.jpeg', name: 'صورة من فعاليات الفرع ' + (i + 1) }));
+    function jsonp(url) {
+      return new Promise((res, rej) => {
+        const cb = '__drive_' + Math.random().toString(36).slice(2), sc = document.createElement('script'); let t;
+        const done = () => { clearTimeout(t); sc.remove(); delete window[cb] };
+        t = setTimeout(() => { done(); rej(new Error('timeout')) }, 45000);
+        window[cb] = d => { done(); res(d) }; sc.onerror = () => { done(); rej(new Error('script error')) };
+        sc.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + cb; document.head.appendChild(sc)
+      })
+    }
+    function formatDriveImg(img) {
+      const u = img.url || '', m = u.match(/\/d\/([a-zA-Z0-9_-]+)/) || u.match(/id=([a-zA-Z0-9_-]+)/);
+      return { id: m ? m[1] : '', url: m ? srcs(m[1], 480)[0] : u, name: img.name || 'صورة من فعاليات الفرع' }
+    }
+    const srcs = (id, w) => ['https://lh3.googleusercontent.com/d/' + id + '=w' + w, 'https://drive.google.com/thumbnail?id=' + id + '&sz=w' + w, 'https://drive.google.com/uc?export=view&id=' + id];
+    const fb = e => {
+      const i = e.target, id = i.dataset.id; i.classList.remove('broken');
+      if (id) {
+        const k = +(i.dataset.n || 0), w = +(i.dataset.w || 800);
+        if (k === 0 && !i.dataset.r) { i.dataset.r = 1; setTimeout(() => { i.src = srcs(id, w)[0] }, 1200 + Math.random() * 1800); return }
+        if (k < 2) { i.dataset.n = k + 1; i.src = srcs(id, w)[k + 1]; return }
+      }
+      if (!i.dataset.fb) { i.dataset.fb = 1; i.src = IMG + 'logo.jpeg' } else i.classList.add('broken')
+    };
+    const AlbumTabs = ({ albums, selected, setSelected }) => html`<div className="album-tabs" role="tablist">${albums.map((a, i) => html`<button key=${i} className=${'album-tab' + (i === selected ? ' active' : '')} role="tab" aria-selected=${i === selected} onClick=${() => setSelected(i)}>${a.title || ('ألبوم ' + (i + 1))}</button>`)}</div>`;
 
-function Gallery(){
- const[albums,setAlbums]=useState([]),[sel,setSel]=useState(0),[loading,setLoading]=useState(true),[o,setO]=useState(null);let sx=0;
- useEffect(()=>{
-  const cap=setTimeout(()=>setLoading(false),8000);
-  fetch(SCRIPT_URL).then(r=>{if(!r.ok)throw new Error('fetch failed');return r.json()}).catch(()=>jsonp(SCRIPT_URL))
-   .then(d=>{const a=d&&Array.isArray(d.albums)?d.albums:Array.isArray(d)?[{title:'الصور',images:d}]:[];setAlbums(a.filter(x=>Array.isArray(x.images)&&x.images.length))})
-   .catch(err=>console.warn('Drive gallery unavailable, showing local photos:',err))
-   .finally(()=>{clearTimeout(cap);setLoading(false)})},[]);
- const drive=albums.length?albums[Math.min(sel,albums.length-1)].images.map(formatDriveImg):[];
- const items=(drive.length?drive:LOCAL).slice(0,12),N=items.length;
- useEffect(()=>{setO(null)},[sel]);
- useEffect(()=>{if(o===null)return;const k=e=>{if(e.key==='Escape')setO(null);if(e.key==='ArrowLeft')setO(i=>(i+1)%N);if(e.key==='ArrowRight')setO(i=>(i+N-1)%N)};addEventListener('keydown',k);return()=>removeEventListener('keydown',k)},[o,N]);
- const go=d=>e=>{e.stopPropagation();setO((o+d+N)%N)};
- return html`<section id="events"><div className="wrap">
-  <div style=${{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'1rem',marginBottom:'1.5rem'}}>
-   <h2 style=${{margin:0}}>الفعاليات</h2>
-   <a className="btn ghost" href="gallery-ar.html" style=${{color:'var(--blue)',borderColor:'var(--blue)',fontSize:'.9rem'}}>افتح صفحة الصور المخصصة \u2190</a>
-  </div>
-  <${Activities}/>
-  ${albums.length>1&&html`<${AlbumTabs} albums=${albums} selected=${sel} setSelected=${setSel}/>`}
-  <div className="gallery">
-   ${loading?html`<p style=${{gridColumn:'1 / -1',textAlign:'center',padding:'3rem 1rem',color:'var(--mute)'}}>جارٍ تحميل الصور...</p>`:items.map((img,i)=>html`<button key=${img.url||i} onClick=${()=>setO(i)} aria-label=${'افتح صورة الفعالية '+(i+1)}><img src=${img.url} alt=${img.name} loading="lazy" data-id=${img.id} data-w="480" onError=${fb}/><span>عرض الصورة</span></button>`)}
-  </div></div>
-  ${o!==null&&items[o]&&html`<div id="lb" className="open" role="dialog" aria-label="عارض الصور" onClick=${()=>setO(null)} onTouchStart=${e=>{sx=e.touches[0].clientX}} onTouchEnd=${e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)setO((o+(d<0?1:N-1))%N)}}>
+    function Gallery() {
+      const [albums, setAlbums] = useState([]), [sel, setSel] = useState(0), [loading, setLoading] = useState(true), [o, setO] = useState(null); let sx = 0;
+      useEffect(() => {
+        const cap = setTimeout(() => setLoading(false), 8000);
+        fetch(SCRIPT_URL).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json() }).catch(() => jsonp(SCRIPT_URL))
+          .then(d => { const a = d && Array.isArray(d.albums) ? d.albums : Array.isArray(d) ? [{ title: 'الصور', images: d }] : []; setAlbums(a.filter(x => Array.isArray(x.images) && x.images.length)) })
+          .catch(err => console.warn('Drive gallery unavailable, showing local photos:', err))
+          .finally(() => { clearTimeout(cap); setLoading(false) })
+      }, []);
+      const drive = albums.length ? albums[Math.min(sel, albums.length - 1)].images.map(formatDriveImg) : [];
+      const items = (drive.length ? drive : LOCAL).slice(0, 12), N = items.length;
+      useEffect(() => { setO(null) }, [sel]);
+      useEffect(() => { if (o === null) return; const k = e => { if (e.key === 'Escape') setO(null); if (e.key === 'ArrowLeft') setO(i => (i + 1) % N); if (e.key === 'ArrowRight') setO(i => (i + N - 1) % N) }; addEventListener('keydown', k); return () => removeEventListener('keydown', k) }, [o, N]);
+      const go = d => e => { e.stopPropagation(); setO((o + d + N) % N) };
+      return html`<${React.Fragment}>
+  <section id="events"><div className="wrap">
+   <h2>الفعاليات والأنشطة</h2>
+   <${Activities}/>
+  </div></section>
+  <section id="gallery" className="gallery-section"><div className="wrap">
+   <div className="gallery-header">
+    <div>
+     <h2 style=${{ margin: 0 }}>معرض الصور</h2>
+     <p className="gallery-sub">لحظات من ورش العمل والهاكاثونات والفعاليات</p>
+    </div>
+    <a className="btn main" href="gallery-ar.html">عرض كل الصور \u2190</a>
+   </div>
+   ${albums.length > 1 && html`<${AlbumTabs} albums=${albums} selected=${sel} setSelected=${setSel}/>`}
+   <div className="gallery">
+    ${loading
+      ? html`<div className="gallery-loading"><div className="spinner"></div><p>جارٍ تحميل الصور...</p></div>`
+      : items.map((img, i) => html`<button key=${img.url || i} onClick=${() => setO(i)} aria-label=${'افتح الصورة ' + (i + 1)} className="gal-btn"><img src=${img.url} alt=${img.name} loading=${i < 3 ? 'eager' : 'lazy'} fetchpriority=${i === 0 ? 'high' : 'auto'} data-id=${img.id} data-w="480" onError=${fb}/><span>عرض الصورة</span></button>`)}
+   </div>
+  </div></section>
+  ${o !== null && items[o] && html`<div id="lb" className="open" role="dialog" aria-label="عارض الصور" onClick=${() => setO(null)} onTouchStart=${e => { sx = e.touches[0].clientX }} onTouchEnd=${e => { const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50) setO((o + (d > 0 ? 1 : N - 1)) % N) }}>
    <button className="x" aria-label="إغلاق">\u00D7</button><button className="p" aria-label="السابق" onClick=${go(-1)}>\u203A</button>
-   <img key=${o} src=${items[o].id?srcs(items[o].id,2000)[0]:items[o].url} alt=${items[o].name} data-id=${items[o].id} data-w="2000" onError=${fb}/><button className="n" aria-label="التالي" onClick=${go(1)}>\u2039</button></div>`}
- </section>`}
+   <img key=${o} src=${items[o].id ? srcs(items[o].id, 2000)[0] : items[o].url} alt=${items[o].name} data-id=${items[o].id} data-w="2000" onError=${fb}/><button className="n" aria-label="التالي" onClick=${go(1)}>\u2039</button></div>`}
+  <//>`}
 
-function Counter({to,suffix='',label}){const[r,v]=useInView(.5),[n,setN]=useState(0);
- useEffect(()=>{if(!v)return;if(still){setN(to);return}let s;const f=t=>{s=s||t;const p=Math.min((t-s)/1400,1);setN(Math.round(to*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)},[v]);
- return html`<div ref=${r}><strong>${n}${suffix}</strong><span>${label}</span></div>`}
-const Numbers=()=>html`<div className="numbers"><div className="wrap"><${Counter} to=${100} suffix="+" label="عضو"/><${Counter} to=${10} suffix="+" label="ورشة عمل منفّذة"/><${Counter} to=${8} label="لجان"/></div></div>`;
+    function Counter({ to, suffix = '', label }) {
+      const [r, v] = useInView(.5), [n, setN] = useState(0);
+      useEffect(() => { if (!v) return; if (still) { setN(to); return } let s; const f = t => { s = s || t; const p = Math.min((t - s) / 1400, 1); setN(Math.round(to * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(f) }; requestAnimationFrame(f) }, [v]);
+      return html`<div ref=${r}><strong>${n}${suffix}</strong><span>${label}</span></div>`
+    }
+    const Numbers = () => html`<div className="numbers"><div className="wrap"><${Counter} to=${100} suffix="+" label="عضو"/><${Counter} to=${10} suffix="+" label="ورشة عمل منفّذة"/><${Counter} to=${8} label="لجان"/></div></div>`;
 
-const People=()=>html`<section className="people" id="people"><div className="wrap"><h2>فريقنا</h2>
- <div className="sup"><${Img} n="WhatsApp%20Image%202026-01-19%20at%203.28.11%20AM" alt="د. رانيا حمدي" loading="lazy"/><div><p>المشرف</p><h3>د. رانيا حمدي</h3></div></div>
+    const People = () => html`<section className="people" id="people"><div className="wrap"><h2>فريقنا</h2>
+ <div className="sup-top"><p>المشرفة</p><h3>د. أميرة السنباطي</h3></div>
+ <div className="sup"><${Img} n="tasneem" alt="تسنيم مصطفى" loading="lazy"/><div><p>مرشدة</p><h3>تسنيم مصطفى</h3></div></div>
  <h3 className="sub">الهيئة العليا</h3>
- <div className="team">${TEAM.map(t=>html`<div className="person" key=${t[0]}><div className="ph"><${Img} n=${t[0]} alt=${t[1]} loading="lazy"/></div><h3>${t[1]}</h3><p>${t[2]}</p></div>`)}</div></div></section>`;
+ <div className="team">${TEAM.map(t => html`<div className="person" key=${t[0]}><div className="ph"><${Img} n=${t[0]} alt=${t[1]} loading="lazy"/></div><h3>${t[1]}</h3><p>${t[2]}</p></div>`)}</div></div></section>`;
 
-function Faq(){const[o,setO]=useState(0);
- return html`<section className="faq" id="faq"><div className="wrap"><h2>الأسئلة الشائعة</h2>${FAQ.map((q,i)=>html`<div key=${i} className=${'qa'+(o===i?' open':'')}><button aria-expanded=${o===i} onClick=${()=>setO(o===i?-1:i)}>${q[0]}</button><div className="ans"><div><p>${q[1]}</p></div></div></div>`)}</div></section>`}
+    function Faq() {
+      const [o, setO] = useState(0);
+      return html`<section className="faq" id="faq"><div className="wrap"><h2>الأسئلة الشائعة</h2>${FAQ.map((q, i) => html`<div key=${i} className=${'qa' + (o === i ? ' open' : '')}><button aria-expanded=${o === i} onClick=${() => setO(o === i ? -1 : i)}>${q[0]}</button><div className="ans"><div><p>${q[1]}</p></div></div></div>`)}</div></section>`
+    }
 
-function Join(){const[f,setF]=useState({name:'',email:'',com:'لم أحدد بعد',msg:''}),[er,setEr]=useState({}),[sent,setSent]=useState(false);
- const set=k=>e=>setF({...f,[k]:e.target.value});
- const submit=e=>{e.preventDefault();const x={};
-  if(!f.name.trim())x.name='اكتب اسمك.';
-  if(!/^\S+@\S+\.\S+$/.test(f.email))x.email='اكتب بريدًا إلكترونيًا صحيحًا.';
-  setEr(x);if(Object.keys(x).length)return;
-  const body='الاسم: '+f.name+'\nالبريد: '+f.email+'\nاللجنة: '+f.com+'\n\n'+f.msg;
-  location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('طلب عضوية: '+f.name)+'&body='+encodeURIComponent(body);setSent(true)};
- return html`<section className="join" id="join"><div className="wrap">
-  <div><h2>انضم إلى الفرع</h2><p>عرّفنا بنفسك وباللجنة التي تهمّك. يُفتح طلبك كرسالة بريد إلى الفرع، ونرد عليك بموعد جلسة التعريف القادمة وتفاصيل العضوية.</p><p style=${{marginTop:'1rem'}}>العضوية بمقابل مادي يدعم فعاليات الفرع ومواردها.</p></div>
+    function Join() {
+      const [f, setF] = useState({ name: '', email: '', com: 'لم أحدد بعد', msg: '' }), [er, setEr] = useState({}), [sent, setSent] = useState(false);
+      const set = k => e => setF({ ...f, [k]: e.target.value });
+      const submit = e => {
+        e.preventDefault(); const x = {};
+        if (!f.name.trim()) x.name = 'اكتب اسمك.';
+        if (!/^\S+@\S+\.\S+$/.test(f.email)) x.email = 'اكتب بريدًا إلكترونيًا صحيحًا.';
+        setEr(x); if (Object.keys(x).length) return;
+        const body = 'الاسم: ' + f.name + '\nالبريد: ' + f.email + '\nاللجنة: ' + f.com + '\n\n' + f.msg;
+        location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('طلب عضوية: ' + f.name) + '&body=' + encodeURIComponent(body); setSent(true)
+      };
+      return html`<section className="join" id="join"><div className="wrap">
+  <div><h2>انضم إلى الفرع</h2><p>عرّفنا بنفسك وباللجنة التي تهمّك. يُفتح طلبك كرسالة بريد إلى الفرع، ونرد عليك بموعد جلسة التعريف القادمة وتفاصيل العضوية.</p><p style=${{ marginTop: '1rem' }}>العضوية بمقابل مادي يدعم فعاليات الفرع ومواردها.</p></div>
   <form onSubmit=${submit} noValidate>
-   <label>الاسم بالكامل<input value=${f.name} onInput=${set('name')} aria-invalid=${!!er.name} autoComplete="name"/>${er.name&&html`<span className="err">${er.name}</span>`}</label>
-   <label>البريد الإلكتروني<input type="email" value=${f.email} onInput=${set('email')} aria-invalid=${!!er.email} autoComplete="email"/>${er.email&&html`<span className="err">${er.email}</span>`}</label>
-   <label>اللجنة التي تهمّك<select value=${f.com} onChange=${set('com')}><option>لم أحدد بعد</option>${COMMITTEES.map(c=>html`<option key=${c[0]}>${c[0]}</option>`)}</select></label>
+   <label>الاسم بالكامل<input value=${f.name} onInput=${set('name')} aria-invalid=${!!er.name} autoComplete="name"/>${er.name && html`<span className="err">${er.name}</span>`}</label>
+   <label>البريد الإلكتروني<input type="email" value=${f.email} onInput=${set('email')} aria-invalid=${!!er.email} autoComplete="email"/>${er.email && html`<span className="err">${er.email}</span>`}</label>
+   <label>اللجنة التي تهمّك<select value=${f.com} onChange=${set('com')}><option>لم أحدد بعد</option>${COMMITTEES.map(c => html`<option key=${c[0]}>${c[0]}</option>`)}</select></label>
    <label>الرسالة (اختياري)<textarea rows="3" value=${f.msg} onInput=${set('msg')}></textarea></label>
    <button className="btn main" type="submit">إرسال طلب العضوية</button>
-   ${sent&&html`<p className="ok" role="status">سيفتح تطبيق البريد برسالة الطلب جاهزة للإرسال. إن لم يفتح، راسلنا على ${MAIL}</p>`}
+   ${sent && html`<p className="ok" role="status">سيفتح تطبيق البريد برسالة الطلب جاهزة للإرسال. إن لم يفتح، راسلنا على ${MAIL}</p>`}
   </form></div></section>`}
 
-const Contact=()=>html`<section className="contact" id="contact"><div className="wrap"><div>
+    const Contact = () => html`<section className="contact" id="contact"><div className="wrap"><div>
  <h2>تحتاج مساعدة؟ تواصل معنا</h2>
  <h3>العنوان</h3><p>المنطقة المركزية، الحي الرابع، دمياط الجديدة، محافظة دمياط، مصر.</p>
- <h3>البريد الإلكتروني</h3><p><a href=${'mailto:'+MAIL}>${MAIL}</a></p>
+ <h3>البريد الإلكتروني</h3><p><a href=${'mailto:' + MAIL}>${MAIL}</a></p>
  <h3>تابعنا</h3><div className="social">
   <a href="https://www.facebook.com/share/1FF6kMpaya/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
   <a href="https://www.instagram.com/ieee_ndeti?igsh=MXRqc2ZvaTljd2Vyag==" target="_blank" rel="noopener">Instagram</a>
   <a href="https://www.linkedin.com/in/ieee-ndeti" target="_blank" rel="noopener">LinkedIn</a></div><${ContactForm}/></div>
  <iframe title="خريطة دمياط الجديدة" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.2227230490714!2d31.6666!3d31.4166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzAwLjAiTiAzMcKwNDAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg"></iframe></div></section>`;
 
-const Footer=()=>html`<footer><div className="wrap"><div><strong>We are the spark behind innovation.</strong>فرع IEEE NDETI الطلابي، دمياط الجديدة</div>
+    const Footer = () => html`<footer><div className="wrap"><div><strong>We are the spark behind innovation.</strong>فرع IEEE NDETI الطلابي، دمياط الجديدة</div>
  <div>\u00A9 ${new Date().getFullYear()} فرع IEEE NDETI الطلابي. جميع الحقوق محفوظة.<br/>تصميم وتطوير: ملك حسن، مسؤول الموقع.</div></div></footer>`;
 
-const ACTIVITIES=[
- ['الهاكاثونات','ابنِ مع فريقك مشروعًا يعمل في وقت محدد وصقل مهارتك في حل المشكلات. وهكذا نستعد أيضًا لـ IEEE Xtreme وتحديات IEEE العالمية الأخرى.'],
- ['ورش العمل','جلسات عملية يقدّمها أعضاء وخبراء ضيوف تنقلك من النظرية إلى شيء تبنيه بيدك.'],
- ['سيشنز البرمجة','جلسات برمجة منتظمة تنظمها لجنة البرمجة، من أول سطر كود حتى مشروعات تقنية كاملة.'],
- ['ندوات وزيارات ميدانية','ندوات تقنية وزيارات ميدانية تُريك كيف تعمل الهندسة خارج قاعة الدراسة.']];
-const Activities=()=>html`<${React.Fragment}><div className="acts">${ACTIVITIES.map((a,i)=>html`<article key=${a[0]} style=${{'--c':i%2?'var(--spark)':'var(--blue)'}}><${Ico} n=${i+4}/><h3>${a[0]}</h3><p>${a[1]}</p></article>`)}</div><h3 className="sub2">صور من فعالياتنا</h3><//>`;
+    const ACTIVITIES = [
+      ['الهاكاثونات', 'ابنِ مع فريقك مشروعًا يعمل في وقت محدد وصقل مهارتك في حل المشكلات. وهكذا نستعد أيضًا لـ IEEE Xtreme وتحديات IEEE العالمية الأخرى.'],
+      ['ورش العمل', 'جلسات عملية يقدّمها أعضاء وخبراء ضيوف تنقلك من النظرية إلى شيء تبنيه بيدك.'],
+      ['سيشنز البرمجة', 'جلسات برمجة منتظمة تنظمها لجنة البرمجة، من أول سطر كود حتى مشروعات تقنية كاملة.'],
+      ['ندوات وزيارات ميدانية', 'ندوات تقنية وزيارات ميدانية تُريك كيف تعمل الهندسة خارج قاعة الدراسة.']];
+    const Activities = () => html`<${React.Fragment}><div className="acts">${ACTIVITIES.map((a, i) => html`<article key=${a[0]} style=${{ '--c': i % 2 ? 'var(--spark)' : 'var(--blue)' }}><${Ico} n=${i + 4}/><h3>${a[0]}</h3><p>${a[1]}</p></article>`)}</div><h3 className="sub2">صور من فعالياتنا</h3><//>`;
 
-const SAMPLE=true; // set to false once the quotes below are real ones from members
-const QUOTES=[
- ['انضممت لأتعلم البرمجة وانتهى بي الأمر أقود فريقًا. هنا تحدثت أمام مجموعة لأول مرة.','اسم العضو','اللجنة والسنة'],
- ['الورش أعطتني مهارات أستخدمها في دراستي، والناس هنا سهّلوا عليّ السؤال.','اسم العضو','اللجنة والسنة'],
- ['العمل داخل لجنة علّمني كيف أخطط وأوزّع المهام وأسلّم في الموعد.','اسم العضو','اللجنة والسنة']];
-const Testimonials=()=>html`<section className="voices" id="voices"><div className="wrap"><h2>ماذا يقول الأعضاء</h2>
- ${SAMPLE&&html`<p className="draft">نص تجريبي. استبدله بآراء حقيقية من الأعضاء قبل النشر.</p>`}
- <div className="vq">${QUOTES.map((q,i)=>html`<figure key=${i} className=${i?'':'big'}><blockquote>${q[0]}</blockquote><figcaption><b>${q[1]}</b>${q[2]}</figcaption></figure>`)}</div></div></section>`;
+    const SAMPLE = true; // set to false once the quotes below are real ones from members
+    const QUOTES = [
+      ['انضممت لأتعلم البرمجة وانتهى بي الأمر أقود فريقًا. هنا تحدثت أمام مجموعة لأول مرة.', 'اسم العضو', 'اللجنة والسنة'],
+      ['الورش أعطتني مهارات أستخدمها في دراستي، والناس هنا سهّلوا عليّ السؤال.', 'اسم العضو', 'اللجنة والسنة'],
+      ['العمل داخل لجنة علّمني كيف أخطط وأوزّع المهام وأسلّم في الموعد.', 'اسم العضو', 'اللجنة والسنة']];
+    const Testimonials = () => html`<section className="voices" id="voices"><div className="wrap"><h2>ماذا يقول الأعضاء</h2>
+ ${SAMPLE && html`<p className="draft">نص تجريبي. استبدله بآراء حقيقية من الأعضاء قبل النشر.</p>`}
+ <div className="vq">${QUOTES.map((q, i) => html`<figure key=${i} className=${i ? '' : 'big'}><blockquote>${q[0]}</blockquote><figcaption><b>${q[1]}</b>${q[2]}</figcaption></figure>`)}</div></div></section>`;
 
-function ContactForm(){const[f,setF]=useState({name:'',email:'',msg:''}),[er,setEr]=useState({}),[sent,setSent]=useState(false);
- const set=k=>e=>setF({...f,[k]:e.target.value});
- const submit=e=>{e.preventDefault();const x={};
-  if(!f.name.trim())x.name='اكتب اسمك.';
-  if(!/^\S+@\S+\.\S+$/.test(f.email))x.email='اكتب بريدًا إلكترونيًا صحيحًا.';
-  if(!f.msg.trim())x.msg='اكتب رسالة قصيرة.';
-  setEr(x);if(Object.keys(x).length)return;
-  location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('رسالة من '+f.name)+'&body='+encodeURIComponent(f.msg+'\n\nمن: '+f.name+' ('+f.email+')');setSent(true)};
- return html`<form onSubmit=${submit} noValidate><h3>أرسل لنا رسالة</h3>
-  <label>الاسم<input value=${f.name} onInput=${set('name')} aria-invalid=${!!er.name} autoComplete="name"/>${er.name&&html`<span className="err">${er.name}</span>`}</label>
-  <label>البريد الإلكتروني<input type="email" value=${f.email} onInput=${set('email')} aria-invalid=${!!er.email} autoComplete="email"/>${er.email&&html`<span className="err">${er.email}</span>`}</label>
-  <label>الرسالة<textarea rows="4" value=${f.msg} onInput=${set('msg')} aria-invalid=${!!er.msg}></textarea>${er.msg&&html`<span className="err">${er.msg}</span>`}</label>
+    function ContactForm() {
+      const [f, setF] = useState({ name: '', email: '', msg: '' }), [er, setEr] = useState({}), [sent, setSent] = useState(false);
+      const set = k => e => setF({ ...f, [k]: e.target.value });
+      const submit = e => {
+        e.preventDefault(); const x = {};
+        if (!f.name.trim()) x.name = 'اكتب اسمك.';
+        if (!/^\S+@\S+\.\S+$/.test(f.email)) x.email = 'اكتب بريدًا إلكترونيًا صحيحًا.';
+        if (!f.msg.trim()) x.msg = 'اكتب رسالة قصيرة.';
+        setEr(x); if (Object.keys(x).length) return;
+        location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('رسالة من ' + f.name) + '&body=' + encodeURIComponent(f.msg + '\n\nمن: ' + f.name + ' (' + f.email + ')'); setSent(true)
+      };
+      return html`<form onSubmit=${submit} noValidate><h3>أرسل لنا رسالة</h3>
+  <label>الاسم<input value=${f.name} onInput=${set('name')} aria-invalid=${!!er.name} autoComplete="name"/>${er.name && html`<span className="err">${er.name}</span>`}</label>
+  <label>البريد الإلكتروني<input type="email" value=${f.email} onInput=${set('email')} aria-invalid=${!!er.email} autoComplete="email"/>${er.email && html`<span className="err">${er.email}</span>`}</label>
+  <label>الرسالة<textarea rows="4" value=${f.msg} onInput=${set('msg')} aria-invalid=${!!er.msg}></textarea>${er.msg && html`<span className="err">${er.msg}</span>`}</label>
   <button className="btn main" type="submit">إرسال الرسالة</button>
-  ${sent&&html`<p className="ok" role="status">سيفتح تطبيق البريد برسالتك جاهزة للإرسال. إن لم يفتح، راسلنا على ${MAIL}</p>`}</form>`}
+  ${sent && html`<p className="ok" role="status">سيفتح تطبيق البريد برسالتك جاهزة للإرسال. إن لم يفتح، راسلنا على ${MAIL}</p>`}</form>`
+    }
 
-const CtaBanner=()=>html`<section className="final"><div className="wrap"><div><h2>هل أنت مستعد لتصنع شيئًا معنا؟</h2><p>انضم إلى أكثر من 100 طالب يتعلمون وينافسون ويقودون في فرع IEEE NDETI الطلابي.</p></div><a className="btn dark" href="#join">انضم الآن</a></div></section>`;
+    const CtaBanner = () => html`<section className="final"><div className="wrap"><div><h2>هل أنت مستعد لتصنع شيئًا معنا؟</h2><p>انضم إلى أكثر من 100 طالب يتعلمون وينافسون ويقودون في فرع IEEE NDETI الطلابي.</p></div><a className="btn dark" href="#join">انضم الآن</a></div></section>`;
 
-const initTheme=()=>{try{const s=localStorage.getItem('theme');if(s)return s}catch(e){}return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'};
-function App(){const[theme,setTheme]=useState(initTheme);
- useEffect(()=>{document.documentElement.dataset.theme=theme;try{localStorage.setItem('theme',theme)}catch(e){}},[theme]);
- return html`<${React.Fragment}><${Nav} theme=${theme} toggle=${()=>setTheme(theme==='dark'?'light':'dark')}/><${Hero}/><${Pillars}/><${About}/><${Committees}/><${Gallery}/><${Numbers}/><${People}/><${Testimonials}/><${Faq}/><${Join}/><${Contact}/><${CtaBanner}/><${Footer}/><//>`}
-document.addEventListener('error',e=>{if(e.target.tagName==='IMG')e.target.classList.add('broken')},true);
-ReactDOM.createRoot(document.getElementById('root')).render(html`<${App}/>`);
-</script>
+    const initTheme = () => { try { const s = localStorage.getItem('theme'); if (s) return s } catch (e) { } return matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light' };
+    function App() {
+      const [theme, setTheme] = useState(initTheme);
+      useEffect(() => { document.documentElement.dataset.theme = theme; try { localStorage.setItem('theme', theme) } catch (e) { } }, [theme]);
+      return html`<${React.Fragment}><${Nav} theme=${theme} toggle=${() => setTheme(theme === 'dark' ? 'light' : 'dark')}/><${Hero}/><${Pillars}/><${About}/><${Committees}/><${Gallery}/><${Numbers}/><${People}/><${Testimonials}/><${Faq}/><${Join}/><${Contact}/><${CtaBanner}/><${Footer}/><//>`
+    }
+    document.addEventListener('error', e => { if (e.target.tagName === 'IMG') e.target.classList.add('broken') }, true);
+    ReactDOM.createRoot(document.getElementById('root')).render(html`<${App}/>`);
+  </script>
 </body>
+
 </html>

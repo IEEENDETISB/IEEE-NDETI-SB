@@ -549,6 +549,53 @@
       margin-bottom: 1.4rem
     }
 
+    /* supervisor box (no photo) */
+    .sup-top {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(160deg, var(--blue), var(--deep));
+      color: #fff;
+      border-radius: 24px;
+      border-inline-start: 6px solid var(--spark);
+      padding: 2.8rem 3rem;
+      margin-bottom: 2.4rem
+    }
+
+    .sup-top::after {
+      content: "";
+      position: absolute;
+      inset: -40% -10% auto auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, #FFB81C40, transparent 65%);
+      z-index: -1;
+      pointer-events: none
+    }
+
+    .sup-top p {
+      color: var(--spark);
+      font-weight: 600;
+      font-size: .95rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: .5rem
+    }
+
+    .sup-top h3 {
+      font-size: clamp(2rem, 4.5vw, 3rem)
+    }
+
+    [data-theme=dark] .sup-top {
+      background: linear-gradient(160deg, #004f7d, #00263d 75%)
+    }
+
+    @media(max-width:520px) {
+      .sup-top {
+        padding: 2rem 1.5rem
+      }
+    }
+
     /* faq */
     .faq {
       background: var(--paper)
@@ -1680,7 +1727,8 @@
     const Numbers = () => html`<div className="numbers"><div className="wrap"><${Counter} to=${100} suffix="+" label="Members"/><${Counter} to=${10} suffix="+" label="Workshops conducted"/><${Counter} to=${8} label="Committees"/></div></div>`;
 
     const People = () => html`<section className="people" id="people"><div className="wrap"><h2>Our team</h2>
- <div className="sup"><${Img} n="tasneem" alt="Tasneem Mostafa" loading="lazy"/><div><p>Consultant</p><h3>Tasneem Mostafa</h3></div></div>
+ <div className="sup-top"><p>Supervisor</p><h3>Dr. Amira El-Sonbaty</h3></div>
+ <div className="sup"><${Img} n="tasneem" alt="Tasneem Mostafa" loading="lazy"/><div><p>Mentor</p><h3>Tasneem Mostafa</h3></div></div>
  <h3 className="sub">High board</h3>
  <div className="team">${TEAM.map(t => html`<div className="person" key=${t[0]}><div className="ph"><${Img} n=${t[0]} alt=${t[1]} loading="lazy"/></div><h3>${t[1]}</h3><p>${t[2]}</p></div>`)}</div></div></section>`;
 
